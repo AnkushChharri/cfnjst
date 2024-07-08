@@ -1,10 +1,44 @@
-import Image from "next/image";
+
+
+
+
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import SearchComponent from "./components/SearchComponent";
+
+export const runtime = "edge";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
 
-      <p>PP</p>
-    </main>
+
+    <>
+      <Navbar />
+
+      <SearchComponent />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <Footer />
+
+
+
+
+
+    </>
   );
 }
+
+
+
