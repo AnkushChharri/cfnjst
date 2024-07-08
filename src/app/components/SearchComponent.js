@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
+import { BeatLoader } from 'react-spinners';
 
 const dummyData = {
     "original_text": "Stylish",
@@ -123,15 +124,26 @@ const dummyData = {
     }
 };
 
+// Define the SearchComponent functional component
 const SearchComponent = () => {
     const [searchText, setSearchText] = useState('');
-    const [result, setResult] = useState(dummyData);
+    const [result, setResult] = useState(null); // Initially null to signify loading
     const [error, setError] = useState(null);
     const [typingTimeout, setTypingTimeout] = useState(0);
     const [copiedStyles, setCopiedStyles] = useState({});
     const [showMixStyles, setShowMixStyles] = useState(false);
+    const [isLoading, setIsLoading] = useState(false); // State to manage loading indicator
+
+    const typingTimeoutRef = useRef(null);
+
+    useEffect(() => {
+        return () => {
+            clearTimeout(typingTimeoutRef.current);
+        };
+    }, []);
 
     const handleSearch = async (searchText) => {
+        setIsLoading(true); // Set loading state when starting API request
         try {
             const response = await fetch(`https://hello-python.viramachhari.workers.dev/?text=${searchText}`);
             if (!response.ok) {
@@ -142,15 +154,18 @@ const SearchComponent = () => {
             setError(null);
         } catch (error) {
             console.error('Error fetching data:', error);
-            // Instead of setting error, we'll keep the dummy data
-            setResult(dummyData);
+            setResult(dummyData); // Fallback to dummyData or previous result
+        } finally {
+            setIsLoading(false); // Reset loading state after request completes
         }
     };
 
-    const handleInputChange = (e) => {
+    const handleInputChange = useCallback((e) => {
         const newSearchText = e.target.value;
         setSearchText(newSearchText);
-        clearTimeout(typingTimeout);
+
+        clearTimeout(typingTimeoutRef.current);
+
         setTypingTimeout(setTimeout(() => {
             handleSearch(newSearchText);
         }, 500));
@@ -158,13 +173,15 @@ const SearchComponent = () => {
         const isMixedCase = newSearchText.length >= 2 &&
             ((newSearchText[0] === newSearchText[0].toUpperCase() && newSearchText[0] !== newSearchText[0].toLowerCase()) ||
                 (newSearchText[1] === newSearchText[1].toUpperCase() && newSearchText[1] !== newSearchText[1].toLowerCase()));
+
         setShowMixStyles(isMixedCase);
-    };
+    }, []);
 
     const handleCopyStyle = useCallback((styleKey, styleValue) => {
         const cleanedValue = Array.isArray(styleValue) ? styleValue[0] : styleValue;
         navigator.clipboard.writeText(cleanedValue);
         setCopiedStyles(prev => ({ ...prev, [styleKey]: true }));
+
         setTimeout(() => {
             setCopiedStyles(prev => ({ ...prev, [styleKey]: false }));
         }, 2000);
@@ -195,12 +212,18 @@ const SearchComponent = () => {
                     className="search-input"
                 />
             </div>
-            {result && (
+            {isLoading && (
+                <div className="spinner-container">
+                    <BeatLoader color="#36D7B7" loading={true} size={15} />
+                    <p>Loading...</p>
+                </div>
+            )}
+            {!isLoading && (result || dummyData) && (
                 <div className="result-container">
-                    {Object.keys(result.styled_texts).map((key, index) => (
+                    {Object.keys(result?.styled_texts || dummyData.styled_texts).map((key, index) => (
                         <div key={index} className="styled-text-box">
                             <h3 className="name-title">{key}</h3>
-                            {Object.entries(filterStyles(result.styled_texts[key]?.styles || {})).map(([styleKey, styleValue], idx) => {
+                            {Object.entries(filterStyles(result?.styled_texts?.[key]?.styles || dummyData.styled_texts[key].styles || {})).map(([styleKey, styleValue], idx) => {
                                 const uniqueKey = `${key}-${styleKey}`;
                                 return (
                                     <div
@@ -216,6 +239,9 @@ const SearchComponent = () => {
                         </div>
                     ))}
                 </div>
+            )}
+            {!isLoading && !result && (
+                <p>No results found.</p>
             )}
         </div>
     );
