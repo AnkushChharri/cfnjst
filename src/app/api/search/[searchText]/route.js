@@ -6,14 +6,13 @@ import { LRUCache } from 'lru-cache';
 
 // Create an LRU cache
 const cache = new LRUCache({
-  max: 1000, // Increased to store more unique queries
-  ttl: 1000 * 60 * 15, // Reduced to 15 minutes for more frequent updates
+  max: 100, // Maximum number of items to store
+  ttl: 1000 * 60 * 60, // Time to live: 1 hour
 });
 
 // Rate limiting
-const RATE_LIMIT = 30; // Increased to 30 requests per minute
+const RATE_LIMIT = 30; // requests per minute
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute in milliseconds
-const RATE_LIMIT_CLEANUP_INTERVAL = 5 * 60 * 1000; // 5 minutes
 
 const rateLimitStore = new Map();
 
@@ -29,27 +28,9 @@ function rateLimit(ip) {
   }
 
   requestTimestamps.push(now);
-  rateLimitStore.set(ip, requestsInWindow.concat(now));
+  rateLimitStore.set(ip, requestTimestamps);
   return true;
 }
-
-// Cleanup function to remove old entries from rateLimitStore
-function cleanupRateLimitStore() {
-  const now = Date.now();
-  const windowStart = now - RATE_LIMIT_WINDOW;
-
-  for (const [ip, timestamps] of rateLimitStore.entries()) {
-    const validTimestamps = timestamps.filter(timestamp => timestamp > windowStart);
-    if (validTimestamps.length === 0) {
-      rateLimitStore.delete(ip);
-    } else {
-      rateLimitStore.set(ip, validTimestamps);
-    }
-  }
-}
-
-// Set up periodic cleanup
-setInterval(cleanupRateLimitStore, RATE_LIMIT_CLEANUP_INTERVAL);
 
 export async function GET(request, { params }) {
   const { searchText } = params;
