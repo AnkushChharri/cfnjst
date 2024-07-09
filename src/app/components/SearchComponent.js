@@ -3,6 +3,8 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { BeatLoader } from 'react-spinners';
 
+import { debounce } from 'lodash';
+
 const dummyData = {
     "original_text": "Stylish",
     "styled_texts": {
@@ -124,70 +126,98 @@ const dummyData = {
     }
 };
 
-// Define the SearchComponent functional component
+
+
+
 const SearchComponent = () => {
     const [searchText, setSearchText] = useState('');
-    const [result, setResult] = useState(null); // Initially null to signify loading
+    const [result, setResult] = useState(dummyData); // Initialize with dummyData
     const [error, setError] = useState(null);
-    const [typingTimeout, setTypingTimeout] = useState(0);
     const [copiedStyles, setCopiedStyles] = useState({});
     const [showMixStyles, setShowMixStyles] = useState(false);
-    const [isLoading, setIsLoading] = useState(false); // State to manage loading indicator
+    const [isLoading, setIsLoading] = useState(false);
 
-    const typingTimeoutRef = useRef(null);
+    const abortControllerRef = useRef(null);
+    const cacheRef = useRef({ '': dummyData }); // Cache dummyData for empty search
 
-    useEffect(() => {
-        return () => {
-            clearTimeout(typingTimeoutRef.current);
-        };
-    }, []);
+    const fetchData = useCallback(async (text) => {
+        // Check if we already have the result in cache
+        if (cacheRef.current[text]) {
+            setResult(cacheRef.current[text]);
+            return;
+        }
 
-    const handleSearch = async (searchText) => {
-        setIsLoading(true); // Set loading state when starting API request
+        if (abortControllerRef.current) {
+            abortControllerRef.current.abort();
+        }
+        abortControllerRef.current = new AbortController();
+
+        setIsLoading(true);
         try {
-            const response = await fetch(`https://hello-python.viramachhari.workers.dev/?text=${searchText}`);
+            const response = await fetch(`/api/search/${encodeURIComponent(text)}`, {
+                signal: abortControllerRef.current.signal
+            });
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            setResult(data);
+            const validData = data && data.styled_texts ? data : dummyData;
+            setResult(validData);
+            // Store the result in cache
+            cacheRef.current[text] = validData;
             setError(null);
         } catch (error) {
-            console.error('Error fetching data:', error);
-            setResult(dummyData); // Fallback to dummyData or previous result
+            if (error.name === 'AbortError') {
+                console.log('Request was aborted');
+            } else {
+                console.error('Error fetching data:', error);
+                setResult(dummyData);
+                setError('An error occurred while fetching data. Using fallback data.');
+            }
         } finally {
-            setIsLoading(false); // Reset loading state after request completes
+            setIsLoading(false);
         }
-    };
+    }, []);
+
+    const debouncedFetchData = useCallback(
+        debounce((text) => {
+            if (text.trim()) {
+                fetchData(text);
+            } else {
+                setResult(dummyData); // Use dummyData for empty search
+                setError(null);
+            }
+        }, 300),
+        [fetchData]
+    );
 
     const handleInputChange = useCallback((e) => {
         const newSearchText = e.target.value;
         setSearchText(newSearchText);
 
-        clearTimeout(typingTimeoutRef.current);
-
-        setTypingTimeout(setTimeout(() => {
-            handleSearch(newSearchText);
-        }, 500));
-
         const isMixedCase = newSearchText.length >= 2 &&
-            ((newSearchText[0] === newSearchText[0].toUpperCase() && newSearchText[0] !== newSearchText[0].toLowerCase()) ||
-                (newSearchText[1] === newSearchText[1].toUpperCase() && newSearchText[1] !== newSearchText[1].toLowerCase()));
+            newSearchText.split('').some(char => char === char.toUpperCase()) &&
+            newSearchText.split('').some(char => char === char.toLowerCase());
 
         setShowMixStyles(isMixedCase);
-    }, []);
+
+        debouncedFetchData(newSearchText);
+    }, [debouncedFetchData]);
 
     const handleCopyStyle = useCallback((styleKey, styleValue) => {
         const cleanedValue = Array.isArray(styleValue) ? styleValue[0] : styleValue;
-        navigator.clipboard.writeText(cleanedValue);
-        setCopiedStyles(prev => ({ ...prev, [styleKey]: true }));
-
-        setTimeout(() => {
-            setCopiedStyles(prev => ({ ...prev, [styleKey]: false }));
-        }, 2000);
+        navigator.clipboard.writeText(cleanedValue)
+            .then(() => {
+                setCopiedStyles(prev => ({ ...prev, [styleKey]: true }));
+                setTimeout(() => {
+                    setCopiedStyles(prev => ({ ...prev, [styleKey]: false }));
+                }, 2000);
+            })
+            .catch(err => console.error('Failed to copy text: ', err));
     }, []);
 
-    const filterStyles = (styles) => {
+    const filterStyles = useCallback((styles) => {
+        if (!styles) return {}; // Return an empty object if styles is null or undefined
         if (showMixStyles) {
             return styles;
         } else {
@@ -195,11 +225,19 @@ const SearchComponent = () => {
                 Object.entries(styles).filter(([key]) => !key.toLowerCase().includes('mix'))
             );
         }
-    };
+    }, [showMixStyles]);
 
-    const getStyleValue = (styleValue) => {
+    const getStyleValue = useCallback((styleValue) => {
         return Array.isArray(styleValue) ? styleValue[0] : styleValue;
-    };
+    }, []);
+
+    useEffect(() => {
+        return () => {
+            if (abortControllerRef.current) {
+                abortControllerRef.current.abort();
+            }
+        };
+    }, []);
 
     return (
         <div className="search-wrapper">
@@ -218,16 +256,17 @@ const SearchComponent = () => {
                     <p>Loading...</p>
                 </div>
             )}
-            {!isLoading && (result || dummyData) && (
+            {error && <p className="error-message">{error}</p>}
+            {!isLoading && result && (
                 <div className="result-container">
-                    {Object.keys(result?.styled_texts || dummyData.styled_texts).map((key, index) => (
-                        <div key={index} className="styled-text-box">
+                    {Object.entries(result.styled_texts || {}).map(([key, value]) => (
+                        <div key={key} className="styled-text-box">
                             <h3 className="name-title">{key}</h3>
-                            {Object.entries(filterStyles(result?.styled_texts?.[key]?.styles || dummyData.styled_texts[key].styles || {})).map(([styleKey, styleValue], idx) => {
+                            {Object.entries(filterStyles(value?.styles || {})).map(([styleKey, styleValue]) => {
                                 const uniqueKey = `${key}-${styleKey}`;
                                 return (
                                     <div
-                                        key={idx}
+                                        key={uniqueKey}
                                         className={`style-item ${copiedStyles[uniqueKey] ? 'copied' : ''}`}
                                         onClick={() => handleCopyStyle(uniqueKey, styleValue)}
                                     >
@@ -240,7 +279,7 @@ const SearchComponent = () => {
                     ))}
                 </div>
             )}
-            {!isLoading && !result && (
+            {!isLoading && !result && searchText.trim() && (
                 <p>No results found.</p>
             )}
         </div>
