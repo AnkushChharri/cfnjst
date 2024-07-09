@@ -30,6 +30,7 @@ export async function GET(request) {
 
   // Input validation
   if (!searchText || typeof searchText !== 'string' || searchText.length > 100) {
+    console.error('Invalid search text:', searchText);
     return NextResponse.json({ error: 'Invalid search text' }, { status: 400 });
   }
 
@@ -39,6 +40,7 @@ export async function GET(request) {
 
   // Rate limiting (note: this is not effective in a serverless environment)
   if (!rateLimit(ip)) {
+    console.error('Rate limit exceeded for IP:', ip);
     return NextResponse.json({ error: 'Rate limit exceeded' }, { status: 429 });
   }
 
@@ -46,6 +48,7 @@ export async function GET(request) {
   const cacheKey = `search:${searchText}`;
   const cachedResult = cache.get(cacheKey);
   if (cachedResult) {
+    console.log('Returning cached result for:', searchText);
     return NextResponse.json(cachedResult);
   }
 
@@ -68,6 +71,7 @@ export async function GET(request) {
     // Cache the result (note: this will not persist across requests in a serverless environment)
     cache.set(cacheKey, data);
 
+    console.log('Fetched and cached result for:', searchText);
     return NextResponse.json(data);
   } catch (error) {
     console.error('Error fetching data:', error);
