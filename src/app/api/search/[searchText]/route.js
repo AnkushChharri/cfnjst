@@ -1,5 +1,5 @@
 // app/api/search/[searchText]/route.js
-
+export const runtime = 'edge'; // 'nodejs' is the default
 import { NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 import { LRUCache } from 'lru-cache';
