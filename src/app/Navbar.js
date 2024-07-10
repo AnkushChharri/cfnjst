@@ -1,14 +1,17 @@
 // components/Navbar.js
 "use client";
 
+
+
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-    { name: 'Dashboard', href: '#', current: true },
-    { name: 'Team', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Calendar', href: '#', current: false },
+    { name: 'Dashboard', href: '/' },
+    { name: 'Fancy Text Generator', href: '/FancyTextGenerator' },
+    { name: 'Font Generator', href: '/FancyTextGenerator/FontGenerator' },
+    { name: 'VillanZalgo', href: '/VillanZalgo' },
+    { name: 'Calendar', href: '#' },
 ];
 
 function classNames(...classes) {

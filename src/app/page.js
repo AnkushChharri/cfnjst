@@ -15,7 +15,7 @@ export default function Home() {
 
 
     <>
-      <Navbar />
+
 
       <SearchComponent />
 
@@ -32,7 +32,7 @@ export default function Home() {
 
 
 
-      <Footer />
+
 
 
 
