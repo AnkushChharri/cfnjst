@@ -3,7 +3,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { BeatLoader } from 'react-spinners';
 import { debounce } from 'lodash';
-import { Copy } from 'lucide-react';
+import { Copy, Bold, Italic, Underline } from 'lucide-react';
 
 const ZalgoPage = () => {
     const [inputText, setInputText] = useState('Hello, World!');
@@ -13,7 +13,11 @@ const ZalgoPage = () => {
     const [copySuccess, setCopySuccess] = useState(false);
     const [crazinessLevel, setCrazinessLevel] = useState(50);
     const [outputBoxHeight, setOutputBoxHeight] = useState(200);
-    const [textSize, setTextSize] = useState(2); // New state for text size
+    const [textSize, setTextSize] = useState(2);
+    const [isBold, setIsBold] = useState(false);
+    const [isItalic, setIsItalic] = useState(false);
+    const [isUnderline, setIsUnderline] = useState(false);
+    const [isRed, setIsRed] = useState(false);
 
     const zalgo_up = ['\u030d', '\u030e', '\u0304', '\u0305', '\u033f', '\u0311', '\u0306', '\u0310', '\u0352', '\u0357', '\u0351', '\u0307', '\u0308', '\u030a', '\u0342', '\u0343', '\u0344', '\u034a', '\u034b', '\u034c', '\u0303', '\u0302', '\u030c', '\u0350', '\u0300', '\u0301', '\u030b', '\u030f', '\u0312', '\u0313', '\u0314', '\u033d', '\u0309', '\u0363', '\u0364', '\u0365', '\u0366', '\u0367', '\u0368', '\u0369', '\u036a', '\u036b', '\u036c', '\u036d', '\u036e', '\u036f', '\u033e', '\u035b', '\u0346', '\u031a'];
     const zalgo_down = ['\u0316', '\u0317', '\u0318', '\u0319', '\u031c', '\u031d', '\u031e', '\u031f', '\u0320', '\u0324', '\u0325', '\u0326', '\u0329', '\u032a', '\u032b', '\u032c', '\u032d', '\u032e', '\u032f', '\u0330', '\u0331', '\u0332', '\u0333', '\u0339', '\u033a', '\u033b', '\u033c', '\u0345', '\u0347', '\u0348', '\u0349', '\u034d', '\u034e', '\u0353', '\u0354', '\u0355', '\u0356', '\u0359', '\u035a', '\u0323'];
@@ -22,7 +26,7 @@ const ZalgoPage = () => {
     const randZalgo = (array) => array[Math.floor(Math.random() * array.length)];
 
     const zalgo = (text, level) => {
-        const intensity = Math.floor((level / 100) * 15) + 1; // Increased range for more variation
+        const intensity = Math.floor((level / 100) * 15) + 1;
         return text.split('').map(char => {
             if (char === ' ') return char;
             let result = char;
@@ -76,9 +80,23 @@ const ZalgoPage = () => {
         });
     };
 
+    const toggleStyle = (styleSetter) => {
+        styleSetter(prev => !prev);
+    };
+
     useEffect(() => {
         generateZalgo();
     }, []);
+
+    useEffect(() => {
+        setOutputStyle(prevStyle => ({
+            ...prevStyle,
+            fontWeight: isBold ? 'bold' : 'normal',
+            fontStyle: isItalic ? 'italic' : 'normal',
+            textDecoration: isUnderline ? 'underline' : 'none',
+            color: isRed ? 'red' : 'inherit'
+        }));
+    }, [isBold, isItalic, isUnderline, isRed]);
 
     return (
         <div className="container mx-auto p-4 min-h-screen bg-gradient-to-b from-purple-100 to-pink-100">
@@ -148,6 +166,34 @@ const ZalgoPage = () => {
                         className="btn bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
                     >
                         Generate
+                    </button>
+                    <button
+                        onClick={() => toggleStyle(setIsBold)}
+                        className={`btn px-3 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105 ${isBold ? 'bg-purple-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+                        title="Toggle Bold"
+                    >
+                        <Bold size={20} />
+                    </button>
+                    <button
+                        onClick={() => toggleStyle(setIsItalic)}
+                        className={`btn px-3 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105 ${isItalic ? 'bg-purple-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+                        title="Toggle Italic"
+                    >
+                        <Italic size={20} />
+                    </button>
+                    <button
+                        onClick={() => toggleStyle(setIsUnderline)}
+                        className={`btn px-3 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105 ${isUnderline ? 'bg-purple-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+                        title="Toggle Underline"
+                    >
+                        <Underline size={20} />
+                    </button>
+                    <button
+                        onClick={() => toggleStyle(setIsRed)}
+                        className={`btn px-3 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105 ${isRed ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+                        title="Toggle Red Text"
+                    >
+                        R
                     </button>
                 </div>
                 {isLoading ? (
