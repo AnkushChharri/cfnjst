@@ -240,14 +240,14 @@ const SearchComponent = () => {
 
     return (
         //Down is Search Wrapper
-        <div className="max-w-800 mr-2 p-1 ">
-            <div className="m-4 ">
+        <div className="max-w-7xl m-auto p-1 ">
+            <div className="m-4 sm:mx-6 lg:mx-10">
 
                 <textarea type="text"
                     value={searchText}
                     onChange={handleInputChange}
                     //Down is Search Input
-                    placeholder="Enter text to style (e.g., Stylish)" className="rounded-md p-4 w-full ring-1 outline-none focus:ring-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 hover:bg-slate-300 shadow-zinc-600"></textarea>
+                    placeholder="Enter text to style (e.g., Stylish)" className="rounded-md p-4 w-full focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600"></textarea>
 
                 <p className="underline underline-offset-4">CLick on Any Style and CopiedStyles</p>
 
@@ -260,16 +260,16 @@ const SearchComponent = () => {
             )}
             {error && <p className="error-message">{error}</p>}
             {!isLoading && result && (
-                <div className="result-container rounded-md shadow-sm   ">
+                <div className="mx-4  space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2 ">
                     {Object.entries(result.styled_texts || {}).map(([key, value]) => (
-                        <div key={key} className="styled-text-box   ">
+                        <div key={key} className="*:w-full *:bg-zinc-200/50 first:[&>*]:rounded-t-lg last:[&>*]:rounded-b-lg *:cursor-pointer">
 
                             {Object.entries(filterStyles(value?.styles || {})).map(([styleKey, styleValue]) => {
                                 const uniqueKey = `${key}-${styleKey}`;
                                 return (
                                     <div
                                         key={uniqueKey}
-                                        className={`style-item rounded-tl-lg rounded-tr-lg shadow-sm outline-2 ring-slate-950 shadow-gray-600 pt-2 py-5 mt-1 hover:bg-stone-50  text-center  ${copiedStyles[uniqueKey] ? 'copied' : ''}`}
+                                        className={`style-item shadow-sm py-3 hover:bg-stone-50   ${copiedStyles[uniqueKey] ? 'copied' : ''}`}
                                         onClick={() => handleCopyStyle(uniqueKey, styleValue)}
 
                                     >
