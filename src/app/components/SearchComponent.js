@@ -238,46 +238,51 @@ const SearchComponent = () => {
         };
     }, []);
 
-    return (
-        //Down is Search Wrapper
-        <div className="max-w-7xl m-auto p-1 ">
-            <div className="m-4 sm:mx-6 lg:mx-10">
+    const renderSkeletonLoader = () => (
+        <div className="mx-4 space-y-5">
+            {[1, 2, 3, 4, 5].map((item) => (
+                <div key={item} className="animate-pulse">
+                    <div className="h-10 bg-gray-200 rounded"></div>
+                    <div className="mt-2 space-y-2">
+                        <div className="h-4 bg-gray-200 rounded"></div>
+                        <div className="h-4 bg-gray-200 rounded"></div>
+                        <div className="h-4 bg-gray-200 rounded"></div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
 
-                <textarea type="text"
+    return (
+        <div className="max-w-7xl m-auto p-1">
+            <div className="m-4 sm:mx-6 lg:mx-10">
+                <textarea
                     value={searchText}
                     onChange={handleInputChange}
-                    //Down is Search Input
-                    placeholder="Enter text to style (e.g., Stylish)" className="rounded-md p-4 w-full focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600"></textarea>
-
-                <p className="text-xs text-zinc-700">CLick on Any Style and Copied Styles</p>
-
+                    placeholder="Enter text to style (e.g., Stylish)"
+                    className="rounded-md p-4 w-full focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600"
+                ></textarea>
+                <p className="text-xs text-zinc-700">Click on Any Style to Copy</p>
             </div>
-            {isLoading && (
-                <div className="spinner-container">
-                    <BeatLoader color="#36D7B7" loading={true} size={15} />
-                    <p>Loading...</p>
-                </div>
-            )}
-            {error && <p className="error-message">{error}</p>}
-            {!isLoading && result && (
-                <div tabIndex={-1} className="mx-4  space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2 ">
+
+            {isLoading ? (
+                renderSkeletonLoader()
+            ) : error ? (
+                <p className="error-message">{error}</p>
+            ) : result && (
+                <div tabIndex={-1} className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2">
                     {Object.entries(result.styled_texts || {}).map(([key, value]) => (
                         <div key={key} className="*:w-full *:bg-zinc-200/50 first:[&>*]:rounded-t-lg last:[&>*]:rounded-b-lg *:cursor-pointer">
-
                             {Object.entries(filterStyles(value?.styles || {})).map(([styleKey, styleValue]) => {
                                 const uniqueKey = `${key}-${styleKey}`;
                                 return (
                                     <div
                                         key={uniqueKey}
-                                        className={`style-item shadow-sm py-3 hover:bg-stone-50   ${copiedStyles[uniqueKey] ? 'copied' : ''}`}
+                                        className={`style-item shadow-sm py-3 hover:bg-stone-50 ${copiedStyles[uniqueKey] ? 'copied' : ''}`}
                                         onClick={() => handleCopyStyle(uniqueKey, styleValue)}
-
                                     >
-                                        <span className="style-value ">{getStyleValue(styleValue)}</span>
-                                        {copiedStyles[uniqueKey] && <span className="copy-alert text-emerald-400  ">Copied!</span>}
-
-
-
+                                        <span className="style-value">{getStyleValue(styleValue)}</span>
+                                        {copiedStyles[uniqueKey] && <span className="copy-alert text-emerald-400">Copied!</span>}
                                     </div>
                                 );
                             })}
@@ -285,6 +290,7 @@ const SearchComponent = () => {
                     ))}
                 </div>
             )}
+
             {!isLoading && !result && searchText.trim() && (
                 <p>No results found.</p>
             )}
