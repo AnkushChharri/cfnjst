@@ -239,7 +239,7 @@ const SearchComponent = () => {
     }, []);
 
     const renderSkeletonLoader = () => (
-        <div className="mx-4 space-y-5">
+        <div className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2 *:h-12">
             {[1, 2, 3, 4, 5].map((item) => (
                 <div key={item} className="animate-pulse">
                     <div className="h-10 bg-gray-200 rounded"></div>
@@ -253,6 +253,20 @@ const SearchComponent = () => {
         </div>
     );
 
+    const CategorySkeleton = () => (
+        <div className="*:w-full first:[&>*]:rounded-t-lg last:[&>*]:rounded-b-lg">
+            {[...Array(1)].map((_, index) => (
+
+                <div key={index} className="animate-pulse bg-slate-500">
+                    <div className="h-40 bg-zinc-300 rounded"></div>
+                </div>
+
+            ))}
+        </div>
+    );
+
+
+
     return (
         <div className="max-w-7xl m-auto p-1">
             <div className="m-4 sm:mx-6 lg:mx-10">
@@ -262,30 +276,32 @@ const SearchComponent = () => {
                     placeholder="Enter text to style (e.g., Stylish)"
                     className="rounded-md p-4 w-full focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600"
                 ></textarea>
-                <p className="text-xs text-zinc-700">Click on Any Style to Copy</p>
+                <p className="text-xs font-weight: 500; text-zinc-400">Click on Any Style to Copy</p>
             </div>
 
-            {isLoading ? (
-                renderSkeletonLoader()
-            ) : error ? (
+            {error ? (
                 <p className="error-message">{error}</p>
-            ) : result && (
+            ) : (
                 <div tabIndex={-1} className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2">
                     {Object.entries(result.styled_texts || {}).map(([key, value]) => (
-                        <div key={key} className="*:w-full *:bg-zinc-200/50 first:[&>*]:rounded-t-lg last:[&>*]:rounded-b-lg *:cursor-pointer">
-                            {Object.entries(filterStyles(value?.styles || {})).map(([styleKey, styleValue]) => {
-                                const uniqueKey = `${key}-${styleKey}`;
-                                return (
-                                    <div
-                                        key={uniqueKey}
-                                        className={`style-item shadow-sm py-3 hover:bg-stone-50 ${copiedStyles[uniqueKey] ? 'copied' : ''}`}
-                                        onClick={() => handleCopyStyle(uniqueKey, styleValue)}
-                                    >
-                                        <span className="style-value">{getStyleValue(styleValue)}</span>
-                                        {copiedStyles[uniqueKey] && <span className="copy-alert text-emerald-400">Copied!</span>}
-                                    </div>
-                                );
-                            })}
+                        <div key={key} className="*:w-full  first:[&>*]:rounded-t-lg last:[&>*]:rounded-b-lg *:cursor-pointer">
+                            {isLoading ? (
+                                <CategorySkeleton />
+                            ) : (
+                                Object.entries(filterStyles(value?.styles || {})).map(([styleKey, styleValue]) => {
+                                    const uniqueKey = `${key}-${styleKey}`;
+                                    return (
+                                        <div
+                                            key={uniqueKey}
+                                            className={`style-item shadow-sm py-3 hover:bg-stone-50 bg-zinc-200/50 ${copiedStyles[uniqueKey] ? 'copied' : ''}`}
+                                            onClick={() => handleCopyStyle(uniqueKey, styleValue)}
+                                        >
+                                            <span className="style-value">{getStyleValue(styleValue)}</span>
+                                            {copiedStyles[uniqueKey] && <span className="copy-alert text-emerald-400">Copied!</span>}
+                                        </div>
+                                    );
+                                })
+                            )}
                         </div>
                     ))}
                 </div>
