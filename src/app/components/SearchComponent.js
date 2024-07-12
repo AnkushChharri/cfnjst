@@ -249,7 +249,7 @@ const SearchComponent = () => {
                     //Down is Search Input
                     placeholder="Enter text to style (e.g., Stylish)" className="rounded-md p-4 w-full focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600"></textarea>
 
-                <p className="text-xs">CLick on Any Style and Copied Styles</p>
+                <p className="text-xs text-zinc-700">CLick on Any Style and Copied Styles</p>
 
             </div>
             {isLoading && (
