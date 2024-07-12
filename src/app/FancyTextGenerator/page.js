@@ -1,12 +1,9 @@
 "use client";
 
-
-
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { BeatLoader } from 'react-spinners';
 
 import { debounce } from 'lodash';
-
 
 
 const dummyData = {
@@ -242,52 +239,51 @@ const SearchComponent = () => {
     }, []);
 
     return (
-        <>
-
-            <div className="search-wrapper">
-                <div className="search-container sticky top-0 bg-white z-50 shadow-md">
-                    <input
-                        type="text"
-                        value={searchText}
-                        onChange={handleInputChange}
-                        placeholder="Enter text to style (e.g., Stylish)"
-                        className="search-input py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                    />
-                </div>
-                {isLoading && (
-                    <div className="spinner-container">
-                        <BeatLoader color="#36D7B7" loading={true} size={15} />
-                        <p>Loading...</p>
-                    </div>
-                )}
-                {error && <p className="error-message">{error}</p>}
-                {!isLoading && result && (
-                    <div className="result-container">
-                        {Object.entries(result.styled_texts || {}).map(([key, value]) => (
-                            <div key={key} className="styled-text-box">
-                                <h3 className="name-title">{key}</h3>
-                                {Object.entries(filterStyles(value?.styles || {})).map(([styleKey, styleValue]) => {
-                                    const uniqueKey = `${key}-${styleKey}`;
-                                    return (
-                                        <div
-                                            key={uniqueKey}
-                                            className={`style-item ${copiedStyles[uniqueKey] ? 'copied' : ''}`}
-                                            onClick={() => handleCopyStyle(uniqueKey, styleValue)}
-                                        >
-                                            <span className="style-value">{getStyleValue(styleValue)}</span>
-                                            {copiedStyles[uniqueKey] && <span className="copy-alert">Copied!</span>}
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        ))}
-                    </div>
-                )}
-                {!isLoading && !result && searchText.trim() && (
-                    <p>No results found.</p>
-                )}
+        <div className="max-w-7xl m-auto p-1 ">
+            <div className="m-4 sm:mx-6 lg:mx-10">
+                <textarea
+                    type="text"
+                    value={searchText}
+                    onChange={handleInputChange}
+                    placeholder="Enter text to style (e.g., Stylish)"
+                    className="rounded-md p-4 w-full focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600"
+                ></textarea>
+                <p className="text-xs">Click on Any Style and Copied Styles</p>
             </div>
-        </>
+            {isLoading && (
+                <div className="spinner-container">
+                    <BeatLoader color="#36D7B7" loading={true} size={15} />
+                    <p>Loading...</p>
+                </div>
+            )}
+            {error && <p className="error-message">{error}</p>}
+            {!isLoading && result && (
+                <div tabIndex={-1} className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2 ">
+                    {Object.entries(result.styled_texts || {}).map(([key, value]) => (
+                        <div key={key} className="*:w-full *:bg-zinc-200/50 first:[&>*]:rounded-t-lg last:[&>*]:rounded-b-lg *:cursor-pointer">
+                            {Object.entries(filterStyles(value?.styles || {})).map(([styleKey, styleValue]) => {
+                                const uniqueKey = `${key}-${styleKey}`;
+                                return (
+                                    <div
+                                        key={uniqueKey}
+                                        className={`style-item shadow-sm py-3 hover:bg-stone-50 ${copiedStyles[uniqueKey] ? 'copied' : ''}`}
+                                        onClick={() => handleCopyStyle(uniqueKey, styleValue)}
+                                    >
+                                        <span className="text-xs text-gray-500 pe-1.5">{key}</span>
+                                        <span className="style-value text-lg me-8">{getStyleValue(styleValue)}</span>
+
+                                        {copiedStyles[uniqueKey] && <span className="copy-alert text-emerald-400 text-xs">Copied!</span>}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    ))}
+                </div>
+            )}
+            {!isLoading && !result && searchText.trim() && (
+                <p>No results found.</p>
+            )}
+        </div>
     );
 };
 

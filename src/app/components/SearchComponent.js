@@ -249,7 +249,7 @@ const SearchComponent = () => {
                     //Down is Search Input
                     placeholder="Enter text to style (e.g., Stylish)" className="rounded-md p-4 w-full focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600"></textarea>
 
-                <p className="underline underline-offset-4">CLick on Any Style and CopiedStyles</p>
+                <p className="text-xs">CLick on Any Style and Copied Styles</p>
 
             </div>
             {isLoading && (
@@ -260,7 +260,7 @@ const SearchComponent = () => {
             )}
             {error && <p className="error-message">{error}</p>}
             {!isLoading && result && (
-                <div className="mx-4  space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2 ">
+                <div tabIndex={-1} className="mx-4  space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2 ">
                     {Object.entries(result.styled_texts || {}).map(([key, value]) => (
                         <div key={key} className="*:w-full *:bg-zinc-200/50 first:[&>*]:rounded-t-lg last:[&>*]:rounded-b-lg *:cursor-pointer">
 
