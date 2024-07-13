@@ -50,11 +50,11 @@ export default function Navbar() {
             {isOpen && (
                 <div className="absolute top-16 left-0 bg-white border border-gray-200 rounded-bl-md shadow-lg z-10">
                     <div className="py-2 w-48">
-                        <Link href="/FancyTextGenerator" onClick={closeMenu} className="text-gray-700 hover:bg-gray-50 hover:text-gray-900 block px-4 py-2 text-sm">
-                            Fancy Text Generator
+                        <Link href="/BoldTextStyles" onClick={closeMenu} className="text-gray-700 hover:bg-gray-50 font-bold hover:text-gray-900 block px-4 py-2 text-sm">
+                            Bold Text Styles
                         </Link>
-                        <Link href="/about" onClick={closeMenu} className="text-gray-700 hover:bg-gray-50 hover:text-gray-900 block px-4 py-2 text-sm">
-                            About
+                        <Link href="/BoldTextStyles/ItalicTextStyles" onClick={closeMenu} className="text-gray-700 italic hover:bg-gray-50 hover:text-gray-900 block px-4 py-2 text-sm">
+                            Italic Text Styles
                         </Link>
                     </div>
                 </div>
