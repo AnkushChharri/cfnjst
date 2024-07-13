@@ -56,6 +56,9 @@ export default function Navbar() {
                         <Link href="/BoldTextStyles/ItalicTextStyles" onClick={closeMenu} className="text-gray-700 italic hover:bg-gray-50 hover:text-gray-900 block px-4 py-2 text-sm">
                             Italic Text Styles
                         </Link>
+                        <Link href="/FancyTextGenerator" onClick={closeMenu} className="text-gray-700  hover:bg-gray-50 hover:text-gray-900 block px-4 py-2 text-sm">
+                            Fancy Text Generator
+                        </Link>
                     </div>
                 </div>
             )}
