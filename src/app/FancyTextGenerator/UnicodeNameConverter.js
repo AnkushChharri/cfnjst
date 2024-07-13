@@ -170,7 +170,7 @@ const createCache = (maxSize = 500) => {
 };
 
 const UnicodeNameConverter = () => {
-    const [name, setName] = useState('John Doe');
+    const [name, setName] = useState('Stylish');
     const [copiedStyle, setCopiedStyle] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
     const cacheRef = useRef(createCache());

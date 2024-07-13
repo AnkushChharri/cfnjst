@@ -78,7 +78,7 @@ const zalgoStyles = [
 ];
 
 const ZalgoTextConverter = () => {
-    const [text, setText] = useState('Enter your text here');
+    const [text, setText] = useState('Stylish');
     const [copiedStyle, setCopiedStyle] = useState('');
     const [seed, setSeed] = useState(Math.random() * 10000);
     const textareaRef = useRef(null);
