@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useCallback, useRef } from 'react';
 import { Check } from 'lucide-react';
+
+
+
 
 const styles = [
     { name: 'Basic', convert: (text) => text },
@@ -151,36 +154,69 @@ const dummyStyle = {
     }
 };
 
+// Custom cache implementation
+const createCache = (maxSize = 500) => {
+    const cache = new Map();
+    return {
+        get: (key) => cache.get(key),
+        set: (key, value) => {
+            if (cache.size >= maxSize) {
+                const firstKey = cache.keys().next().value;
+                cache.delete(firstKey);
+            }
+            cache.set(key, value);
+        }
+    };
+};
+
 const UnicodeNameConverter = () => {
     const [name, setName] = useState('John Doe');
     const [copiedStyle, setCopiedStyle] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
+    const cacheRef = useRef(createCache());
 
-    const handleCopy = (text, styleName) => {
+    const handleCopy = useCallback((text, styleName) => {
         navigator.clipboard.writeText(text);
         setCopiedStyle(styleName);
         setTimeout(() => setCopiedStyle(''), 2000);
-    };
+    }, []);
 
-    const filteredStyles = styles.filter(style =>
-        style.name.toLowerCase().includes(searchTerm.toLowerCase())
+    const filteredStyles = useMemo(() =>
+        styles.filter(style =>
+            style.name.toLowerCase().includes(searchTerm.toLowerCase())
+        ),
+        [searchTerm]
     );
 
-    const renderStyleCard = (style) => (
+    const convertedNames = useMemo(() => {
+        const allStyles = [dummyStyle, ...filteredStyles];
+        return allStyles.reduce((acc, style) => {
+            const cacheKey = `${style.name}:${name}`;
+            let convertedName = cacheRef.current.get(cacheKey);
+            if (!convertedName) {
+                convertedName = style.convert(name);
+                cacheRef.current.set(cacheKey, convertedName);
+            }
+            acc[style.name] = convertedName;
+            return acc;
+        }, {});
+    }, [name, filteredStyles]);
+
+    const renderStyleCard = useCallback((style) => (
         <div
             key={style.name}
             className="flex flex-col items-center bg-gray-100 p-4 rounded cursor-pointer hover:bg-gray-200 transition-colors duration-200 relative"
-            onClick={() => handleCopy(style.convert(name), style.name)}
+            onClick={() => handleCopy(convertedNames[style.name], style.name)}
         >
-            <span className="font-serif  text-sm mb-2">{style.name}</span>
-            <span className="text-xl">{style.convert(name)}</span>
+            <span className="font-serif text-sm mb-2">{style.name}</span>
+            <span className="text-xl">{convertedNames[style.name]}</span>
             {copiedStyle === style.name && (
                 <div className="absolute top-2 right-2 text-green-600">
                     <Check size={20} />
                 </div>
             )}
         </div>
-    );
+    ), [convertedNames, copiedStyle, handleCopy]);
 
     return (
         <div className="max-w-7xl m-auto p-1">
@@ -189,7 +225,6 @@ const UnicodeNameConverter = () => {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Enter your name"
                 className="rounded-md p-4 w-full focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600"
-
             />
             <p className="text-xs font-weight: 500; text-zinc-400">⬆️Search Your Name and Click on Any Style & Copy⬇️</p>
 

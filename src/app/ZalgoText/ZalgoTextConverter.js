@@ -1,5 +1,30 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef, useMemo } from 'react';
 import { Check, RefreshCw } from 'lucide-react';
+
+// LRU Cache implementation
+class LRUCache {
+    constructor(capacity) {
+        this.capacity = capacity;
+        this.cache = new Map();
+    }
+
+    get(key) {
+        if (!this.cache.has(key)) return undefined;
+        const value = this.cache.get(key);
+        this.cache.delete(key);
+        this.cache.set(key, value);
+        return value;
+    }
+
+    put(key, value) {
+        if (this.cache.has(key)) {
+            this.cache.delete(key);
+        } else if (this.cache.size >= this.capacity) {
+            this.cache.delete(this.cache.keys().next().value);
+        }
+        this.cache.set(key, value);
+    }
+}
 
 const zalgoCharSets = {
     up: ['\u030d', '\u030e', '\u0304', '\u0305', '\u033f', '\u0311', '\u0306', '\u0310', '\u0352', '\u0357', '\u0351', '\u0307', '\u0308', '\u030a', '\u0342', '\u0343', '\u0344', '\u034a', '\u034b', '\u034c', '\u0303', '\u0302', '\u030c', '\u0350', '\u0300', '\u0301', '\u030b', '\u030f', '\u0312', '\u0313', '\u0314', '\u033d', '\u0309', '\u0363', '\u0364', '\u0365', '\u0366', '\u0367', '\u0368', '\u0369', '\u036a', '\u036b', '\u036c', '\u036d', '\u036e', '\u036f', '\u033e', '\u035b'],
@@ -9,12 +34,16 @@ const zalgoCharSets = {
 
 const createZalgoStyle = (name, upIntensity, middleIntensity, downIntensity) => ({
     name,
-    convert: (text, seed) => {
+    convert: (text, seed, cache) => {
+        const cacheKey = `${name}-${text}-${seed}`;
+        const cachedResult = cache.get(cacheKey);
+        if (cachedResult) return cachedResult;
+
         const random = (seed) => {
             let x = Math.sin(seed++) * 10000;
             return x - Math.floor(x);
         };
-        return text.split('').map((char, index) => {
+        const result = text.split('').map((char, index) => {
             let zalgoChar = char;
             for (let i = 0; i < upIntensity; i++) {
                 zalgoChar += zalgoCharSets.up[Math.floor(random(seed + index + i * 1000) * zalgoCharSets.up.length)];
@@ -27,6 +56,9 @@ const createZalgoStyle = (name, upIntensity, middleIntensity, downIntensity) => 
             }
             return zalgoChar;
         }).join('');
+
+        cache.put(cacheKey, result);
+        return result;
     }
 });
 
@@ -49,6 +81,9 @@ const ZalgoTextConverter = () => {
     const [text, setText] = useState('Enter your text here');
     const [copiedStyle, setCopiedStyle] = useState('');
     const [seed, setSeed] = useState(Math.random() * 10000);
+    const textareaRef = useRef(null);
+
+    const cache = useMemo(() => new LRUCache(50), []); // Create an LRU cache with a capacity of 50
 
     const handleCopy = useCallback((convertedText, styleName) => {
         navigator.clipboard.writeText(convertedText);
@@ -60,22 +95,27 @@ const ZalgoTextConverter = () => {
         setSeed(Math.random() * 10000);
     }, []);
 
-    return (
+    const handleTextChange = useCallback((e) => {
+        setText(e.target.value);
+    }, []);
 
+    const focusTextarea = useCallback(() => {
+        textareaRef.current?.focus();
+    }, []);
+
+    return (
         <div className="max-w-7xl m-auto p-4">
             <div className="flex mb-4">
                 <textarea
+                    ref={textareaRef}
                     value={text}
-                    onChange={(e) => setText(e.target.value)}
+                    onChange={handleTextChange}
                     placeholder="Enter your text"
                     className="rounded-l-md p-4 flex-grow focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600"
                 />
-
-
-
             </div>
 
-            <div className="mb-4 ">
+            <div className="mb-4">
                 <button
                     onClick={handleGenerate}
                     className="transition ease-in-out delay-150 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded-md flex items-center"
@@ -85,11 +125,11 @@ const ZalgoTextConverter = () => {
                 </button>
 
                 <p className="text-xs font-weight: 500; text-zinc-400 mt-2">⬆️Click on Generate Button for Different Style⬆️</p>
-
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {zalgoStyles.map((style) => {
-                    const convertedText = style.convert(text, seed);
+                    const convertedText = style.convert(text, seed, cache);
                     return (
                         <div
                             key={style.name}
