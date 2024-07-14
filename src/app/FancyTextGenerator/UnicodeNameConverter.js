@@ -248,7 +248,7 @@ const UnicodeNameConverter = () => {
                 </Link>
             </div>
 
-            <div className="space-y-4 mt-8">
+            <div className="space-y-4 mt-4">
                 {renderStyleCard(dummyStyle)}
                 {filteredStyles.map(renderStyleCard)}
             </div>

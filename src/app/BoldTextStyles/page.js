@@ -170,7 +170,7 @@ const SearchComponent = () => {
     );
 
     return (
-        <div className="max-w-7xl m-auto p-1 h-screen">
+        <div className="max-w-7xl m-auto p-1 h-screen ">
             <div className="m-4 sm:mx-6 lg:mx-10">
                 <textarea
                     value={searchText}
@@ -204,7 +204,7 @@ const SearchComponent = () => {
             {error ? (
                 <p className="error-message">{error}</p>
             ) : (
-                <div tabIndex={-1} className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2">
+                <div tabIndex={-1} className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2  ">
                     {Object.entries(result.styled_texts || {}).map(([key, value]) => {
                         const boldStyles = filterStyles(value?.styles || {});
                         if (Object.keys(boldStyles).length === 0) return null; // Skip categories with no bold styles
