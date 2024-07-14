@@ -199,7 +199,7 @@ const SearchComponent = () => {
             {error ? (
                 <p className="error-message">{error}</p>
             ) : (
-                <div tabIndex={-1} className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2">
+                <div tabIndex={-1} className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2 pt-3">
                     {Object.entries(result.styled_texts || {}).map(([key, value]) => (
                         <div key={key} className="*:w-full  first:[&>*]:rounded-t-lg last:[&>*]:rounded-b-lg *:cursor-pointer">
                             {isLoading ? (
