@@ -1,5 +1,7 @@
 import React, { useState, useMemo, useCallback, useRef } from 'react';
 import { Check } from 'lucide-react';
+import Link from 'next/link';
+
 
 
 
@@ -205,7 +207,7 @@ const UnicodeNameConverter = () => {
     const renderStyleCard = useCallback((style) => (
         <div
             key={style.name}
-            className="flex flex-col items-center bg-gray-100 p-4 rounded cursor-pointer hover:bg-gray-200 transition-colors duration-200 relative"
+            className="flex flex-col items-center bg-white p-4 rounded cursor-pointer hover:bg-gray-200 transition-colors duration-200 relative"
             onClick={() => handleCopy(convertedNames[style.name], style.name)}
         >
             <span className="font-serif text-sm mb-2">{style.name}</span>
@@ -227,6 +229,22 @@ const UnicodeNameConverter = () => {
                 className="rounded-md p-4 w-full focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600"
             />
             <p className="text-xs font-weight: 500; text-zinc-400">⬆️Search Your Name and Click on Any Style & Copy⬇️</p>
+            <div className=" text-center pt-5 ">
+                <Link href="/" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                    Stylish Text
+                </Link>
+
+                <Link href="/BoldTextStyles" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                    Bold Text
+                </Link>
+                <Link href="/BoldTextStyles/ItalicTextStyles" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                    Italic Text
+                </Link>
+
+                <Link href="/ZalgoText" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                    Zalgo Text
+                </Link>
+            </div>
 
             <div className="space-y-4 mt-8">
                 {renderStyleCard(dummyStyle)}
@@ -236,6 +254,7 @@ const UnicodeNameConverter = () => {
                 <div className="mt-4 text-green-600 text-center">Copied: {copiedStyle} style</div>
             )}
         </div>
+
     );
 };
 

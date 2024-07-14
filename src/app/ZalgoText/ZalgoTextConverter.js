@@ -1,5 +1,6 @@
-import React, { useState, useCallback, useRef, useMemo } from 'react';
+import React, { useState, useCallback, useRef, useMemo, useEffect } from 'react';
 import { Check, RefreshCw } from 'lucide-react';
+import Link from 'next/link';
 
 // LRU Cache implementation
 class LRUCache {
@@ -80,10 +81,16 @@ const zalgoStyles = [
 const ZalgoTextConverter = () => {
     const [text, setText] = useState('Stylish');
     const [copiedStyle, setCopiedStyle] = useState('');
-    const [seed, setSeed] = useState(Math.random() * 10000);
+    const [seed, setSeed] = useState(0);
+    const [isClient, setIsClient] = useState(false);
     const textareaRef = useRef(null);
 
     const cache = useMemo(() => new LRUCache(50), []); // Create an LRU cache with a capacity of 50
+
+    useEffect(() => {
+        setIsClient(true);
+        setSeed(Math.random() * 10000);
+    }, []);
 
     const handleCopy = useCallback((convertedText, styleName) => {
         navigator.clipboard.writeText(convertedText);
@@ -104,16 +111,17 @@ const ZalgoTextConverter = () => {
     }, []);
 
     return (
-        <div className="max-w-7xl m-auto p-4">
+        <div className="flex flex-col h-full max-w-7xl mx-auto p-4">
             <div className="flex mb-4">
                 <textarea
                     ref={textareaRef}
                     value={text}
                     onChange={handleTextChange}
-                    placeholder="Enter your text"
-                    className="rounded-l-md p-4 flex-grow focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600"
+                    placeholder="Stylish"
+                    className="w-full h-full min-h-[100px] rounded-md p-4 focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600 resize-none"
                 />
             </div>
+
 
             <div className="mb-4">
                 <button
@@ -127,20 +135,41 @@ const ZalgoTextConverter = () => {
                 <p className="text-xs font-weight: 500; text-zinc-400 mt-2">⬆️Click on Generate Button for Different Style⬆️</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {zalgoStyles.map((style) => {
+            <div className=" text-center pb-5 ">
+
+                <Link href="/" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                    Stylish Text
+                </Link>
+
+                <Link href="/BoldTextStyles" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                    Bold Text
+                </Link>
+                <Link href="/BoldTextStyles/ItalicTextStyles" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                    Italic Text
+                </Link>
+                <Link href="/FancyTextGenerator" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                    Fancy Text
+                </Link>
+
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto">
+                {isClient && zalgoStyles.map((style) => {
                     const convertedText = style.convert(text, seed, cache);
                     return (
                         <div
                             key={style.name}
-                            className="flex flex-col items-center bg-gray-100 p-4 rounded cursor-pointer hover:bg-gray-200 transition-colors duration-200 relative"
+                            className="flex flex-col items-center bg-white p-4 rounded cursor-pointer hover:bg-gray-200 transition-colors duration-200 relative"
                             onClick={() => handleCopy(convertedText, style.name)}
                         >
                             <span className="font-serif text-sm mb-2">{style.name}</span>
                             <span className="text-xl break-all">{convertedText}</span>
                             {copiedStyle === style.name && (
                                 <div className="absolute top-2 right-2 text-green-600">
+
                                     <Check size={20} />
+
+
                                 </div>
                             )}
                         </div>
