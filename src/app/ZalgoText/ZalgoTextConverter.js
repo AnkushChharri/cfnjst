@@ -135,7 +135,7 @@ const ZalgoTextConverter = () => {
                 <p className="text-xs font-weight: 500; text-zinc-400 mt-2">⬆️Click on Generate Button for Different Style⬆️</p>
             </div>
 
-            <div className=" text-center pb-5 pt-3 overflow-x-auto" style={{ width: '100%', whiteSpace: 'nowrap' }}>
+            <div className=" text-center pb-3 pt-5  overflow-x-auto" style={{ width: '100%', whiteSpace: 'nowrap' }}>
 
                 <Link href="/" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
                     Stylish Text
@@ -153,7 +153,7 @@ const ZalgoTextConverter = () => {
 
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto mt-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto mt-4">
                 {isClient && zalgoStyles.map((style) => {
                     const convertedText = style.convert(text, seed, cache);
                     return (
