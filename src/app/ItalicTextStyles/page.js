@@ -167,7 +167,7 @@ const SearchComponent = () => {
     );
 
     return (
-        <div className="max-w-7xl m-auto p-1 h-screen">
+        <div className="max-w-7xl m-auto p-1 min-h-screen">
             <div className="m-4 sm:mx-6 lg:mx-10">
                 <textarea
                     value={searchText}

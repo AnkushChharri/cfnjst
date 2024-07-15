@@ -3,26 +3,22 @@
 export default function Footer() {
     return (
 
+        <footer className="flex flex-col items-center pt-6 font-sans border-t bg-gradient-to-b from-zinc-50/75 mt-8">
 
-        <footer className="bg-white border-double ring-1 ring-slate-300 mb-auto">
-            <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-                <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="/" className="hover:underline">Style Text™</a>. All Rights Reserved.
-                </span>
-                <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-                    <li>
-                        <a href="/" className="hover:underline me-4 md:me-6">About</a>
-                    </li>
-                    <li>
-                        <a href="/" className="hover:underline me-4 md:me-6">Contact
-                        </a>
-                    </li>
+            <div className="flex flex-col-reverse items-center w-11/12 mb-8 text-sm md:flex-row md:items-baseline md:justify-between">
+                <div className="text-center text-slate-600 max-sm:text-sm/4">© 2024 - Free Fire Style Name. All rights reserved.</div>
 
-                    <li>
-                        <a href="/" className="hover:underline">Privacy Policy</a>
-                    </li>
-                </ul>
+                <nav className="flex flex-wrap justify-center font-medium md:justify-start gap-x-4 gap-y-2 md:gap-6 text-slate-700 [&>a:hover]:text-stone-800 pb-3.5">
+                    <a href="#">About Us</a>
+                    <a href="#">Investor Relations</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">Press</a>
+                    <a href="#">Blog Us</a>
+                </nav>
+
             </div>
         </footer>
+
 
     );
 }

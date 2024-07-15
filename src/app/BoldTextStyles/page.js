@@ -170,7 +170,7 @@ const SearchComponent = () => {
     );
 
     return (
-        <div className="max-w-7xl m-auto p-1 h-screen ">
+        <div className="max-w-7xl m-auto p-1 min-h-screen">
             <div className="m-4 sm:mx-6 lg:mx-10">
                 <textarea
                     value={searchText}
@@ -188,7 +188,7 @@ const SearchComponent = () => {
                 </Link>
 
 
-                <Link href="/BoldTextStyles/ItalicTextStyles" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                <Link href="/ItalicTextStyles" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
                     Italic Text
                 </Link>
                 <Link href="/FancyTextGenerator" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
@@ -204,7 +204,7 @@ const SearchComponent = () => {
             {error ? (
                 <p className="error-message">{error}</p>
             ) : (
-                <div tabIndex={-1} className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2  h-[calc(100vh-200px)] overflow-x-auto ">
+                <div tabIndex={-1} className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2 overflow-x-auto pt-3">
                     {Object.entries(result.styled_texts || {}).map(([key, value]) => {
                         const boldStyles = filterStyles(value?.styles || {});
                         if (Object.keys(boldStyles).length === 0) return null; // Skip categories with no bold styles
