@@ -3,37 +3,14 @@ import { Copy, X } from 'lucide-react';
 import Link from 'next/link';
 
 const dotSymbols = [
-    // Basic dots
-    '•', '·', '∙', '⋅', '‧', '⦁',
-    // Geometric shapes
-    '○', '◌', '◍', '◎', '●', '◐', '◑', '◒', '◓', '◔', '◕', '◦', '◯',
-    // Small geometric shapes
-    '▪', '▫', '▴', '▵', '▸', '▹', '▾', '▿', '◂', '◃', '◊', '◦',
-    // Bullet variations
-    '⁃', '‣', '⁌', '⁍',
-    // Mathematical symbols
-    '∘', '⨀', '⦿', '⊙', '⊚', '⊛', '⊝', '◉',
-    // Dingbats
-    '✶', '✱', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '❉', '❋', '☸',
-    // Miscellaneous symbols
-    '☉', '⊗', '⊜', '⍟', '⎊', '⎉',
-    // Braille patterns
-    '⠁', '⠂', '⠃', '⠄', '⠅',
-    // Enclosed alphanumerics
-    '⓪', '①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩',
-    '⓿', '❶', '❷', '❸', '❹', '❺', '❻', '❼', '❽', '❾', '❿',
-    // Emoji
-    '🔴', '🔵', '⚪', '⚫', '🟣', '🟢', '🟡', '🟠', '🟤',
-    // Supplemental arrows
-    '◄', '►', '◅', '▻', '◈', '◇', '◆',
-    // Miscellaneous technical
-    '⌾', '⍎', '⍕', '⎕',
-    // Geometric shapes extended
-    '🞆', '🞈', '🞉', '🞊',
-    // Misc symbols and arrows
-    '⯃', '⯂', '⯁', '⯀',
-    // Mathematical alphanumeric symbols
-    '𝟎', '𝟏', '𝟐', '𝟑', '𝟒', '𝟓', '𝟔', '𝟕', '𝟖', '𝟗'
+    // Expanded heart symbols
+    '♥', '♡', '❤', '❥', '❣', '❦', '❧', '🤎', '💔', '💞', '💟',
+    '💌', '💑', '💒', '💏', '👩‍❤️‍👨', '👨‍❤️‍👨', '👩‍❤️‍👩',
+    '❤️‍🔥', '❣️', '💖', '💗', '💓', '💕', '❤️‍🩹', '💙', '💚', '💛', '🧡', '💜', '🤎', '🖤', '🤍',
+    '💘', '💝', '💋', '💯', '💢', '💥',
+
+    '☎', '⌛', '⌚', '☄', '✈', '⚓', '⚡', '☘', '⚘', '⚔', '⚖', '⚰', '⚱', '⚽', '⚾', '⛄', '⛅', '⛈', '⛓',
+    '⛔', '⛩', '⛪', '⛰', '⛱', '⛲', '⛳', '⛴', '⛵', '⛷', '⛸', '⛹', '⛺', '⛽', '✨', '⭐',
 ];
 
 const DotSymbolSelector = () => {
@@ -116,8 +93,8 @@ const DotSymbolSelector = () => {
             </div>
 
             <div className="text-center pt-4 overflow-x-auto" style={{ width: '100%', whiteSpace: 'nowrap' }}>
-                <Link href="/HeartSymbol" className="inline-block text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                    Heart Symbol
+                <Link href="/DotSymbol" className="inline-block text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                    Dot Symbol
                 </Link>
 
                 <Link href="/BulletPointSymbol" className="inline-block text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
