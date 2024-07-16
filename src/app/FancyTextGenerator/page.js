@@ -1,6 +1,6 @@
 // src/app/textgenerator/page.js
 
-"use client"
+
 import UnicodeNameConverter from './UnicodeNameConverter';
 
 export default function FancyTextGenerator() {

@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, useMemo, useCallback, useRef } from 'react';
 import { Check } from 'lucide-react';
 import Link from 'next/link';

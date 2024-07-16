@@ -1,3 +1,6 @@
+"use client"
+
+
 import React, { useState, useCallback } from 'react';
 import { Copy, X } from 'lucide-react';
 

@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, useCallback, useEffect } from 'react';
 import { Copy, X } from 'lucide-react';
 import Link from 'next/link';
