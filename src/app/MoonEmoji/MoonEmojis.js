@@ -5,12 +5,8 @@ import { Copy, X } from 'lucide-react';
 import Link from 'next/link';
 
 const symbols = [
-    // Arrow emojis
-    '➡️', '⬅️', '⬆️', '⬇️', '↗️', '↘️', '↙️', '↖️', '↕️', '↔️', '↩️', '↪️',
-    '⤴️', '⤵️', '🔄', '🔃', '🔂', '🔁', '🔀', '🔼', '🔽', '⏫', '⏬', '⏩', '⏪',
-    '🔚', '🔙', '🔛', '🔝', '🔜', '☑️', '✅', '✔️', '❇️', '✳️', '➿', '➰', '〽️',
-    '✴️', '❎', '✖️', '➕', '➖', '➗', '❌', '💠', '🔘', '🔳', '🔲', '◻️', '◼️',
-    '◽', '◾', '▫️', '▪️'
+    // Moon emojis
+    '🌑', '🌒', '🌓', '🌔', '🌕', '🌖', '🌗', '🌘', '🌙', '🌚', '🌛', '🌜', '🌝',
 ];
 
 const SymbolSelector = () => {
@@ -81,23 +77,6 @@ const SymbolSelector = () => {
 
                 <Link href="/HomeEmoji" className="inline-block text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
                     Home Emoji
-                </Link>
-
-
-                <Link href="/MoonEmoji" className="inline-block text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                    Moon Emoji
-                </Link>
-
-                <Link href="/MewingEmoji" className="inline-block text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                    Mewing Emoji
-                </Link>
-
-                <Link href="/DotEmoji" className="inline-block text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                    Dot Emoji
-                </Link>
-
-                <Link href="/Kaomoji" className="inline-block text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                    Kaomoji
                 </Link>
 
             </div>
