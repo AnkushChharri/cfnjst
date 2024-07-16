@@ -1,133 +1,86 @@
-"use client"
-export const runtime = 'edge';
-import React, { useState, useCallback, useEffect, useRef } from 'react';
-import { debounce } from 'lodash';
-import Link from 'next/link';
+export const runtime = 'edge'; // 'nodejs' is the default
+import { NextResponse } from 'next/server';
+import { headers } from 'next/headers';
+import { LRUCache } from 'lru-cache';
 
-const SearchComponent = () => {
-  const [searchText, setSearchText] = useState('');
-  const [result, setResult] = useState(null);
-  const [error, setError] = useState(null);
-  const [copiedStyles, setCopiedStyles] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+// Create an LRU cache
+const cache = new LRUCache({
+  max: 100, // Maximum number of items to store
+  ttl: 1000 * 60 * 60, // Time to live: 1 hour
+});
 
-  const abortControllerRef = useRef(null);
+// Rate limiting
+const RATE_LIMIT = 30; // requests per minute
+const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute in milliseconds
 
-  const fetchData = useCallback(async (text) => {
-    if (abortControllerRef.current) {
-      abortControllerRef.current.abort();
+const rateLimitStore = new Map();
+
+function rateLimit(ip) {
+  const now = Date.now();
+  const windowStart = now - RATE_LIMIT_WINDOW;
+
+  const requestTimestamps = rateLimitStore.get(ip) || [];
+  const requestsInWindow = requestTimestamps.filter(timestamp => timestamp > windowStart);
+
+  if (requestsInWindow.length >= RATE_LIMIT) {
+    return false;
+  }
+
+  requestTimestamps.push(now);
+  rateLimitStore.set(ip, requestTimestamps);
+  return true;
+}
+
+export async function GET(request, { params }) {
+  const { searchText } = params;
+  const headersList = headers();
+  const ip = headersList.get('x-forwarded-for') || 'unknown';
+
+  // Input validation
+  if (!searchText || typeof searchText !== 'string' || searchText.length > 100) {
+    return NextResponse.json({ error: 'Invalid search text' }, { status: 400 });
+  }
+
+  // Rate limiting
+  if (!rateLimit(ip)) {
+    return NextResponse.json({ error: 'Rate limit exceeded' }, { status: 429 });
+  }
+
+  // Check cache
+  const cacheKey = `search:${searchText}`;
+  const cachedResult = cache.get(cacheKey);
+  if (cachedResult) {
+    return NextResponse.json(cachedResult);
+  }
+
+  const apiUrl = `https://hello-python.viramachhari.workers.dev/?text=${encodeURIComponent(searchText)}`;
+
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
+    const response = await fetch(apiUrl, {
+      signal: controller.signal,
+      next: { revalidate: 3600 } // Cache for 1 hour on the server side
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-    abortControllerRef.current = new AbortController();
 
-    setIsLoading(true);
-    try {
-      const response = await fetch(`/api/arrowStyles?text=${encodeURIComponent(text)}`, {
-        signal: abortControllerRef.current.signal
-      });
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
-      setResult(data);
-      setError(null);
-    } catch (error) {
-      if (error.name === 'AbortError') {
-        console.log('Request was aborted');
-      } else {
-        console.error('Error fetching data:', error);
-        setError('An error occurred while fetching data.');
-      }
-    } finally {
-      setIsLoading(false);
+    const data = await response.json();
+
+    // Cache the result
+    cache.set(cacheKey, data);
+
+    return NextResponse.json(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    if (error.name === 'AbortError') {
+      return NextResponse.json({ error: 'Request timed out' }, { status: 504 });
     }
-  }, []);
-
-  const debouncedFetchData = useCallback(
-    debounce((text) => {
-      if (text.trim()) {
-        fetchData(text);
-      } else {
-        setResult(null);
-        setError(null);
-      }
-    }, 300),
-    [fetchData]
-  );
-
-  const handleInputChange = useCallback((e) => {
-    const newSearchText = e.target.value;
-    setSearchText(newSearchText);
-    debouncedFetchData(newSearchText);
-  }, [debouncedFetchData]);
-
-  const handleCopyStyle = useCallback((styleKey, styleValue) => {
-    navigator.clipboard.writeText(styleValue)
-      .then(() => {
-        setCopiedStyles(prev => ({ ...prev, [styleKey]: true }));
-        setTimeout(() => {
-          setCopiedStyles(prev => ({ ...prev, [styleKey]: false }));
-        }, 2000);
-      })
-      .catch(err => console.error('Failed to copy text: ', err));
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      if (abortControllerRef.current) {
-        abortControllerRef.current.abort();
-      }
-    };
-  }, []);
-
-  return (
-    <div className="max-w-7xl m-auto p-1">
-      <div className="m-4 sm:mx-6 lg:mx-10">
-        <textarea
-          value={searchText}
-          onChange={handleInputChange}
-          placeholder="Enter text to style (e.g., Stylish)"
-          className="rounded-md p-4 w-full focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600"
-        ></textarea>
-        <p className="text-xs font-weight: 500; text-zinc-400">⬇️Click on Any Style to Copy⬇️</p>
-      </div>
-
-      <div className="text-center pb-1 overflow-x-auto" style={{ width: '100%', whiteSpace: 'nowrap' }}>
-        <Link href="/ArrowText" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-          Arrow Text
-        </Link>
-      </div>
-
-      {error && <p className="error-message text-red-500">{error}</p>}
-
-      {isLoading ? (
-        <div className="text-center">Loading...</div>
-      ) : (
-        <div tabIndex={-1} className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2 pt-3">
-          {result && Object.entries(result.styled_texts || {}).map(([key, value]) => (
-            <div key={key} className="*:w-full  first:[&>*]:rounded-t-lg last:[&>*]:rounded-b-lg *:cursor-pointer">
-              {Object.entries(value?.styles || {}).map(([styleKey, styleValue]) => {
-                const uniqueKey = `${key}-${styleKey}`;
-                return (
-                  <div
-                    key={uniqueKey}
-                    className={`style-item shadow-sm py-3 hover:bg-stone-50 bg-white ${copiedStyles[uniqueKey] ? 'copied' : ''}`}
-                    onClick={() => handleCopyStyle(uniqueKey, styleValue)}
-                  >
-                    <span className="style-value">{styleValue}</span>
-                    {copiedStyles[uniqueKey] && <span className="copy-alert text-emerald-400">Copied!</span>}
-                  </div>
-                );
-              })}
-            </div>
-          ))}
-        </div>
-      )}
-
-      {!isLoading && (!result || Object.keys(result.styled_texts || {}).length === 0) && searchText.trim() && (
-        <p>No results found.</p>
-      )}
-    </div>
-  );
-};
-
-export default SearchComponent;
+    return NextResponse.json({ error: 'An error occurred while fetching data' }, { status: 500 });
+  }
+}
