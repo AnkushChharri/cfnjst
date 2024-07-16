@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { debounce } from 'lodash';
 import Link from 'next/link';
