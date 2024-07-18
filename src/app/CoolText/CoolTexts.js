@@ -24,7 +24,59 @@ const styles = [
     { name: 'Pixel', convert: (text) => text.split('').map(char => char + '̗̀').join('') },
     { name: 'Cursed', convert: (text) => text.split('').map(char => char + '̶̷').join('') },
     { name: 'Steampunk', convert: (text) => text.split('').map(char => char + '҉').join('') },
-    { name: 'Synthwave', convert: (text) => text.toUpperCase().split('').join('═') }
+    { name: 'Synthwave', convert: (text) => text.toUpperCase().split('').join('═') },
+    { name: 'Bubble', convert: (text) => text.split('').map(char => char + '̊').join('') },
+    { name: 'Circuit', convert: (text) => text.split('').map(char => char + '̤').join('') },
+    { name: 'Magical', convert: (text) => '✦' + text.split('').join('°') + '✦' },
+    { name: 'Radioactive', convert: (text) => text.split('').map(char => char + '☢️').join('') },
+    { name: 'Starry', convert: (text) => text.split('').map(char => char + '✰').join('') },
+    { name: 'Retro Wave', convert: (text) => text.toUpperCase().split('').join('▀▄') },
+    { name: 'Holographic', convert: (text) => text.split('').map(char => char + '⃝').join('') },
+    { name: 'Glowing', convert: (text) => text.split('').map(char => char + '҈').join('') },
+    { name: 'Futuristic', convert: (text) => text.split('').map(char => char + '⃠').join('') },
+    { name: 'Enchanted', convert: (text) => '✴' + text.split('').join('❈') + '✴' },
+    // New styles added below
+    { name: 'Neon Glow', convert: (text) => text.split('').map(char => char + '̐').join('') },
+    { name: 'Underwater', convert: (text) => text.split('').map(char => char + '͜').join('') },
+    { name: 'Alien Language', convert: (text) => text.split('').map(char => char + '҇').join('') },
+    { name: 'Constellation', convert: (text) => '⋆' + text.split('').join('⋆') + '⋆' },
+    { name: 'Quantum', convert: (text) => text.split('').map(char => char + '̬').join('') },
+    { name: 'Corrupted Data', convert: (text) => text.split('').map(char => char + '̺̺̠̺').join('') },
+    { name: 'Plasma', convert: (text) => text.split('').map(char => char + '҉̨').join('') },
+    { name: 'Echoed', convert: (text) => text.split('').map(char => char + char.toLowerCase()).join('') },
+    { name: 'Crystalline', convert: (text) => '❄' + text.split('').join('❅') + '❄' },
+    { name: 'Runic', convert: (text) => text.split('').map(char => char + '᛫').join('') },
+    { name: 'Psychedelic', convert: (text) => text.split('').map(char => char + '҆').join('') },
+    { name: 'Gravity Distortion', convert: (text) => text.split('').map(char => char + '҃').join('') },
+    { name: 'Nanotech', convert: (text) => text.split('').map(char => char + '̂').join('') },
+    { name: 'Mystic Runes', convert: (text) => text.split('').map(char => char + '҄').join('') },
+    { name: 'Electromagnetic', convert: (text) => text.split('').map(char => char + '҅').join('') },
+    { name: 'Binary Code', convert: (text) => text.split('').map(char => char.charCodeAt(0).toString(2)).join(' ') },
+    {
+        name: 'Morse Code', convert: (text) => text.split('').map(char => {
+            const morse = {
+                'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
+                'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
+                'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
+                'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+                'Y': '-.--', 'Z': '--..', ' ': '/'
+            };
+            return morse[char.toUpperCase()] || char;
+        }).join(' ')
+    },
+    {
+        name: 'Hieroglyphics', convert: (text) => text.split('').map(char => {
+            const hieroglyphs = '𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀛𓀜𓀝';
+            return hieroglyphs[char.charCodeAt(0) % hieroglyphs.length];
+        }).join('')
+    },
+    {
+        name: 'Wingdings', convert: (text) => text.split('').map(char => {
+            const wingdings = '♠♣♥♦♤♧♡♢☎☏✆✇♿⚽⚾♀♂';
+            return wingdings[char.charCodeAt(0) % wingdings.length];
+        }).join('')
+    },
+    { name: 'Matrix Rain', convert: (text) => text.split('').map(char => char + '̴̵̶̷̸̡̢̧̨̛̖̗̘̙̜̝̞̟̠̣̤̥̦̩̪̫̬̭̮̯̰̱̲̳̹̺̻̼͇͈͉͍͎̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̽̾̿̀́͂̓̈́͆͊͋͌̕̚͘͜͟͢͝͞͠͡').join('') }
 ];
 
 // Custom cache implementation
