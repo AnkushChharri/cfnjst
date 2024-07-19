@@ -4,6 +4,7 @@ import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { Copy, X } from 'lucide-react';
 import Link from 'next/link';
 
+
 const dotSymbols = [
     {
         category: "Smileys & Emotion", symbols: [
