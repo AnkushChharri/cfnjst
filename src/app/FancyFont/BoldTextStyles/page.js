@@ -215,6 +215,8 @@ const SearchComponent = () => {
 
 
 
+
+
             {error ? (
                 <p className="error-message">{error}</p>
             ) : (
