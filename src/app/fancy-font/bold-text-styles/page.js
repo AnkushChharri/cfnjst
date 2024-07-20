@@ -1,135 +1,42 @@
 "use client";
 
 import React, { useState, useCallback, useEffect, useRef } from 'react';
-
-
 import { debounce } from 'lodash';
 import Link from 'next/link';
-
 
 const dummyData = {
     "original_text": "Stylish",
     "styled_texts": {
-        "Parens": {
-            "styles": {
-                "Mix": "🄢⒯⒴⒧⒤⒮⒣",
-                "Cap": "🄢🄣🄨🄛🄘🄢🄗",
-                "SM": "⒮⒯⒴⒧⒤⒮⒣"
-            },
-            "count": 3
-        },
-        "Square": {
-            "styles": {
-                "SQ": "🅂🅃🅈🄻🄸🅂🄷",
-                "Neg": "🆂🆃🆈🅻🅸🆂🅷"
-            },
-            "count": 2
-        },
-        "Circle": {
-            "styles": {
-                "Mix": "Ⓢⓣⓨⓛⓘⓢⓗ",
-                "Cap": "ⓈⓉⓎⓁⒾⓈⒽ",
-                "SM": "ⓢⓣⓨⓛⓘⓢⓗ",
-                "Neg": "🅢🅣🅨🅛🅘🅢🅗"
-            },
-            "count": 4
-        },
-        "Fullwidth": {
-            "styles": {
-                "Mix": "Ｓｔｙｌｉｓｈ",
-                "Cap": "ＳＴＹＬＩＳＨ",
-                "SM": "ｓｔｙｌｉｓｈ"
-            },
-            "count": 3
-        },
         "Mathematical": {
             "styles": {
-                "Scr-Mix": "𝒮𝓉𝓎𝓁𝒾𝓈𝒽",
-                "Scr-cap": "𝒮𝒯𝒴li𝒮h",
-                "Scr-sm": "𝓈𝓉𝓎𝓁𝒾𝓈𝒽",
                 "BScr-Mix": "𝓢𝓽𝔂𝓵𝓲𝓼𝓱",
                 "BScr-cap": "𝓢𝓣𝓨𝓛𝓘𝓢𝓗",
                 "BScr-sm": "𝓼𝓽𝔂𝓵𝓲𝓼𝓱",
-                "Ital-Mix": "𝑆𝑡𝑦𝑙𝑖𝑠h",
-                "Ital-cap": "𝑆𝑇𝑌𝐿𝐼𝑆𝐻",
-                "Ital-sm": "𝑠𝑡𝑦𝑙𝑖𝑠h",
                 "B-Mix": "𝐒𝐭𝐲𝐥𝐢𝐬𝐡",
                 "B-cap": "𝐒𝐓𝐘𝐋𝐈𝐒𝐇",
                 "B-sm": "𝐬𝐭𝐲𝐥𝐢𝐬𝐡",
                 "BI-Mix": "𝑺𝒕𝒚𝒍𝒊𝒔𝒉",
                 "BI-cap": "𝑺𝑻𝒀𝑳𝑰𝑺𝑯",
                 "BI-sm": "𝒔𝒕𝒚𝒍𝒊𝒔𝒉",
-                "Frak-Mix": "𝔖𝔱𝔶𝔩𝔦𝔰𝔥",
-                "Frak-cap": "𝔖𝔗𝔜𝔏i𝔖h",
-                "Frak-sm": "𝔰𝔱𝔶𝔩𝔦𝔰𝔥",
-                "BF-Mix": "𝕾𝖙𝖞𝖑𝖎𝖘𝖍",
-                "BF-cap": "𝕾𝕿𝖄𝕷𝕴𝕾𝕳",
-                "BF-sm": "𝖘𝖙𝖞𝖑𝖎𝖘𝖍",
-                "DS-Mix": "𝕊𝕥𝕪𝕝𝕚𝕤𝕙",
-                "DS-cap": "𝕊𝕋𝕐𝕃𝕀𝕊h",
-                "DS-sm": "𝕤𝕥𝕪𝕝𝕚𝕤𝕙",
-                "SS-Mix": "𝖲𝗍𝗒𝗅𝗂𝗌𝗁",
-                "SS-cap": "𝖲𝖳𝖸𝖫𝖨𝖲𝖧",
-                "SS-sm": "𝗌𝗍𝗒𝗅𝗂𝗌𝗁",
-                "SSB-Mix": "𝗦𝘁𝘆𝗹𝗶𝘀𝗵",
-                "SSB-cap": "𝗦𝗧𝗬𝗟𝗜𝗦𝗛",
-                "SSB-sm": "𝘀𝘁𝘆𝗹𝗶𝘀𝗵",
-                "SSI-Mix": "𝘚𝘵𝘺𝘭𝘪𝘴𝘩",
-                "SSI-cap": "𝘚𝘛𝘠𝘓𝘐𝘚𝘏",
-                "SSI-sm": "𝘴𝘵𝘺𝘭𝘪𝘴𝘩",
-                "SSBI-Mix": "𝙎𝙩𝙮𝙡𝙞𝙨𝙝",
-                "SSBI-cap": "𝙎𝙏𝙔𝙇𝙄𝙎𝙃",
-                "SSBI-sm": "𝙨𝙩𝙮𝙡𝙞𝙨𝙝",
-                "MS-Mix": "𝚂𝚝𝚢𝚕𝚒𝚜𝚑",
-                "MS-cap": "𝚂𝚃𝚈𝙻𝙸𝚂𝙷",
-                "MS-sm": "𝚜𝚝𝚢𝚕𝚒𝚜𝚑"
-            },
-            "count": 39
-        },
-        "Quirky": {
-            "styles": {
-                "Bopomofo": "ㄙㄊyㄌㄧㄙㄏ",
-                "Lydian": "𐤳𐤯𐤧𐤩𐤦𐤳h",
-                "Lycian": "𐊖𐊗y𐊍𐊆𐊖𐊛",
-                "Carian": "𐊰𐊭y𐊣𐊹𐊰h",
-                "Duployan-ios": "𛰜𛰃y𛰆𛱆𛰜𛰀"
-            },
-            "count": 5
-        },
-        "Latin": {
-            "styles": {
-                "Str.Mix": "Sŧɏłɨsħ",
-                "Str.cap": "SŦɎŁƗsĦ",
-                "Str-sm": "Sŧɏłɨsħ",
-                "D.Abv-Mix": "Ṡṫẏliṡḣ",
-                "D.Abv-cap": "ṠṪẎlİṠḢ",
-                "D.Abv-sm": "ṡṫẏliṡḣ",
-                "D.Blw-Mix": "Ṣṭỵḷịṣḥ",
-                "D.Blw-cap": "ṢṬỴḶỊṢḤ",
-                "D.Blw-sm": "ṣṭỵḷịṣḥ",
-                "Hk-Mix": "Ʂƭƴliʂɦ",
-                "Hk-cap": "ꟅƬƳliꟅꞪ",
-                "Hk-sm": "ʂƭƴliʂɦ"
+                "Bold-Fraktur": "𝕾𝖙𝖞𝖑𝖎𝖘𝖍",
+                "Bold-Serif": "𝗦𝘁𝘆𝗹𝗶𝘀𝗵",
+                "Bold-Sans": "𝗦𝘁𝘆𝗹𝗶𝘀𝗵"
+
             },
             "count": 12
         },
-        "Group": {
+        "Unicode": {
             "styles": {
-                "Sm-cap": "ꜱᴛʏʟɪꜱʜ",
-                "Subscr": "ₛₜyₗᵢₛₕ",
-                "Regnl": "🇸🇹🇾🇱🇮🇸🇭",
-                "Mofi-Mix": "Sᵗʸˡiˢʰ",
-                "Mofi-cap": "Sᵀyᴸᴵsᴴ",
-                "Mofi-sm": "ˢᵗʸˡiˢʰ"
+                "Bold": "𝐒𝐭𝐲𝐥𝐢𝐬𝐡",
+                "Bold-Italic": "𝑺𝒕𝒚𝒍𝒊𝒔𝒉",
+                "Bold-Script": "𝓢𝓽𝔂𝓵𝓲𝓼𝓱"
             },
-            "count": 6
+            "count": 3
         },
+
 
     }
 };
-
-
-
 
 const SearchComponent = () => {
     const [searchText, setSearchText] = useState('');
@@ -141,6 +48,29 @@ const SearchComponent = () => {
 
     const abortControllerRef = useRef(null);
     const cacheRef = useRef({ '': dummyData });
+
+    const filterBoldStyles = useCallback((styles) => {
+        if (!styles) return {};
+        return Object.fromEntries(
+            Object.entries(styles).filter(([key]) =>
+                key.toLowerCase().includes('b') ||
+                key.toLowerCase().includes('bold') ||
+                key.toLowerCase().includes('bscr')
+            )
+        );
+    }, []);
+
+    const filterStyles = useCallback((styles) => {
+        if (!styles) return {};
+        const boldStyles = filterBoldStyles(styles);
+        if (showMixStyles) {
+            return boldStyles;
+        } else {
+            return Object.fromEntries(
+                Object.entries(boldStyles).filter(([key]) => !key.toLowerCase().includes('mix'))
+            );
+        }
+    }, [showMixStyles, filterBoldStyles]);
 
     const fetchData = useCallback(async (text) => {
         if (cacheRef.current[text]) {
@@ -216,17 +146,6 @@ const SearchComponent = () => {
             .catch(err => console.error('Failed to copy text: ', err));
     }, []);
 
-    const filterStyles = useCallback((styles) => {
-        if (!styles) return {};
-        if (showMixStyles) {
-            return styles;
-        } else {
-            return Object.fromEntries(
-                Object.entries(styles).filter(([key]) => !key.toLowerCase().includes('mix'))
-            );
-        }
-    }, [showMixStyles]);
-
     const getStyleValue = useCallback((styleValue) => {
         return Array.isArray(styleValue) ? styleValue[0] : styleValue;
     }, []);
@@ -239,37 +158,19 @@ const SearchComponent = () => {
         };
     }, []);
 
-    const renderSkeletonLoader = () => (
-        <div className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2 *:h-12">
-            {[1, 2, 3, 4, 5].map((item) => (
-                <div key={item} className="animate-pulse">
-                    <div className="h-10 bg-gray-200 rounded"></div>
-                    <div className="mt-2 space-y-2">
-                        <div className="h-4 bg-gray-200 rounded"></div>
-                        <div className="h-4 bg-gray-200 rounded"></div>
-                        <div className="h-4 bg-gray-200 rounded"></div>
-                    </div>
-                </div>
-            ))}
-        </div>
-    );
-
     const CategorySkeleton = () => (
         <div className="*:w-full first:[&>*]:rounded-t-lg last:[&>*]:rounded-b-lg">
             {[...Array(1)].map((_, index) => (
-
                 <div key={index} className="animate-pulse bg-slate-500">
                     <div className="h-40 bg-zinc-300 rounded"></div>
-                </div>
 
+                </div>
             ))}
         </div>
     );
 
-
-
     return (
-        <div className="max-w-7xl m-auto p-1">
+        <div className="max-w-7xl m-auto p-1 min-h-screen">
             <div className="m-4 sm:mx-6 lg:mx-10">
                 <textarea
                     value={searchText}
@@ -277,10 +178,8 @@ const SearchComponent = () => {
                     placeholder="Enter text to style (e.g., Stylish)"
                     className="rounded-md p-4 w-full focus:ring-1 outline-none focus:ring-sky-500 border focus:border-sky-300 ring-zinc-400/75 shadow-sm hover:ring-sky-300 bg-zinc-50 shadow-zinc-600"
                 ></textarea>
-                <p className="text-xs font-weight: 500; text-zinc-400">⬇️Click on Any Style to Copy⬇️</p>
+                <p className="text-xs font-weight: 500; text-zinc-400">⬇️Click on Any Style & Copy⬇️</p>
             </div>
-
-
 
             <div className="text-center pb-1 overflow-x-auto" style={{ width: '100%', whiteSpace: 'nowrap' }}>
 
@@ -354,44 +253,42 @@ const SearchComponent = () => {
                 </Link>
 
 
-                <Link href="/fancy-font/bold-text-styles" className="text-white bg-gradient-to-r from-violet-500 via-violet-600 to-violet-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-violet-300 dark:focus:ring-violet-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
-                    Bold Text
-                </Link>
-
-
-
-
-
             </div>
+
+
+
+
 
             {error ? (
                 <p className="error-message">{error}</p>
             ) : (
-                <div tabIndex={-1} className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2 pt-3">
-                    {Object.entries(result.styled_texts || {}).map(([key, value]) => (
-                        <div key={key} className="*:w-full  first:[&>*]:rounded-t-lg last:[&>*]:rounded-b-lg *:cursor-pointer">
-                            {isLoading ? (
-                                <CategorySkeleton />
-                            ) : (
-                                Object.entries(filterStyles(value?.styles || {})).map(([styleKey, styleValue]) => {
-                                    const uniqueKey = `${key}-${styleKey}`;
-                                    return (
-                                        <div
-                                            key={uniqueKey}
-                                            className={`style-item shadow-sm py-3 hover:bg-stone-50 bg-white ${copiedStyles[uniqueKey] ? 'copied' : ''}`}
-                                            onClick={() => handleCopyStyle(uniqueKey, styleValue)}
-                                        >
+                <div tabIndex={-1} className="mx-4 space-y-5 *:flex *:flex-col *:items-center *:text-center *:gap-y-2 overflow-x-auto pt-3">
+                    {Object.entries(result.styled_texts || {}).map(([key, value]) => {
+                        const boldStyles = filterStyles(value?.styles || {});
+                        if (Object.keys(boldStyles).length === 0) return null; // Skip categories with no bold styles
 
-                                            <span className="style-value">{getStyleValue(styleValue)}</span>
-
-
-                                            {copiedStyles[uniqueKey] && <span className="copy-alert text-emerald-400">Copied!</span>}
-                                        </div>
-                                    );
-                                })
-                            )}
-                        </div>
-                    ))}
+                        return (
+                            <div key={key} className="*:w-full first:[&>*]:rounded-t-lg last:[&>*]:rounded-b-lg *:cursor-pointer">
+                                {isLoading ? (
+                                    <CategorySkeleton />
+                                ) : (
+                                    Object.entries(boldStyles).map(([styleKey, styleValue]) => {
+                                        const uniqueKey = `${key}-${styleKey}`;
+                                        return (
+                                            <div
+                                                key={uniqueKey}
+                                                className={`style-item shadow-sm py-3 hover:bg-stone-50 bg-white ${copiedStyles[uniqueKey] ? 'copied' : ''}`}
+                                                onClick={() => handleCopyStyle(uniqueKey, styleValue)}
+                                            >
+                                                <span className="style-value">{getStyleValue(styleValue)}</span>
+                                                {copiedStyles[uniqueKey] && <span className="copy-alert text-emerald-400">Copied!</span>}
+                                            </div>
+                                        );
+                                    })
+                                )}
+                            </div>
+                        );
+                    })}
                 </div>
             )}
 

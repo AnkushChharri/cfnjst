@@ -6,13 +6,12 @@ import Link from 'next/link';
 
 
 const symbols = [
-    // Kaomoji (30+)
-    '(^_^)', '(>_<)', '(;_;)', '(^o^)', '(^_^;)', '(*_*)', '(T_T)',
-    '(╯°□°)╯︵ ┻━┻', '┬─┬ノ( º _ ºノ)', '¯\\_(ツ)_/¯', '(╬ಠ益ಠ)', '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧',
-    '(⌐■_■)', '( ͡° ͜ʖ ͡°)', '(づ｡◕‿‿◕｡)づ', '(ノಠ益ಠ)ノ彡┻━┻', '(｡♥‿♥｡)',
-    'ヽ(ヅ)ノ', '(๑•́ ω •̀๑)', '(≧◡≦)', '(◕‿◕✿)', '(⊙_⊙)', '(╯︵╰,)',
-    '(っ˘̩╭╮˘̩)っ', '(￣▽￣)ノ', '(〜￣△￣)〜', '(･ω･)つ⊂(･ω･)',
-    'ᕦ(ò_óˇ)ᕤ', '(｡◕‿◕｡)', '(✿◠‿◠)', '(◡‿◡✿)', '(≧﹏≦)', '(ㆆ _ ㆆ)'
+    // Skull emojis and related spooky symbols
+    '💀', '☠️', '👽', '👾', '🤖', '🎃', '😈', '👹', '👺', '🤡', '💩', '👻',
+    '🦴', '🩻', '🕷️', '🕸️', '🦇', '🧛', '🧛‍♀️', '🧛‍♂️', '🧟', '🧟‍♀️', '🧟‍♂️',
+    '🪦', '⚰️', '⚱️', '🏴‍☠️', '🕯️', '🧿', '🪬', '🗿', '🤯', '🫥', '👤', '👥',
+    '🦹', '🦹‍♀️', '🦹‍♂️', '🧙', '🧙‍♀️', '🧙‍♂️', '🧚', '🧚‍♀️', '🧚‍♂️',
+    '🪓', '🔪', '🗡️', '⚔️', '🛡️', '🪄', '🧨', '💣', '🔮', '🕳️', '💊', '💉',
 ];
 
 const SymbolSelector = () => {
@@ -92,6 +91,7 @@ const SymbolSelector = () => {
 
             </div>
 
+
             <div className="text-center ring-cyan-300 pb-4 pt-3 overflow-x-auto" style={{ width: '100%', whiteSpace: 'nowrap' }}>
 
                 <Link href="/Emoji/arrow-emoji" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg px-3 py-2 text-xs text-center me-2 mb-2">
@@ -116,15 +116,15 @@ const SymbolSelector = () => {
                     Home Emoji
                 </Link>
 
-
+                <Link href="/Emoji/Kaomoji" className="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
+                    Kaomoji
+                </Link>
 
                 <Link href="/Emoji/mewing-emoji" className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
                     Mewing Emoji
                 </Link>
 
-                <Link href="/Emoji/skull-emoji" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg px-3 py-2 text-xs text-center me-2 mb-2">
-                    Skull Emoji
-                </Link>
+
 
                 <Link href="/Emoji/dot-emoji" className="text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
                     Dot Emoji
@@ -135,16 +135,17 @@ const SymbolSelector = () => {
 
             </div>
 
+
             <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-2 text-gray-700">Fire Emojis and Kaomoji</h3>
-                <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2">
+                <h3 className="text-lg font-semibold mb-2 text-gray-700">Skull and Spooky Emojis</h3>
+                <div className="grid grid-cols-8 sm:grid-cols-10 md:grid-cols-12 lg:grid-cols-15 gap-2">
                     {symbols.map((symbol, index) => (
                         <div
                             key={index}
                             className="relative flex items-center justify-center bg-white p-2 rounded cursor-pointer hover:bg-gray-200 transition-colors duration-200"
                             onClick={() => handleSymbolClick(symbol)}
                         >
-                            <span className="text-lg sm:text-xl">{symbol}</span>
+                            <span className="text-2xl">{symbol}</span>
                             {copiedSymbol === symbol && (
                                 <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs py-1 px-2 rounded">
                                     Copied!

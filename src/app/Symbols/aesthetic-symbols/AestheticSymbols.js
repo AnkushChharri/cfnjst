@@ -4,18 +4,23 @@ import React, { useState, useCallback } from 'react';
 import { Copy, X } from 'lucide-react';
 import Link from 'next/link';
 
-
-const symbols = [
-    // Kaomoji (30+)
-    '(^_^)', '(>_<)', '(;_;)', '(^o^)', '(^_^;)', '(*_*)', '(T_T)',
-    '(╯°□°)╯︵ ┻━┻', '┬─┬ノ( º _ ºノ)', '¯\\_(ツ)_/¯', '(╬ಠ益ಠ)', '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧',
-    '(⌐■_■)', '( ͡° ͜ʖ ͡°)', '(づ｡◕‿‿◕｡)づ', '(ノಠ益ಠ)ノ彡┻━┻', '(｡♥‿♥｡)',
-    'ヽ(ヅ)ノ', '(๑•́ ω •̀๑)', '(≧◡≦)', '(◕‿◕✿)', '(⊙_⊙)', '(╯︵╰,)',
-    '(っ˘̩╭╮˘̩)っ', '(￣▽￣)ノ', '(〜￣△￣)〜', '(･ω･)つ⊂(･ω･)',
-    'ᕦ(ò_óˇ)ᕤ', '(｡◕‿◕｡)', '(✿◠‿◠)', '(◡‿◡✿)', '(≧﹏≦)', '(ㆆ _ ㆆ)'
+const aestheticSymbols = [
+    // Additional Aesthetic Symbols
+    '✦', '✧', '★', '☆', '✯', '✭', '✮', '✩', '✪', '✫', '✬', '✰', '⋆', '❋', '✿', '❀',
+    '❃', '❁', '✾', '✽', '✼', '✻', '✺', '✹', '✸', '✷', '✶', '✵', '✴', '❄', '❅', '❆', '☀',
+    '☼', '☾', '☽', '◌', '◍', '◉', '◎', '●', '○', '◯', '❂', '☢', '☣', '⚛', '⚜', '☸',
+    '✙', '✚', '✛', '✜', '✝', '✞', '✟', '†', '✠', '✡', '☥', '☦', '☧', '☨', '☩', '☫', '☬',
+    '☭', '☮', '☯', '☰', '☱', '☲', '☳', '☴', '☵', '☶', '☷', '♔', '♕', '♖', '♗', '♘', '♙',
+    '♚', '♛', '♜', '♝', '♞', '♟', '♤', '♠', '♧', '♣', '♡', '♥', '♢', '♦', '♩', '♪', '♫', '♬',
+    '♭', '♮', '♯', '°', '✓', '✔', '✕', '✖', '✗', '✘', '∫', '∮', '∞', '∆', '∏', '∑', '√',
+    '∂', '∇', '≡', '≠', '≈', '∼', '∽', '⊕', '⊗', '⊘', '⊞', '⊟',
+    '⊠', '⊡', '⋄', '⋅', '⋇', '⋈', '⋉', '⋊', '⋋', '⋌', '⋍', '⋎', '⋏', '⋐', '⋑', '⋒', '⋓',
+    '⋔', '⋕', '⌘', '␣', '⎋', '⌫', '⌦', '⌧', '⌨', '⌥', '⌅', '⌆', '⌇', '⌗', '⌚', '⌛', '⌡', '⌠',
+    '⟀', '⟁', '⟂', '⟃', '⟄', '⟇', '⟈', '⟉', '⟊', '⟐', '⟑', '⟒', '⟓', '⟔', '⟕', '⟖', '⟗', '⟘',
+    '⟙', '⟚', '⟛', '⟜', '⟝', '⟞', '⟟', '⟠', '⟡', '⟢', '⟣', '⟤', '⟥', '⟦', '⟧', '⟨', '⟩', '⟪', '⟫'
 ];
 
-const SymbolSelector = () => {
+const AestheticSymbolSelector = () => {
     const [selectedSymbols, setSelectedSymbols] = useState('');
     const [copiedSymbol, setCopiedSymbol] = useState(null);
 
@@ -68,7 +73,7 @@ const SymbolSelector = () => {
                 </div>
             </div>
 
-            <div className="text-center pb-1 overflow-x-auto" style={{ width: '100%', whiteSpace: 'nowrap' }}>
+            <div className="text-center pt-4 overflow-x-auto" style={{ width: '100%', whiteSpace: 'nowrap' }}>
 
                 <Link href="/" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
                     Fancy Font
@@ -94,57 +99,65 @@ const SymbolSelector = () => {
 
             <div className="text-center ring-cyan-300 pb-4 pt-3 overflow-x-auto" style={{ width: '100%', whiteSpace: 'nowrap' }}>
 
-                <Link href="/Emoji/arrow-emoji" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg px-3 py-2 text-xs text-center me-2 mb-2">
-                    Arrow Emoji
+
+
+
+
+                <Link href="/bullet-point-symbol" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg px-3 py-2 text-xs text-center me-2 mb-2">
+                    Bullet Point Symbol
                 </Link>
 
 
 
-                <Link href="/Emoji/moon-emoji" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg px-3 py-2 text-xs text-center me-2 mb-2">
-                    Moon Emoji
+                <Link href="/Symbols/circle-symbol" className="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
+                    Circle Symbol
                 </Link>
 
-                <Link href="/Emoji/fire-emoji" className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
-                    Fire Emoji
+                <Link href="/Symbols/cross-symbol" className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
+                    Cross Symbol
                 </Link>
 
-                <Link href="/Emoji/heart-emoji" className="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
-                    Heart Emoji
+                <Link href="/Symbols/dot-symbol" className="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
+                    Dot Symbol
                 </Link>
 
-                <Link href="/Emoji/home-emoji" className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
-                    Home Emoji
+                <Link href="/Symbols/heart-symbol" className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
+                    Heart Symbol
+                </Link>
+
+                <Link href="/Symbols/star-symbol" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg px-3 py-2 text-xs text-center me-2 mb-2">
+                    Star Symbol
+                </Link>
+
+                <Link href="/Symbols/straight-lines-symbol" className="text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
+                    Straight Line Symbol
+                </Link>
+
+                <Link href="/Symbols/text-symbol" className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
+                    Text Symbol
                 </Link>
 
 
 
-                <Link href="/Emoji/mewing-emoji" className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
-                    Mewing Emoji
-                </Link>
 
-                <Link href="/Emoji/skull-emoji" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg px-3 py-2 text-xs text-center me-2 mb-2">
-                    Skull Emoji
-                </Link>
-
-                <Link href="/Emoji/dot-emoji" className="text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-xs px-3 py-2 text-center me-2 mb-2">
-                    Dot Emoji
-                </Link>
 
 
 
 
             </div>
 
+
+
             <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-2 text-gray-700">Fire Emojis and Kaomoji</h3>
-                <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2">
-                    {symbols.map((symbol, index) => (
+                <h3 className="text-lg font-semibold mb-2 text-gray-700">Aesthetic Symbols</h3>
+                <div className="grid grid-cols-8 sm:grid-cols-10 md:grid-cols-12 lg:grid-cols-15 gap-2">
+                    {aestheticSymbols.map((symbol, index) => (
                         <div
                             key={index}
                             className="relative flex items-center justify-center bg-white p-2 rounded cursor-pointer hover:bg-gray-200 transition-colors duration-200"
                             onClick={() => handleSymbolClick(symbol)}
                         >
-                            <span className="text-lg sm:text-xl">{symbol}</span>
+                            <span className="text-2xl">{symbol}</span>
                             {copiedSymbol === symbol && (
                                 <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs py-1 px-2 rounded">
                                     Copied!
@@ -158,4 +171,4 @@ const SymbolSelector = () => {
     );
 };
 
-export default SymbolSelector;
+export default AestheticSymbolSelector;
