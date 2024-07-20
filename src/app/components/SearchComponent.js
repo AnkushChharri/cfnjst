@@ -420,7 +420,7 @@ const SearchComponent = () => {
                             <h1 className="pt-2 text-xl">5. Zalgo Text: Adding a Touch of Chaos to Your Digital Content</h1>
                             <p className="pt-2">Have you ever come across text that looks like it's glitching or melting off the screen? Chances are, you've encountered Zalgo text. In this post, we'll dive into the world of Zalgo text, exploring what it is, how to create it, and when to use it effectively.</p>
 
-                            <h1 className="pt-2 text-sm">What is Zalgo Text?</h1>
+                            <h1 className="pt-2 text-sm">What is Zalgo Text</h1>
                             <p className="pt-2">Zalgo text, named after an internet meme, is a style of text that combines a regular character with multiple combining characters to create a glitchy, chaotic appearance. It's often described as "corrupted" or "cursed" text due to its unsettling visual effect.</p>
 
                             <h1 className="pt-2 text-sm">Example: </h1>
