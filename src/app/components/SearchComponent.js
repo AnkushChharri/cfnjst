@@ -147,8 +147,6 @@ const SearchComponent = () => {
             setResult(cacheRef.current[text]);
             return;
         }
-
-
         if (abortControllerRef.current) {
             abortControllerRef.current.abort();
         }
