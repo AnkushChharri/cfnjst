@@ -148,6 +148,7 @@ const SearchComponent = () => {
             return;
         }
 
+
         if (abortControllerRef.current) {
             abortControllerRef.current.abort();
         }
