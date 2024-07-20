@@ -4,10 +4,7 @@
 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-
 import SearchComponent from "./components/SearchComponent";
-
-
 
 
 
@@ -35,16 +32,8 @@ export default function Home() {
           <h1 className="pt-2 pb-2 text-sm">Example: ✨N✨e✨w✨, N̶̷e̶̷w̶̷, Ḷ̠ạ̠ṭ̠ẹ̠ṣ̠ṭ̠, ✴C❈o❈o❈l✴ </h1>
 
           <h1 className="pt-2 text-xl">2. Bold Text: Make Your Message Stand Out</h1>
-
-          <p className="pt-2 font-extrabold">
-            <a href="/fancy-font/bold-text-styles" className="bold-link bold-link-red text-blue-700">Bold text</a> is perfect for emphasizing key points in your writing. It's particularly useful for headlines, subheadings, or important phrases you want readers to notice.
-          </p>
-          <h1 className="pt-2 pb-2 text-sm">Example:
-            <a href="/fancy-font/bold-text-styles" className="bold-link bold-link-green">𝓝𝓔𝓦</a>,
-            <a href="/fancy-font/bold-text-styles" className="bold-link bold-link-blue">𝑳𝑨𝑻𝑬𝑺𝑻</a>,
-            <a href="/fancy-font/bold-text-styles" className="bold-link bold-link-pink">𝐂𝐎𝐎𝐋</a>,
-            <a href="/fancy-font/bold-text-styles" className="bold-link bold-link-cyan">𝕮𝕺𝕺𝕷</a>
-          </h1>
+          <p className="pt-2 font-extrabold">**Bold text** is perfect for emphasizing key points in your writing. It's particularly useful for headlines, subheadings, or important phrases you want readers to notice.</p>
+          <h1 className="pt-2 pb-2 text-sm">Example: 𝓝𝓔𝓦, 𝑳𝑨𝑻𝑬𝑺𝑻, 𝐂𝐎𝐎𝐋, 𝕮𝕺𝕺𝕷 </h1>
 
           <h1 className="pt-2 text-xl">3. Italic Text: For Subtle Emphasis</h1>
           <p className="pt-2 italic ">*Italic text* adds a touch of nuance to your writing. Use it for book titles, foreign words, or to convey a slight change in tone.</p>
