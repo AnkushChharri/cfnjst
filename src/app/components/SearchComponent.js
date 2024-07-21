@@ -395,19 +395,18 @@ const SearchComponent = () => {
 
                     ))}
 
-
                     <div className=" max-h-fit max-w-7xl mx-auto my-auto mt-2 h-auto  ">
                         <div className="text-justify  capitalize font-semibold subpixel-antialiased  text-sm ml-2 mr-3">
-                            <p>Are you looking to make your social media posts stand out? Want to add a touch of creativity to your online writing? Look no further! In this post, we'll explore various text styles that can help you express yourself uniquely online. From Fancy Font to Arrow Text, we've got you covered.</p>
-                            <h1 className="pt-2 text-xl">1. Fancy Font: Add Elegance to Your Words</h1>
+
+                            <p >Are you looking to make your social media posts stand out? Want to add a touch of creativity to your online writing? Look no further! In this post, we'll explore various text styles that can help you express yourself uniquely online. From Fancy Font to Arrow Text, we've got you covered.
+                            </p>
+                            <h1 className="pt-2 text-xl ">1. Fancy Font: Add Elegance to Your Words</h1>
                             <p className="pt-2">Fancy fonts can transform ordinary text into eye-catching masterpieces. Whether you're creating a logo or designing a social media graphic, fancy fonts can help convey a sense of sophistication and style.</p>
-                            <h1 className="pt-2 pb-2 text-sm">Example: ✨N✨e✨w✨, N̶̷e̶̷w̶̷, Ḷ̠ạ̠ṭ̠ẹ̠ṣ̠ṭ̠, ✴C❈o❈o❈l✴</h1>
-                            <h1 className="pt-2 text-xl">2. Bold Text: Make Your Message Stand Out</h1>
-                            <p className="pt-2 ">**Bold text** is perfect for emphasizing key points in your writing. It's particularly useful for headlines, subheadings, or important phrases you want readers to notice.</p>
-                            <h1 className="pt-2 pb-2 text-sm">Example: 𝓝𝓔𝓦, 𝑳𝑨𝑻𝑬𝑺𝑻, 𝐂𝐎𝐎𝐋, 𝕮𝕺𝕺𝕷</h1>
+                            <h1 className="pt-2 pb-2 text-sm">Example: ✨N✨e✨w✨, N̶̷e̶̷w̶̷, Ḷ̠ạ̠ṭ̠ẹ̠ṣ̠ṭ̠, ✴C❈o❈o❈l✴ </h1>
 
                         </div>
                     </div>
+
 
 
                 </div>
