@@ -419,22 +419,22 @@ const SearchComponent = () => {
                             <h1 className="pt-2 pb-2 text-sm">Example: ✨N✨e✨w✨, N̶̷e̶̷w̶̷, Ḷ̠ạ̠ṭ̠ẹ̠ṣ̠ṭ̠, ✴C❈o❈o❈l✴</h1>
 
 
-                            <h1 className="pt-2 text-xl tracking-tight">2. Bold Text: Make Your Message Stand Out</h1>
+                            <h1 className="pt-2 text-xl tracking-tighter">2. Bold Text: Make Your Message Stand Out</h1>
                             <p className="pt-2 font-extrabold">**Bold text** is perfect for emphasizing key points in your writing. It&apos;s particularly useful for headlines, subheadings, or important phrases you want readers to notice.</p>
                             <h1 className="pt-2 pb-2 text-sm">Example: 𝓝𝓔𝓦, 𝑳𝑨𝑻𝑬𝑺𝑻, 𝐂𝐎𝐎𝐋, 𝕮𝕺𝕺𝕷</h1>
 
 
-                            <h1 className="pt-2 text-xl tracking-tight">3. Italic Text: For Subtle Emphasis</h1>
+                            <h1 className="pt-2 text-xl tracking-tighter">3. Italic Text: For Subtle Emphasis</h1>
                             <p className="pt-2 italic">*Italic text* adds a touch of nuance to your writing. Use it for book titles, foreign words, or to convey a slight change in tone.</p>
                             <h1 className="pt-2 pb-2 text-sm">Example: 𝓝𝓔𝓦, 𝓃e𝓌, L𝒜𝒯e𝒮𝒯, L𝒶𝓉e𝓈𝓉</h1>
 
 
-                            <h1 className="pt-2 text-xl tracking-tight">4. Fancy Text: Beyond Basic Formatting</h1>
+                            <h1 className="pt-2 text-xl -tracking-tighter">4. Fancy Text: Beyond Basic Formatting</h1>
                             <p className="pt-2">Fancy text goes beyond simple bold or italic styles. It can include decorative elements, unique character sets, or even animated text for digital platforms.</p>
                             <h1 className="pt-2 pb-2 text-sm">Example: N̨̥̬̩̪̬ę̥̬̩̪̬w̨̥̬̩̪̬, ⓃⒺⓌ, ♑€☠️, ✧L⋆a⋆t⋆e⋆s⋆t✧, L҉a҉t҉e҉s҉t҉</h1>
 
 
-                            <h1 className="pt-2 text-xl tracking-tight">5. Zalgo Text: Adding a Touch of Chaos to Your Digital Content</h1>
+                            <h1 className="pt-2 text-xl tracking-tighter">5. Zalgo Text: Adding a Touch of Chaos to Your Digital Content</h1>
                             <p className="pt-2">Have you ever come across text that looks like it&apos;s glitching or melting off the screen? Chances are, you&apos;ve encountered Zalgo text. In this post, we&apos;ll dive into the world of Zalgo text, exploring what it is, how to create it, and when to use it effectively.</p>
                             <h1 className="pt-2 text-sm">What is Zalgo Text?</h1>
                             <p className="pt-2">Zalgo text, named after an internet meme, is a style of text that combines a regular character with multiple combining characters to create a glitchy, chaotic appearance. It&apos;s often described as &quot;corrupted&quot; or &quot;cursed&quot; text due to its unsettling visual effect.</p>
