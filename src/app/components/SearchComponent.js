@@ -402,7 +402,7 @@ const SearchComponent = () => {
                             </p>
                             <h1 className="pt-2 text-xl ">1. Fancy Font: Add Elegance to Your Words</h1>
                             <p className="pt-2">Fancy fonts can transform ordinary text into eye-catching masterpieces. Whether you're creating a logo or designing a social media graphic, fancy fonts can help convey a sense of sophistication and style.</p>
-                            <h1 className="pt-2 pb-2 text-sm">Example: ✨N✨e✨w✨, N̶̷e̶̷w̶̷, Ḷ̠ạ̠ṭ̠ẹ̠ṣ̠ṭ̠, ✴C❈o❈o❈l✴ </h1>
+
 
                         </div>
                     </div>
