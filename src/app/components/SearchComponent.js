@@ -529,7 +529,6 @@ const SearchComponent = () => {
             <p className="pt-1"> Remember, effective communication is about more than words— presentation, clarity, and engagement. With FontsCopy at your fingertips, you can make digital communication more effective, expressive, and memorable. </p>
             <p className="pt-1"> So why settle for plain text when you can elevate your online presence? Give FontsCopy a try and discover the difference it can make in your digital communication today! </p>
 
-
             <h1 className="pt-2 font-semibold text-xl"> Conclusion: Emojis as a Community-Building Tool </h1>
             <p className="pt-1"> Discord emojis, particularly custom ones, are more than just fun additions to your server. They&apos;re powerful tools for building community, expressing identity, and fostering engagement. By thoughtfully implementing and managing your server&apos;s emoji selection, you can create a more vibrant, expressive, and connected community. </p>
             <p className="pt-1"> Whether you&apos;re running a gaming server, a brand community, or a social group, mastering the art of Discord emojis can take your server to the next level. So start creating, sharing, and enjoying the wonderful world of Discord emojis today! </p>
