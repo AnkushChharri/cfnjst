@@ -363,6 +363,8 @@ const SearchComponent = () => {
 
             </div>
 
+
+
             {error ? (
                 <p className="error-message">{error}</p>
             ) : (
@@ -385,15 +387,43 @@ const SearchComponent = () => {
                                             <span className="style-value">{getStyleValue(styleValue)}</span>
 
 
+
+
                                             {copiedStyles[uniqueKey] && <span className="copy-alert text-emerald-400">Copied!</span>}
+
+
                                         </div>
 
+
+
                                     );
+
+
                                 })
+
                             )}
+
+
                         </div>
 
+
+
                     ))}
+
+                    <div className=" max-h-fit max-w-7xl mx-auto my-auto mt-2 h-auto  ">
+                        <div className="text-justify  capitalize font-semibold subpixel-antialiased  text-sm ml-2 mr-3">
+
+                            <p >Are you looking to make your social media posts stand out? Want to add a touch of creativity to your online writing? Look no further! In this post, we'll explore various text styles that can help you express yourself uniquely online. From Fancy Font to Arrow Text, we've got you covered.
+                            </p>
+
+
+
+
+                        </div>
+                    </div>
+
+
+
 
 
 
@@ -402,11 +432,14 @@ const SearchComponent = () => {
 
             )}
 
+
+
             {!isLoading && !result && searchText.trim() && (
                 <p>No results found.</p>
             )}
 
         </div>
+
 
 
 
