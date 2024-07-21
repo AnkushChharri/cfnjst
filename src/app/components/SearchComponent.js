@@ -435,34 +435,104 @@ const SearchComponent = () => {
 
         <div className="max-w-7xl xl:!mx-auto *:!text-left !mx-4">
 
-            <p>Are you looking to make your social media posts stand out? Want to add a touch of creativity to your online writing? Look no further! In this post, we&apos;ll explore various text styles that can help you express yourself uniquely online. From Fancy Font to Arrow Text, we&apos;ve got you covered.</p>
-            <h1 className="pt-2 font-semibold text-xl"> 1. Fancy Font: Add Elegance to Your Words</h1>
-            <p className="pt-2">Fancy fonts can transform ordinary text into eye-catching masterpieces. Whether you&apos;re creating a logo or designing a social media graphic, fancy fonts can help convey a sense of sophistication and style.</p>
-            <h1 className="pt-2 pb-2 ">Example: ✨N✨e✨w✨, N̶̷e̶̷w̶̷, Ḷ̠ạ̠ṭ̠ẹ̠ṣ̠ṭ̠, ✴C❈o❈o❈l✴</h1>
+
+            <p className="pt-1"> In today&apos;s digital age, communication has evolved beyond simple text. We now have many options to express ourselves online, from emojis to unique text styles. This post will explore FontsCopy, a versatile tool that offers various text-related features, including Discord emojis, arrow emojis, bullet point symbols, and Zalgo text. Whether you&apos;re a social media enthusiast, a content creator, or someone who loves adding flair to their messages, FontsCopy has something for everyone. </p>
+
+            <h1 className="pt-2 font-semibold text-xl"> Discord Emojis: Adding Flavor to Your Conversations </h1>
+            <p className="pt-1"> Discord, the popular communication platform, has revolutionized how we interact online. One of its standout features is its extensive collection of emojis. These small, expressive icons can convey emotions, reactions, and ideas in a single glance. FontsCopy provides access to a wide array of Discord emojis, allowing you to use them outside the Discord platform. </p>
+
+            <h1 className="pt-2 font-semibold text-xl"> Why Use Discord Emojis? </h1>
+            <p className="pt-1"> 1. Enhanced Expression: Emojis add nuance and emotion to text-based communication. </p>
+            <p className="pt-1"> 2. Visual Appeal: They make your messages more engaging and fun to read. </p>
+            <p className="pt-1"> 3. Universal Language: Emojis can often transcend language barriers. </p>
 
 
-            <h1 className="pt-2  font-bold "> 2. Bold Text: Make Your Message Stand Out</h1>
-            <p className="pt-2 ">**Bold text** is perfect for emphasizing key points in your writing. It&apos;s particularly useful for headlines, subheadings, or important phrases you want readers to notice.</p>
-            <h1 className="pt-2 pb-2 ">Example: 𝓝𝓔𝓦, 𝑳𝑨𝑻𝑬𝑺𝑻, 𝐂𝐎𝐎𝐋, 𝕮𝕺𝕺𝕷</h1>
+            <h1 className="pt-2 font-semibold text-xl"> Example of Discord Emojis </h1>
+            <p className="pt-1"> Here are some popular Discord emojis you can find on FontsCopy: </p>
+            <p className="pt-1">  😀 Grinning Face </p>
+            <p className="pt-1"> 🎉 Party Popper </p>
+            <p className="pt-1"> 🔥 Fire </p>
+            <p className="pt-1"> 🤔 Thinking Face </p>
+            <p className="pt-1"> 💯 Hundred Points </p>
+            <p className="pt-1"> To use these in your messages, copy and paste them from FontsCopy into your desired platform. </p>
 
 
-            <h1 className="pt-2 font-bold italic "> 3. Italic Text: For Subtle Emphasis</h1>
-            <p className="pt-2 italic">*Italic text* adds a touch of nuance to your writing. Use it for book titles, foreign words, or to convey a slight change in tone.</p>
-            <h1 className="pt-2 pb-2 ">Example: 𝓝𝓔𝓦, 𝓃e𝓌, L𝒜𝒯e𝒮𝒯, L𝒶𝓉e𝓈𝓉</h1>
+
+            <h1 className="pt-2 font-semibold text-xl"> Arrow Emoji: Pointing the Way </h1>
+            <p className="pt-1"> Arrow emojis are incredibly versatile symbols that can be used in various contexts. Whether creating a tutorial, highlighting important information, or adding direction to your text, arrow emojis can be invaluable. </p>
+            <p className="pt-1"> Uses for Arrow Emojis</p>
+            <p className="pt-1"> 1. Directional Guidance: Use them to point to important information. </p>
+            <p className="pt-1"> 2. Step-by-Step Instructions: Arrows can indicate the flow of a process. </p>
+            <p className="pt-1"> 3. Emphasis: Draw attention to specific parts of your text. </p>
+
+            <h1 className="pt-2 font-semibold text-xl"> Example of Arrow Emojis </h1>
+            <p className="pt-1"> FontsCopy offers a variety of arrow emojis, including: </p>
+            <p className="pt-1"> ➡️ Right Arrow </p>
+            <p className="pt-1"> ⬅️ Left Arrow </p>
+            <p className="pt-1"> ⬆️ Up Arrow </p>
+            <p className="pt-1"> ⬇️ Down Arrow </p>
+            <p className="pt-1"> ↗️ North East Arrow </p>
+            <p className="pt-1"> These can be easily incorporated into your text to add visual clarity and direction. </p>
 
 
-            <h1 className="pt-2 font-bold "> 4. Fancy Text: Beyond Basic Formatting</h1>
-            <p className="pt-2">Fancy text goes beyond simple bold or italic styles. It can include decorative elements, unique character sets, or even animated text for digital platforms.</p>
-            <h1 className="pt-2 pb-2 ">Example: N̨̥̬̩̪̬ę̥̬̩̪̬w̨̥̬̩̪̬, ⓃⒺⓌ, ♑€☠️, ✧L⋆a⋆t⋆e⋆s⋆t✧, L҉a҉t҉e҉s҉t҉</h1>
+            <h1 className="pt-2 font-semibold text-xl"> Bullet Point Symbol: Organizing Information </h1>
+            <p className="pt-1"> Bullet points are essential for creating clear, concise, and well-organized content. They help break down information into digestible chunks, making it easier for readers to understand and remember key points. </p>
+
+            <p className="pt-1"> Benefits of Using Bullet Points </p>
+            <p className="pt-1"> 1. Improved Readability: They create visual breaks in text. </p>
+            <p className="pt-1"> 2. Easy Scanning: Readers can quickly find important information. </p>
+            <p className="pt-1"> 3. Emphasis on Key Points: Bullet points naturally draw attention. </p>
+
+            <h1 className="pt-2 font-semibold text-xl"> Example of Bullet Point Symbols </h1>
+            <p className="pt-1"> FontsCopy provides various bullet point symbols to suit different styles: </p>
+            <p className="pt-1"> • Standard bullet point </p>
+            <p className="pt-1"> ◦ Hollow bullet point </p>
+            <p className="pt-1"> ▪ Square bullet point </p>
+            <p className="pt-1"> ▹ Triangle bullet point </p>
+            <p className="pt-1"> ✓ Checkmark bullet point </p>
+            <p className="pt-1"> These can create visually appealing and well-structured lists in your documents or social media posts. </p>
 
 
-            <h1 className="pt-2 font-bold "> 5. Zalgo Text: Adding a Touch of Chaos to Your Digital Content</h1>
-            <p className="pt-2">Have you ever come across text that looks like it&apos;s glitching or melting off the screen? Chances are, you&apos;ve encountered Zalgo text. In this post, we&apos;ll dive into the world of Zalgo text, exploring what it is, how to create it, and when to use it effectively.</p>
-            <h1 className="pt-2 ">What is Zalgo Text?</h1>
-            <p className="pt-2">Zalgo text, named after an internet meme, is a style of text that combines a regular character with multiple combining characters to create a glitchy, chaotic appearance. It&apos;s often described as &quot;corrupted&quot; or &quot;cursed&quot; text due to its unsettling visual effect.</p>
-            <h1 className="pt-2 ">Example: </h1>
-            <p className="pt-5">Z̶̨̳̳̬̣̫̏̐̀̋̐́͜͢å̢̨̦̰̠͙̫͛͋̌̉͘͞͠l̾͒̑ͨ͐҉̶͚͎̟̖̣̀͘͞g̷ͭͮ̋̿̀͏̶̸̢͖̙̥͈̱ơ̵͇̻̱̺ͤͤͣ̔̌͟͟͞ͅ, Ṡ̷̡̤̰͔͉͇ͤͬ͐̃i̷̞̻̻̦̖̐̎ͫ̔̒́m̻̳͕̦̔̔̏ͣ̓͜͝ͅp̾͋̉̀̅҉͚̱͔̬̖͞l̴̞̬̩͇͒̋̃ͣ͛́ͅė̡̨̤̠̱̯͈ͭ͊͗ͯ, Ṅ̡̤ͤͬ͐e̞̐̎ͫ̔́w̻̔̔̏ͣ͝, Ṁ̷̴̸̡̤̰͔͉ͤͬ͐o̷̞̻̻̦̐̎ͫ̔́͜͝ḑ̔̔̏ͣ͜͝͏̻̳͕ͅe̾͋̉̀҉̷̛͚̱͔̬͞r̴͒̋̃ͣ́҉̨̞̬̩ͅṅ̡̨ͭ͊͗҉̶̤̠̱̯</p>
 
+            <h1 className="pt-2 font-semibold text-xl"> Zalgo Text: Adding a Touch of Chao </h1>
+            <p className="pt-1"> Zalgo text, also known as &quot;glitch text&quot; or &quot;creepy text,&quot; is a unique way to transform regular text into a distorted, chaotic version. It&apos;s created by adding multiple combining characters to the original text, resulting in a glitchy, otherworldly appearance. </p>
+            <p className="pt-1"> When to Use Zalgo Text </p>
+            <p className="pt-1"> 1. Creative Writing: Add an eerie or supernatural element to your stories. </p>
+            <p className="pt-1"> 2. Social Media Posts: Create attention-grabbing, unique text. </p>
+            <p className="pt-1"> className="pt-1" 3. Gaming Communities: Fit in with horror or glitch-themed games. </p>
+
+            <h1 className="pt-2 font-semibold text-xl"> Example of Zalgo Text </h1>
+            <p className="pt-1"> Here&apos;s an example of how regular text can be transformed into Zalgo text using FontsCopy: </p>
+            <p className="pt-1"> Regular text: &quot;Hello, World!&quot; </p>
+            <p className="pt-1"> Zalgo text: &quot;H̸̢̪̘̹̯̅͂͑͑͜ę̷̛̮̙̜̳̿̋̊͝l̶̨͕̱̟̆̆̈́̈́̕ļ̶̱̼̮̏̓̓̈́͜͝o̶̢̨͚̞̞̽̓̈́̈́͝,̶̡̛̮̙̜̳̿̋̊͝ W̸̢̪̘̹̯̅͂͑͑͜ǫ̷̛̮̙̜̳̿̋̊͝r̶̨͕̱̟̆̆̈́̈́̕ļ̶̱̼̮̏̓̓̈́͜͝d̶̢̨͚̞̞̽̓̈́̈́͝!̶̡̛̮̙̜̳̿̋̊͝&quot; </p>
+            <p className="pt-1"> As you can see, the Zalgo version adds a dramatic, glitchy effect to the original text. </p>
+
+
+
+
+            <h1 className="pt-2 font-semibold text-xl"> How FontsCopy Enhances Your Digital Communication </h1>
+            <p className="pt-1"> FontsCopy is a comprehensive tool for anyone looking to elevate their digital communication. Providing easy access to Discord emojis, arrow emojis, bullet point symbols, and Zalgo text empowers users to create more expressive, organized, and visually appealing content. </p>
+            <p className="pt-1"> Key Features of FontsCopy </p>
+            <p className="pt-1"> 1. User-Friendly Interface: Easy to navigate and use. </p>
+            <p className="pt-1"> 2. Wide Selection: Offers many symbols and text styles. </p>
+            <p className="pt-1"> 3. Copy-Paste Functionality: Quickly add special characters to your text. </p>
+            <p className="pt-1"> 4. Cross-Platform Compatibility: Works across various digital platforms. </p>
+            <p className="pt-2"> Integrating FontsCopy into Your Workflow </p>
+            <p className="pt-1"> To make the most of FontsCopy, consider the following tips: </p>
+            <p className="pt-1"> 1. Bookmark the FontsCopy website for quick access. </p>
+            <p className="pt-1"> 2. Familiarize yourself with the different categories of symbols and text styles. </p>
+            <p className="pt-1"> 3. Practice using different elements to see what works best for your communication style. </p>
+            <p className="pt-1"> 4. Experiment with combining different features for unique effects. </p>
+            <p className="pt-2"> Conclusion: Elevate Your Digital Communication with FontsCopy </p>
+            <p className="pt-1"> In an increasingly digital world, communicating online matters more than ever. FontsCopy provides valuable tools to enhance your digital presence, whether you&apos;re chatting with friends on Discord, creating content for social media, or drafting professional documents. </p>
+            <p className="pt-1"> By incorporating Discord emojis, you can add emotional depth to your messages. Arrow emojis help guide your readers&apos; attention and clarify instructions. Bullet point symbols improve the structure and readability of your content. And when you want to add a touch of the extraordinary, Zalgo text offers a unique way to transform your words. </p>
+            <p className="pt-1"> Remember, effective communication is about more than words— presentation, clarity, and engagement. With FontsCopy at your fingertips, you can make digital communication more effective, expressive, and memorable. </p>
+            <p className="pt-1"> So why settle for plain text when you can elevate your online presence? Give FontsCopy a try and discover the difference it can make in your digital communication today! </p>
+
+
+            <h1 className="pt-2 font-semibold text-xl"> Conclusion: Emojis as a Community-Building Tool </h1>
+            <p className="pt-1"> Discord emojis, particularly custom ones, are more than just fun additions to your server. They&apos;re powerful tools for building community, expressing identity, and fostering engagement. By thoughtfully implementing and managing your server&apos;s emoji selection, you can create a more vibrant, expressive, and connected community. </p>
+            <p className="pt-1"> Whether you&apos;re running a gaming server, a brand community, or a social group, mastering the art of Discord emojis can take your server to the next level. So start creating, sharing, and enjoying the wonderful world of Discord emojis today! </p>
         </div>
     </>
 
