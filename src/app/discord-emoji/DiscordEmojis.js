@@ -328,63 +328,67 @@ const DotSymbolSelector = () => {
                 ))}
             </div>
 
-            <div className="max-w-7xl xl:!mx-auto *:!text-left !mx-4">
+            <div className="max-w-7xl xl:mx-auto text-left mx-4">
+                <h1 className="pt-2 font-semibold text-xl">Discord Emoji: Expressing Yourself in the Digital Age</h1>
+                <p className="pt-1">In online communication, emojis have become essential for conveying emotions, ideas, and reactions. Discord, a popular platform for communities and gamers, offers many emojis to enhance conversations. Let&apos;s dive into the colorful world of Discord emojis and explore the various categories that bring life to your chats.</p>
 
-                <h1 className="pt-2 font-semibold text-xl"> Discord Emoji: Enhancing Your Server&apos;s Communication and Engagement</h1>
-                <p>In the vibrant world of online communication, Discord has emerged as a powerhouse platform for communities of all sizes. One of its most beloved features is the use of emojis, which add a layer of expression and fun to conversations. This comprehensive guide will delve into the world of Discord emoji, exploring their types, uses, and impact on server engagement.</p>
+                <h2 className="pt-2 font-semibold text-lg">1. Smileys & Emotion: The Heart of Expression</h2>
+                <p className="pt-1">Smileys and emotional emojis are the cornerstone of digital communication. These little faces help convey tone and feeling in text-based conversations, making your messages more engaging and relatable.</p>
+                <p className="pt-1">Example: 😊 (smiling face with smiling eyes) - Use this emoji to express genuine happiness or contentment in your Discord conversations.</p>
 
-                <h1 className="pt-2 font-semibold text-xl"> What Are Discord Emojis? </h1>
-                <p> Discord emojis are small digital images or icons used to express emotions, reactions, or ideas in text-based conversations. They come in various forms and can significantly enhance the way users interact within a Discord server. </p>
+                <h2 className="pt-2 font-semibold text-lg">2. People & Body: Representing Diversity</h2>
+                <p className="pt-1">The people and body category showcases the diversity of human expression and gestures. These emojis allow users to represent themselves and others in various poses and activities.</p>
+                <p className="pt-1">Example: 🤷‍♀️ (woman shrugging) - Perfect for expressing uncertainty or a lack of knowledge about a topic in your Discord chats.</p>
 
-                <h1 className="pt-2 font-semibold text-xl"> Types of Discord Emojis </h1>
-                <p> 1. Standard Emojis: These are the default emojis available on all Discord servers, similar to those found on most messaging platforms. </p>
-                <p> 2. Custom Emojis: Unique to Discord, these are user-created emojis that can be uploaded to a server, allowing for personalized and branded expressions. </p>
-                <p> 3. Animated Emojis: These are GIF-like emojis that add movement and extra flair to conversations. </p>
+                <h2 className="pt-2 font-semibold text-lg">3. Animal & Nature: Bringing the Outdoors In</h2>
+                <p className="pt-1">Animal and nature emojis add a touch of the natural world to your digital conversations. From cute critters to majestic landscapes, these emojis help paint vivid pictures with just a single character.</p>
+                <p className="pt-1">Example: 🦋 (butterfly) - Use this emoji to symbolize transformation, beauty, or to add a splash of color to your Discord messages.</p>
 
+                <h2 className="pt-2 font-semibold text-lg">4. Food & Drink: Satisfying Digital Cravings</h2>
+                <p className="pt-1">Food and drink emojis are perfect for discussing culinary delights, planning meals, or expressing hunger. These mouth-watering icons add flavor to your Discord conversations.</p>
+                <p className="pt-1">Example: 🍕 (pizza) - Ideal for coordinating pizza night with your Discord friends or expressing your love for this popular dish.</p>
 
-                <h1 className="pt-2 font-semibold text-xl"> The Power of Custom Discord Emojis </h1>
-                <p> Custom emojis are a game-changer for Discord communities. They allow server owners and administrators to create a unique identity and culture within their space. Here&apos;s why they&apos;re so impactful: </p>
-                <p> 1. **Brand Identity**: For businesses and content creators, custom emojis can incorporate logos or mascots, reinforcing brand recognition. </p>
-                <p> 2. **Community Inside Jokes**: Custom emojis can represent shared experiences or humor within a community, fostering a sense of belonging. </p>
-                <p> 3. **Improved Engagement**: Unique and fun emojis encourage users to interact more, leading to increased activity on the server. </p>
-                <p> 4. **Rewards and Incentives**: Some servers use exclusive emojis as rewards for active members or supporters, creating a tiered system of engagement. </p>
+                <h2 className="pt-2 font-semibold text-lg">5. Travel & Places: Exploring the World</h2>
+                <p className="pt-1">Travel and places emojis allow you to share your wanderlust or describe locations without words. These icons can instantly transport your Discord conversations across the globe.</p>
+                <p className="pt-1">Example: 🗼 (Tokyo tower) - Use this emoji to discuss Japan, indicate a meetup location, or express your desire to visit Tokyo.</p>
 
+                <h2 className="pt-2 font-semibold text-lg">6. Activities: Showcasing Hobbies and Interests</h2>
+                <p className="pt-1">Activity emojis represent various hobbies, sports, and pastimes. These icons are great for organizing events or sharing your interests with your Discord community.</p>
+                <p className="pt-1">Example: 🎮 (video game) - Perfect for gamers to indicate they&apos;re playing or to organize a gaming session with Discord friends.</p>
 
+                <h2 className="pt-2 font-semibold text-lg">7. Objects: Everyday Items in Digital Form</h2>
+                <p className="pt-1">Object emojis represent common items we encounter in our daily lives. These icons can quickly convey ideas or requests without typing out long descriptions.</p>
+                <p className="pt-1">Example: 💡 (light bulb) - Use this emoji to indicate a new idea or a moment of realization in your Discord discussions.</p>
 
-                <h1 className="pt-2 font-semibold text-xl"> How to Create and Use Custom Discord Emojis </h1>
-                <p> Creating custom emojis for your Discord server is a straightforward process: </p>
-                <p> 1. Prepare Your Image: Create or select an image that&apos;s 128x128 pixels or smaller, not exceeding 256KB.</p>
-                <p> 2. Upload the Emoji: In your server settings, navigate to the &quot;Emoji&quot; tab and click &quot;Upload Emoji.&quot; </p>
-                <p> 3. Name Your Emoji: Give your new emoji a unique name that users can easily remember and type.</p>
-                <p> 4. Use Your Emoji: To use the new emoji in chat, type `:emojiname:` or select it from the emoji picker.</p>
+                <h2 className="pt-2 font-semibold text-lg">8. Symbols: Conveying Abstract Concepts</h2>
+                <p className="pt-1">Symbol emojis represent abstract ideas, mathematical concepts, or commonly used signs. These icons can add clarity and emphasis to your Discord messages.</p>
+                <p className="pt-1">Example: ❗ (exclamation mark) - Ideal for emphasizing important points or expressing urgency in your Discord conversations.</p>
 
+                <h2 className="pt-2 font-semibold text-lg">9. Flags: Celebrating Global Diversity</h2>
+                <p className="pt-1">Flag emojis represent countries, regions, and other geographic entities. These icons perfectly express national pride or indicate language preferences in international Discord servers.</p>
+                <p className="pt-1">Example: 🏴‍☠️ (pirate flag) - Use this playful emoji to set a fun tone in gaming-related Discord chats or to organize themed events.</p>
 
-                <h1 className="pt-2 font-semibold text-xl"> Best Practices for Discord Emoji Usage </h1>
-                <p> To maximize the impact of emojis in your Discord server, consider these best practices: </p>
-                <p> 1. Maintain Quality: Ensure your custom emojis are clear and easily recognizable, even at small sizes. </p>
-                <p> 2. Stay Relevant: Create emojis that align with your server&apos;s theme or purpose. </p>
-                <p> 3. Regularly Update: Keep your emoji selection fresh by adding new ones periodically and removing outdated or unused ones. </p>
-                <p> 4. Encourage Usage: Promote your custom emojis by using them in announcements or creating emoji-based events. </p>
-                <p> 5. Consider Accessibility: Remember that not all users may be able to see or understand certain emojis, so use them to enhance, not replace, clear communication. </p>
+                <h2 className="pt-2 font-semibold text-lg">Enhancing Your Discord Experience with Emojis</h2>
+                <p className="pt-1">Emojis on Discord serve multiple purposes:</p>
+                <ol className="list-decimal list-inside pl-4">
+                    <li>Emotional Expression: They help convey tone and emotion in text-based communication.</li>
+                    <li>Cultural Exchange: Emojis can bridge language barriers and facilitate understanding between users from different backgrounds.</li>
+                    <li>Community Building: Custom emojis can create a sense of belonging and shared identity within Discord servers.</li>
+                    <li>Efficient Communication: A single emoji can often replace several words, making conversations more concise and engaging.</li>
+                </ol>
 
+                <p className="pt-2">To make the most of Discord emojis:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Familiarize Yourself: Explore the emoji picker and learn the various categories.</li>
+                    <li>Context is Key: Use emojis appropriate for the conversation and the server&apos;s culture.</li>
+                    <li>Custom Emojis: Many Discord servers offer custom emojis. Learn and use these to show you&apos;re an active community member.</li>
+                    <li>Emoji Reactions: Utilize emoji reactions to quickly respond to messages without cluttering the chat.</li>
+                </ul>
 
-                <h1 className="pt-2 font-semibold text-xl"> The Impact of Emojis on Server Engagement </h1>
-                <p> Emojis do more than just add visual flair to conversations. They can significantly impact user engagement and community dynamics: </p>
-                <p> 1. Increased Interaction: Emojis make conversations more inviting and can encourage shy users to participate. </p>
-                <p> 2. Clearer Communication: Emojis can help convey tone and intent, reducing misunderstandings in text-based chats. </p>
-                <p> 3. Faster Responses: Reaction emojis allow users to quickly respond to messages without typing, increasing overall engagement. </p>
-                <p> 4. Community Building: Shared custom emojis create a sense of in-group language and culture, strengthening community bonds. </p>
-
-                <h1 className="pt-2 font-semibold text-xl"> Discord Nitro and Emoji Perks </h1>
-                <p> Discord Nitro, the platform&apos;s premium subscription service, offers additional emoji-related benefits: </p>
-                <p> 1. Animated Avatars and Emojis: Nitro users can use animated profile pictures and emojis. </p>
-                <p> 2. Global Custom Emojis: Nitro subscribers can use custom emojis from any server they&apos;re a part of, anywhere on Discord. </p>
-                <p> 3. Higher Upload Limits: Nitro boosts the file size limit for emoji uploads, allowing for higher quality custom emojis. </p>
-
-
-                <h1 className="pt-2 font-semibold text-xl"> Conclusion: Emojis as a Community-Building Tool </h1>
-                <p> Discord emojis, particularly custom ones, are more than just fun additions to your server. They&apos;re powerful tools for building community, expressing identity, and fostering engagement. By thoughtfully implementing and managing your server&apos;s emoji selection, you can create a more vibrant, expressive, and connected community. </p>
-                <p> Whether you&apos;re running a gaming server, a brand community, or a social group, mastering the art of Discord emojis can take your server to the next level. So start creating, sharing, and enjoying the wonderful world of Discord emojis today! </p>
+                <h2 className="pt-2 font-semibold text-lg">Conclusion: The Power of Visual Communication</h2>
+                <p className="pt-1">Discord emojis have revolutionized online communication, allowing users to express themselves more vividly and efficiently. From simple smileys to complex custom designs, these small icons convey emotions, ideas, and reactions.</p>
+                <p className="pt-1">As you navigate the colorful world of Discord, remember that emojis are more than just fun additions to your messages. They&apos;re a language of their own, capable of transcending cultural and linguistic barriers. So explore the vast array of Discord emojis, and let your conversations come to life with these expressive digital icons!</p>
+                <p className="pt-2">Whether coordinating a gaming session with the 🎮 emoji, sharing your travel dreams with 🗼, or simply brightening someone&apos;s day with a 😊, Discord emojis are here to make your online interactions more engaging, efficient, and enjoyable. Happy chatting!</p>
             </div>
 
         </div>
