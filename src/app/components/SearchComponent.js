@@ -395,17 +395,6 @@ const SearchComponent = () => {
 
                     ))}
 
-                    <div className=" max-h-fit max-w-7xl mx-auto my-auto mt-2 h-auto  ">
-                        <div className="text-justify  capitalize font-semibold subpixel-antialiased  text-sm ml-2 mr-3">
-
-                            <p >Are you looking to make your social media posts stand out? Want to add a touch of creativity to your online writing? Look no further! In this post, we'll explore various text styles that can help you express yourself uniquely online. From Fancy Font to Arrow Text, we've got you covered.
-                            </p>
-                            <h1 className="pt-2 text-xl ">1. Fancy Font: Add Elegance to Your Words</h1>
-
-
-
-                        </div>
-                    </div>
 
 
 
