@@ -169,7 +169,7 @@ const SearchComponent = () => {
         </div>
     );
 
-    return (
+    return (<>
         <div className="max-w-7xl m-auto p-1 min-h-screen">
             <div className="m-4 sm:mx-6 lg:mx-10">
                 <textarea
@@ -295,7 +295,96 @@ const SearchComponent = () => {
             {!isLoading && !result && searchText.trim() && (
                 <p>No results found.</p>
             )}
+
+            <div className="max-w-7xl xl:mx-auto text-left mx-4">
+                <h1 className="pt-2 font-semibold text-xl">Bold Text Generator: Transform Your Text with Style</h1>
+                <p className="pt-1">Are you looking to make your text stand out online? A bold text generator is the perfect tool to add emphasis and flair to your digital content. In this comprehensive guide, we&apos;ll explore everything you need to know about bold text, from its uses to how to create and copy-paste it effortlessly.</p>
+
+                <h2 className="pt-2 font-semibold text-lg">What is a Bold Text Generator?</h2>
+                <p className="pt-1">A bold text generator is an online tool that converts regular text into bold characters. These generators use Unicode characters to create text that appears bold across various platforms, even where traditional formatting isn&apos;t supported.</p>
+                <p className="pt-2">Example:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Regular text: Hello World</li>
+                    <li>Bold text: 𝗛𝗲𝗹𝗹𝗼 𝗪𝗼𝗿𝗹𝗱</li>
+                </ul>
+
+                <p className="pt-2">Why Use Bold Text?</p>
+                <ol className="list-decimal list-inside pl-4">
+                    <li>Enhance Readability: Bold text helps key information stand out, making it easier for readers to scan and comprehend content quickly.</li>
+                    <li>Increase Engagement: Eye-catching bold text can draw attention to important points, increasing user engagement with your content.</li>
+                    <li>Improve Aesthetics: Bold text adds visual interest to plain text, making your content more appealing and professional-looking.</li>
+                    <li>Cross-Platform Compatibility: Unicode bold text works across various social media platforms, messaging apps, and websites where traditional formatting may not be available.</li>
+                </ol>
+
+                <h2 className="pt-2 font-semibold text-lg">How to Use a Bold Text Generator</h2>
+                <p className="pt-1">Using a bold text generator is simple. Follow these steps:</p>
+
+                <p className="pt-2">Example:</p>
+                <ol className="list-decimal list-inside pl-4">
+                    <li>Find a reputable bold text generator online.</li>
+                    <li>Type or paste your text into the input field.</li>
+                    <li>Click the &quot;Generate&quot; or &quot;Convert&quot; button.</li>
+                    <li>Copy the resulting bold text.</li>
+                    <li>Paste the bold text wherever you need it.</li>
+                </ol>
+
+                <p className="pt-2">Example:</p>
+                <ol className="list-decimal list-inside pl-4">
+                    <li>Input: &quot;Bold text generator&quot;</li>
+                    <li>Output: &quot;𝗕𝗼𝗹𝗱 𝘁𝗲𝘅𝘁 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗼𝗿&quot;</li>
+                </ol>
+
+                <p className="pt-2">Bold Text Copy and Paste: Tips and Tricks</p>
+                <ol className="list-decimal list-inside pl-4">
+                    <li>Keyboard Shortcuts: Use Ctrl+C (or Cmd+C on Mac) to copy and Ctrl+V (or Cmd+V on Mac) to paste bold text quickly.</li>
+                    <li>Test Before Using: Always test your bold text in the desired platform to ensure compatibility and readability.</li>
+                    <li>Mix and Match: Combine bold text with regular text for maximum impact. Use bold sparingly to highlight key points.</li>
+                    <li>Create Templates: Save commonly used bold text phrases for easy access and reuse.</li>
+                </ol>
+
+                <p className="pt-2">Example:</p>
+                <p className="pt-1">Template: &quot;🔥 𝗛𝗼𝘁 𝗗𝗲𝗮𝗹: [Insert offer here] 🔥&quot;</p>
+                <p className="pt-1">Best Practices for Using Bold Text</p>
+                <ol className="list-decimal list-inside pl-4">
+                    <li>Use Sparingly: Overusing bold text can be overwhelming and reduce its effectiveness. Stick to highlighting only the most important information.</li>
+                    <li>Maintain Consistency: Use bold text consistently throughout your content for a cohesive look and feel.</li>
+                    <li>Consider Accessibility: Ensure that using bold text doesn&apos;t negatively impact screen reader functionality or readability for visually impaired users.</li>
+                    <li>Combine with Other Formatting: Pair bold text with italics, underlines, or different font sizes for added emphasis where appropriate.</li>
+                </ol>
+
+                <p className="pt-2">Example:</p>
+                <p className="pt-1">&quot;Join our 𝗘𝘅𝗰𝗹𝘂𝘀𝗶𝘃𝗲 𝗠𝗲𝗺𝗯𝗲𝗿𝘀𝗵𝗶𝗽 for *unlimited access* to premium content!&quot;</p>
+                <p className="pt-1">Popular Uses for Bold Text</p>
+                <ol className="list-decimal list-inside pl-4">
+                    <li>Social Media: Make your posts stand out in crowded feeds.</li>
+                    <li>Messaging Apps: Emphasize important information in chats.</li>
+                    <li>Email Marketing: Highlight key points in newsletters and promotional emails.</li>
+                    <li>Blog Posts: Draw attention to headings, subheadings, and crucial details.</li>
+                    <li>Online Profiles: Make your name or tagline more noticeable.</li>
+                </ol>
+
+                <p className="pt-2">Example:</p>
+                <p className="pt-1">Twitter bio: &quot;𝗗𝗶𝗴𝗶𝘁𝗮𝗹 𝗠𝗮𝗿𝗸𝗲𝘁𝗶𝗻𝗴 𝗘𝘅𝗽𝗲𝗿𝘁 | Helping businesses grow online | 📈 𝗗𝗮𝘁𝗮-𝗱𝗿𝗶𝘃𝗲𝗻 𝘀𝘁𝗿𝗮𝘁𝗲𝗴𝗶𝗲𝘀&quot;</p>
+                <p className="pt-1">Limitations of Bold Text Generators</p>
+                <p className="pt-1">While bold text generators are versatile tools, it&apos;s important to be aware of their limitations:</p>
+                <ol className="list-decimal list-inside pl-4">
+                    <li>Platform Restrictions: Some platforms may not support or may strip Unicode bold text.</li>
+                    <li>SEO Considerations: Search engines may not recognize Unicode bold text as emphasized content.</li>
+                    <li>Accessibility Issues: Screen readers may have difficulty interpreting Unicode bold characters correctly.</li>
+                    <li>Font Compatibility: Not all fonts support Unicode bold characters, potentially affecting display.</li>
+                </ol>
+
+                <p className="pt-2">Example:</p>
+                <p className="pt-1">Unicode bold text: 𝗛𝗲𝗹𝗹𝗼 𝗪𝗼𝗿𝗹𝗱</p>
+                <p className="pt-1">How a screen reader might interpret it: &quot;Mathematical Bold Capital H Mathematical Bold Small E Mathematical Bold Small L Mathematical Bold Small L Mathematical Bold Small O Mathematical Bold Capital W Mathematical Bold Small O Mathematical Bold Small R Mathematical Bold Small L Mathematical Bold Small D.&quot;</p>
+
+                <p className="pt-2">Conclusion</p>
+                <p className="pt-2">A bold text generator is a powerful tool for enhancing your digital communication. By understanding its benefits, best practices, and limitations, you can effectively use bold text to make your content more engaging and impactful. Whether you&apos;re crafting social media posts, sending important messages, or designing eye-catching marketing materials, incorporating bold text can help your words stand out in the digital landscape.</p>
+                <p className="pt-2">Remember to use bold text judiciously and always consider your audience and platform when applying this stylistic enhancement. With these tips and tricks at your disposal, you&apos;re well-equipped to leverage the power of bold text in your online communications.</p>
+                <p className="pt-2">Start experimenting with a bold text generator today and watch your content transform from ordinary to extraordinary!</p>
+            </div>
         </div>
+    </>
     );
 };
 
