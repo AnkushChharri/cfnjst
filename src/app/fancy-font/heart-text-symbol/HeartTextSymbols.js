@@ -134,7 +134,7 @@ const HeartTextSymbolConverter = () => {
         </div>
     ), [convertedNames, copiedStyle, handleCopy, isClient]);
 
-    return (
+    return (<>
         <div className="max-w-7xl mx-auto p-4">
             <textarea
                 value={name}
@@ -226,7 +226,62 @@ const HeartTextSymbolConverter = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {filteredStyles.map(renderStyleCard)}
             </div>
+            <div className="max-w-7xl xl:mx-auto text-left mx-4">
+                <h1 className="pt-2 font-semibold text-xl">Heart Text Symbol: Love at Your Fingertips</h1>
+                <p className="pt-1">In the digital age, expressing emotions through text has become an art form. Among the myriad of symbols available, the heart text symbol stands out as a universal icon of love, affection, and care. This guide will explore the heart shape symbol text, how to use it, and provide easy copy-and-paste options for various platforms.</p>
+
+                <h2 className="pt-2 font-semibold text-lg">What is a Heart Text Symbol?</h2>
+                <p className="pt-1">The heart text symbol, often represented as ♥ or &lt;3, is a typographic character used to convey love, affection, or appreciation in digital communication. It&apos;s a versatile symbol that can enhance your messages, social media posts, and even website content.</p>
+                <p className="pt-2">Example: &quot;I ♥ New York&quot; is a famous slogan that effectively uses the heart text symbol.</p>
+                <p className="pt-2">Heart Shape Symbol Text: Variations and Uses</p>
+                <p className="pt-1">Heart text symbols come in various forms, each with its unique charm and application. Here are some popular variations:</p>
+                <p className="pt-2">1. Classic Heart: ♥</p>
+                <p className="pt-1">Example: &quot;Sending ♥ to all my friends!&quot;</p>
+                <p className="pt-2">2. Less-Than Three: &lt;3</p>
+                <p className="pt-1">Example: &quot;Thanks for your support &lt;3&quot;</p>
+                <p className="pt-2">3. Hollow Heart: ♡</p>
+                <p className="pt-1">Example: &quot;You&apos;re the best ♡&quot;</p>
+                <p className="pt-2">4. Heavy Black Heart: ❤</p>
+                <p className="pt-1">Example: &quot;Family ❤ Forever&quot;</p>
+                <p className="pt-2">5. Two Hearts: 💕</p>
+                <p className="pt-1">Example: &quot;Me and you 💕&quot;</p>
+                <p className="pt-2">6. Sparkling Heart: 💖</p>
+                <p className="pt-1">Example: &quot;Feeling blessed 💖&quot;</p>
+
+                <h2 className="pt-2 font-semibold text-lg">These variations allow you to express different shades of affection and add visual interest to your text.</h2>
+                <p className="pt-1">How to Use Heart Text Symbols</p>
+                <p className="pt-2">Incorporating heart text symbols into your digital communication is easy and can significantly enhance your message&apos;s emotional impact. Here are some tips:</p>
+                <p className="pt-2">1. Social Media Posts: Use heart symbols to emphasize positive emotions in your updates.</p>
+                <p className="pt-1">Example: &quot;Just got my dream job! ❤️❤️❤️&quot;</p>
+                <p className="pt-2">2. Text Messages: Add a personal touch to your messages with a heart symbol.</p>
+                <p className="pt-1">Example: &quot;Goodnight, sleep tight ♥&quot;</p>
+                <p className="pt-2">3. Email Signatures: Include a heart symbol in your email signature for a friendly touch.</p>
+                <p className="pt-1">Example: &quot;Best regards, Jane ♡&quot;</p>
+                <p className="pt-2">4. Blog Posts: Use heart symbols to highlight important points or express enthusiasm.</p>
+                <p className="pt-1">Example: &quot;5 Reasons Why I ♥ Blogging&quot;</p>
+                <p className="pt-2">5. Comments and Reactions: Respond to content with heart symbols to show appreciation.</p>
+                <p className="pt-1">Example: &quot;Great article! ♥&quot;</p>
+
+                <h2 className="pt-2 font-semibold text-lg">Enhancing Your Online Presence with Heart Text Symbols</h2>
+                <p className="pt-1">Incorporating heart text symbols into your online content can have several benefits:</p>
+                <p className="pt-2">1. Improved Engagement: Heart symbols can make your content more visually appealing and engaging.</p>
+                <p className="pt-1">Example: &quot;Double tap if you ♥ this post!&quot;</p>
+                <p className="pt-2">2. Emotional Connection: They help convey emotions more effectively in text-based communication.</p>
+                <p className="pt-1">Example: &quot;We&apos;re thrilled to announce our new product line ♥&quot;</p>
+                <p className="pt-2">3. Brand Personality: Using heart symbols can contribute to a friendly, approachable brand image.</p>
+                <p className="pt-1">Example: &quot;At XYZ Company, we ♥ our customers&quot;</p>
+                <p className="pt-2">4. Concise Expression: Heart symbols can replace words, making your messages more concise.</p>
+                <p className="pt-2">Example: &quot;♥ this idea!&quot; instead of &quot;I love this idea!&quot;</p>
+                <p className="pt-1">5. Cross-Cultural Communication: Heart symbols are universally understood, transcending language barriers.</p>
+                <p className="pt-2">Example: A simple &quot;♥&quot; as a response can be understood globally.</p>
+
+                <h2 className="pt-2 font-semibold text-lg">Conclusion</h2>
+                <p className="pt-2">Heart text symbols are powerful tools for digital communication, allowing us to infuse our messages with emotion and personality. Whether you&apos;re crafting a social media post, sending a loving text, or adding a friendly touch to your website, these symbols can enhance your message and connect with your audience on a more personal level.</p>
+                <p className="pt-2">Remember to use heart text symbols thoughtfully and in moderation. When used effectively, they can make your content more engaging, expressive, and memorable. So go ahead, spread the love, and let your heart speak through your text! ♥</p>
+            </div>
+
         </div>
+    </>
     );
 };
 

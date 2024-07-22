@@ -166,7 +166,7 @@ const SearchComponent = () => {
         </div>
     );
 
-    return (
+    return (<>
         <div className="max-w-7xl m-auto p-1 min-h-screen">
             <div className="m-4 sm:mx-6 lg:mx-10">
                 <textarea
@@ -284,7 +284,81 @@ const SearchComponent = () => {
             {!isLoading && !result && searchText.trim() && (
                 <p>No results found.</p>
             )}
+
+            <div className="max-w-7xl xl:mx-auto text-left mx-4">
+                <p className="pt-1">Are you looking to add a touch of elegance to your text? The italic text might be just what you need. In this guide, we&apos;ll explore everything you need to know about italic text, from its origins to practical applications. We&apos;ll also introduce you to some handy tools like italic text generators and show you how to use italic text in various contexts, including LaTeX documents and social media platforms.</p>
+
+                <h1 className="pt-2 font-semibold text-xl">What is Italic Text?</h1>
+                <p className="pt-1">Italic text is a stylized font that slants slightly to the right. It&apos;s often used to emphasize words or phrases, set apart titles of works, or indicate foreign words within a text.</p>
+                <p className="pt-2">Example:</p>
+
+                <ol className="list-disc list-inside pl-4">
+                    <li>Regular text: The cat sat on the mat.</li>
+                    <li>Italic text: <i>The cat sat on the mat.</i></li>
+                </ol>
+
+                <h2 className="pt-2 font-semibold text-lg">The History of Italic Text</h2>
+                <p className="pt-2">Italic type was first developed in Italy (hence the name) during the Renaissance. It was originally designed to mimic handwriting and save space in printed books.</p>
+                <p className="pt-2">Example:</p>
+
+                <ol className="list-disc list-inside pl-4">
+                    <li>Early italic typeface: <i>The Art of War</i> by Niccolò Machiavelli (1532)</li>
+                </ol>
+
+                <h2 className="pt-2 font-semibold text-lg">How to Use Italic Text Effectively</h2>
+                <p className="pt-1"><strong>Emphasis:</strong> Use italic text to stress important words or phrases.</p>
+                <p className="pt-1">Example: I <i>really</i> need you to listen to this.</p>
+                <p className="pt-2"><strong>Titles:</strong> Italicize titles of longer works like books, movies, or albums.</p>
+                <p className="pt-2">Example: Have you read <i>To Kill a Mockingbird</i>?</p>
+                <p className="pt-1"><strong>Foreign words:</strong> Use italics for non-English words in English text.</p>
+                <p className="pt-2">Example: She had a certain <i>je ne sais quoi</i>.</p>
+                <p className="pt-1"><strong>Thoughts:</strong> Represent internal monologue or thoughts in italics.</p>
+                <p className="pt-2">Example: <i>I wonder what&apos;s for dinner</i>, he thought.</p>
+
+                <h2 className="pt-2 font-semibold text-lg">Italic Text Generator: Simplifying Text Styling</h2>
+                <p className="pt-1">An italic text generator is a tool that converts regular text into italic format. These generators are particularly useful for platforms that don&apos;t support native text formatting.</p>
+                <p className="pt-1">Example:</p>
+
+                <ol className="list-disc list-inside pl-4">
+                    <li>Input: Hello, World!</li>
+                    <li>Output: <i>Hello, World!</i></li>
+                </ol>
+
+                <p className="pt-1">To use an italic text generator:</p>
+
+                <ol className="list-decimal list-inside pl-4">
+                    <li>Find a reliable online italic text generator.</li>
+                    <li>Type or paste your text into the input field.</li>
+                    <li>Click the &quot;Generate&quot; or &quot;Convert&quot; button.</li>
+                    <li>Copy the resulting italic text and paste it where needed.</li>
+                </ol>
+
+                <h2 className="pt-2 font-semibold text-lg">Glitch Text Copy and Paste: Adding a Unique Flair</h2>
+                <p className="pt-2">While not strictly related to italic text, glitch text is another way to stylize your writing. Glitch text generators create text with a distorted, &quot;glitchy&quot; appearance.</p>
+                <p className="pt-2">Example:</p>
+
+                <ol className="list-disc list-inside pl-4">
+                    <li>Regular text: Hello, World!</li>
+                    <li>Glitch text: H̷̪̋ȅ̶̩l̶̰̓l̷͇̐o̷̦͋,̶̱̒ ̶͉̒W̷̺̔ỏ̷͜r̶̖̎l̷̞̓d̷͕̋!̶̣̒</li>
+                </ol>
+
+                <p className="pt-2">To use glitch text:</p>
+
+                <ol className="list-decimal list-inside pl-4">
+                    <li>Go to FontsCopy.com and find the glitch text generator.</li>
+                    <li>Enter your text.</li>
+                    <li>Generate the glitched version.</li>
+                    <li>Copy and paste the result where desired.</li>
+                </ol>
+
+                <h2 className="pt-2 font-semibold text-lg">Conclusion: The Versatility of Italic Text</h2>
+
+                <p className="pt-2">Italic text is a powerful tool in typography, offering ways to emphasize, differentiate, and add style to your writing. Whether you&apos;re using an italic text generator for social media, implementing LaTeX italic text in academic papers, or simply adding emphasis to an important point, mastering the use of italic text can significantly enhance your written communication.</p>
+                <p className="pt-2">Remember, the key to the effective use of italic text is moderation. Overuse can diminish its impact and make your text harder to read. Use it thoughtfully to draw attention where it&apos;s most needed, and your writing will benefit from this classic typographic technique.</p>
+                <p className="pt-2">By incorporating these tips and tools into your writing repertoire, you&apos;ll be well-equipped to use italic text effectively across various platforms and contexts. Happy writing!</p>
+            </div>
         </div>
+    </>
     );
 };
 

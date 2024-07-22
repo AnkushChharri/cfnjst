@@ -145,7 +145,7 @@ const UnicodeNameConverter = () => {
         </div>
     ), [convertedNames, copiedStyle, handleCopy, isClient]);
 
-    return (
+    return (<>
         <div className="max-w-7xl mx-auto p-4">
             <textarea
                 value={name}
@@ -235,7 +235,87 @@ const UnicodeNameConverter = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {filteredStyles.map(renderStyleCard)}
             </div>
+
+            <div className="max-w-7xl xl:mx-auto text-left mx-4">
+                <h1 className="pt-3 font-semibold text-xl">Small Text: The Ultimate Guide to Small Text Generator and Copy-Paste Tools</h1>
+                <p className="pt-1">Are you looking to add a unique flair to your online communication? The small text might be just what you need. In this comprehensive guide, we&apos;ll explore everything you need to know about small text, including how to generate it and use it effectively across various platforms.</p>
+
+                <h1 className="pt-2 font-semibold text-xl">What is a Small Text?</h1>
+                <p className="pt-1">Small text, also known as tiny text or superscript text, is a stylized form of writing that uses smaller characters than standard text. It&apos;s created using Unicode characters and can be used on most digital platforms, including social media, messaging apps, and websites.</p>
+                <p className="pt-2">Example: ᴛʜɪs ɪs ᴀɴ ᴇxᴀᴍᴘʟᴇ ᴏғ sᴍᴀʟʟ ᴛᴇxᴛ</p>
+
+                <h1 className="pt-2 font-semibold text-xl">Small Text Generator: How It Works</h1>
+                <p className="pt-1">Small text generators are online tools that convert regular text into small Unicode characters. These generators use a mapping of standard letters to their corresponding small Unicode equivalents.</p>
+                <p className="pt-1">How to use a small text generator:</p>
+
+                <ol className="list-decimal list-inside pl-4">
+                    <li>Visit a small text generator website</li>
+                    <li>Type or paste your text into the input field</li>
+                    <li>Click the &quot;Generate&quot; or &quot;Convert&quot; button</li>
+                    <li>Copy the resulting small text</li>
+                </ol>
+
+                <p className="pt-2">Example: </p>
+                <p className="pt-1">Input: &quot;Hello World&quot;</p>
+                <p className="pt-1">Output: ʜᴇʟʟᴏ ᴡᴏʀʟᴅ</p>
+
+                <h2 className="pt-2 font-semibold text-lg">Benefits of Using Small Text</h2>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Attention-grabbing: Small text stands out in a sea of regular-sized text, making your messages more noticeable.</li>
+                    <li>Space-saving: In platforms with character limits, small text can help you fit more content.</li>
+                    <li>Aesthetic appeal: It can add a unique visual element to your online presence.</li>
+                    <li>Emphasis: Use small text to highlight certain parts of your message without resorting to all caps.</li>
+                </ul>
+                <p className="pt-1">Example: &quot;Don&apos;t forget to ᴄʜᴇᴄᴋ ᴏᴜᴛ ᴏᴜʀ ɴᴇᴡ ᴘʀᴏᴅᴜᴄᴛ ʟɪɴᴇ!&quot; </p>
+
+                <h2 className="pt-2 font-semibold text-lg">Small Text Copy and Paste: Tips and Tricks</h2>
+                <p className="pt-1">Copying and pasting small text is straightforward, but here are some tips to ensure smooth usage: </p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Use keyboard shortcuts (Ctrl+C to copy, Ctrl+V to paste) for efficiency.</li>
+                    <li>Test the pasted text to ensure it displays correctly on your platform.</li>
+                    <li>Be aware that some platforms may not support all Unicode characters.</li>
+                </ul>
+                <p className="pt-1">Example: Copy this small text → ʏᴏᴜʀ ᴛᴇxᴛ ʜᴇʀᴇ ← and paste it where you need it. </p>
+
+                <h2 className="pt-2 font-semibold text-lg">Popular Uses for Small Text</h2>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Social media bios: Make your profile stand out with a unique small text description.</li>
+                    <li>Messaging apps: Add flair to your conversations with friends.</li>
+                    <li>Email signatures: Create a memorable sign-off for your professional emails.</li>
+                    <li>Website headings: Use small text for subheadings or emphasis in web content.</li>
+                </ul>
+                <p className="pt-2">Example social media bio:</p>
+                <p className="pt-1">ᴘʜᴏᴛᴏɢʀᴀᴘʜᴇʀ 📸 | ᴛʀᴀᴠᴇʟ ᴇɴᴛʜᴜsɪᴀsᴛ ✈️ | ᴄᴏғғᴇᴇ ʟᴏᴠᴇʀ ☕</p>
+
+                <h2 className="pt-2 font-semibold text-lg">Limitations and Considerations</h2>
+                <p className="pt-1">While small text can be fun and useful, it&apos;s important to consider:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Accessibility: Small text may be difficult for some users to read.</li>
+                    <li>Platform compatibility: Not all platforms support Unicode characters equally.</li>
+                    <li>Overuse: Too much small text can be overwhelming and hard to read.</li>
+                </ul>
+                <p className="pt-2">Example of overuse (avoid this):</p>
+                <p className="pt-2">ᴛʜɪs ᴇɴᴛɪʀᴇ ᴘᴀʀᴀɢʀᴀᴘʜ ɪs ɪɴ sᴍᴀʟʟ ᴛᴇxᴛ, ᴍᴀᴋɪɴɢ ɪᴛ ᴅɪғғɪᴄᴜʟᴛ ᴛᴏ ʀᴇᴀᴅ ᴀɴᴅ ᴘᴏᴛᴇɴᴛɪᴀʟʟʏ ᴀɴɴᴏʏɪɴɢ ғᴏʀ sᴏᴍᴇ ʀᴇᴀᴅᴇʀs.</p>
+
+                <h2 className="pt-2 font-semibold text-lg">Best Practices for Using Small Text</h2>
+                <p className="pt-1">To make the most of small text while ensuring readability and effectiveness:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Use it sparingly for emphasis or aesthetic purposes.</li>
+                    <li>Combine small text with regular text for contrast.</li>
+                    <li>Ensure the content is still legible when converted to small text.</li>
+                    <li>Consider your audience and platform when deciding to use small text.</li>
+                </ul>
+                <p className="pt-2">Example of good usage:</p>
+                <p className="pt-2">&quot;Join us for our HUGE summer sale! ˢᵃᵛᵉ ᵘᵖ ᵗᵒ ⁵⁰% on selected items!&quot;</p>
+
+                <h2 className="pt-2 font-semibold text-lg">Conclusion</h2>
+                <p className="pt-1">Small text can be a powerful tool for adding uniqueness to your online communication. By understanding how to generate and use it effectively, you can enhance your digital presence across various platforms. Remember to use it judiciously and always prioritize readability and accessibility in your content.</p>
+                <p className="pt-2">Whether you&apos;re looking to stand out on social media, add flair to your website, or simply have fun with your friends in messaging apps, the small text offers a world of creative possibilities. Start experimenting with small text generators and copy-paste techniques today to discover how this tiny text can make a big impact on your online interactions.</p>
+            </div>
+
+
         </div>
+    </>
     );
 };
 
