@@ -156,7 +156,7 @@ const UnicodeNameConverter = () => {
         </div>
     ), [convertedNames, copiedStyle, handleCopy, isClient]);
 
-    return (
+    return (<>
         <div className="max-w-7xl m-auto p-1">
             <textarea
                 value={name}
@@ -246,7 +246,108 @@ const UnicodeNameConverter = () => {
             <div className="space-y-4 mt-4">
                 {filteredStyles.map(renderStyleCard)}
             </div>
+            <div className="max-w-7xl xl:mx-auto text-left mx-4">
+                <h1 className="pt-2 font-semibold text-xl">Cool Text: Elevate Your Digital Expression with Stylish Fonts and Symbols</h1>
+                <p className="pt-1">In today&apos;s digital landscape, standing out is more important than ever. Whether you&apos;re crafting a social media post, designing a logo, or just wanting to add some flair to your online communication, cool text can be your secret weapon. This comprehensive guide will explore the world of cool text, from generators to fonts and symbols, helping you elevate your digital expression to new heights.</p>
+
+                <h2 className="pt-2 font-semibold text-lg">1. Cool Text: The Art of Stylish Digital Writing</h2>
+                <p className="pt-1">Cool text refers to visually appealing and unique ways of presenting text, often using special fonts, characters, or styling techniques. It&apos;s a powerful tool for catching attention and expressing personality in digital communication.</p>
+                <p className="pt-2">Example:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Standard text: Hello World</li>
+                    <li>Cool text: 𝓗𝓮𝓵𝓵𝓸 𝓦𝓸𝓻𝓵𝓭</li>
+                </ul>
+
+                <p className="pt-2">Benefits of using cool text include:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Grabbing attention in crowded digital spaces</li>
+                    <li>Expressing creativity and personality</li>
+                    <li>Enhancing brand recognition</li>
+                    <li>Making messages more memorable</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">2. Cool Text Generator: Your Gateway to Stylish Text</h2>
+                <p className="pt-1">A cool text generator is an online tool that transforms plain text into stylized versions using various fonts, symbols, or effects. These generators are user-friendly and require no design skills to create eye-catching text.</p>
+
+                <p className="pt-2">Example:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Input: Cool Text</li>
+                    <li>Output options:</li>
+                    <li>𝒞𝑜𝑜𝓁 𝒯𝑒𝓍𝓉 (Script style)</li>
+                    <li>𝕮𝖔𝖔𝖑 𝕿𝖊𝖝𝖙 (Gothic style)</li>
+                    <li>Cᴏᴏʟ Tᴇxᴛ (Small caps style)</li>
+                </ul>
+
+                <p className="pt-2">Popular uses for cool text generators:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Creating unique social media bios</li>
+                    <li>Designing eye-catching headers for blogs or websites</li>
+                    <li>Crafting attention-grabbing titles for videos or presentations</li>
+                    <li>Adding flair to digital signatures in emails</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">3. Cool Text Fonts: Typographic Marvels</h2>
+                <p className="pt-1">Cool text fonts are specially designed typefaces that add visual interest and personality to your text. These can range from elegant scripts to bold, futuristic designs.</p>
+
+                <p className="pt-2">Examples:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>𝔊𝔬𝔱𝔥𝔦𝔠 𝔉𝔬𝔫𝔱</li>
+                    <li>𝓢𝓬𝓻𝓲𝓹𝓽 𝓕𝓸𝓷𝓽</li>
+                    <li>𝕭𝖔𝖑𝖉 𝕱𝖔𝖓𝖙</li>
+                </ul>
+
+                <p className="pt-2">Cool text fonts can be used for:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Creating unique logos</li>
+                    <li>Designing merchandise</li>
+                    <li>Crafting eye-catching social media graphics</li>
+                    <li>Adding personality to digital art projects</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">4. Cool Text Symbol: Beyond Letters and Numbers</h2>
+                <p className="pt-1">Cool text symbols are special characters that can be used alongside or instead of regular text to create visual interest or convey meaning more efficiently.</p>
+
+                <p className="pt-2">Examples:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>★ (Star symbol)</li>
+                    <li>♪ (Musical note symbol)</li>
+                    <li>☺ (Smiley face symbol)</li>
+                </ul>
+
+                <p className="pt-2">Creative uses for cool text symbols:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Adding flair to usernames or Gamertags</li>
+                    <li>Creating unique bullet points in lists</li>
+                    <li>Enhancing emotional expression in messages</li>
+                    <li>Designing minimalist logos or icons</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">5. Cool Texting Symbols: Enhancing Mobile Communication</h2>
+                <p className="pt-1">Cool texting symbols are combinations of characters used primarily in mobile and instant messaging to convey emotions, actions, or objects. They&apos;re the precursors to modern emojis and are still widely used for their simplicity and compatibility.</p>
+
+                <p className="pt-2">Example:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>¯\_(ツ)_/¯ (Shrug)</li>
+                    <li>(╯°□°）╯︵ ┻━┻ (Table flip)</li>
+                    <li>&lt;3 (Heart)</li>
+                </ul>
+
+                <p className="pt-2">Cool texting symbols are great for:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Adding emotion to text messages</li>
+                    <li>Creating a personal texting style</li>
+                    <li>Conveying complex ideas quickly</li>
+                    <li>Adding humor to digital conversations</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">Conclusion</h2>
+                <p className="pt-2">Cool text is more than just a way to make your digital content look interesting – it&apos;s a powerful tool for expression, branding, and engagement. From cool text generators that transform your words with a click to unique fonts that give your brand a distinct voice to symbols that convey meaning at a glance, the world of cool text offers endless possibilities for creativity and communication.</p>
+                <p className="pt-2">Remember, the key to effectively using cool text lies in balance and appropriateness. While it can greatly enhance your digital presence, overuse can lead to confusion or appear unprofessional in certain contexts. Consider your audience, platform, and message when deciding how and where to incorporate cool text.</p>
+                <p className="pt-2">As you experiment with different cool text styles, fonts, and symbols, you&apos;ll develop a sense of what works best in various situations. This skill can set you apart in the digital landscape, helping your messages stand out and be remembered.</p>
+                <p>Whether you&apos;re a social media enthusiast, a digital marketer, a blogger, or just someone who loves to express themselves creatively online, mastering the art of cool text can open up new avenues for connection and expression in the digital world. So go ahead, dive into the world of cool text, and watch as your digital communication transforms from ordinary to extraordinary!</p>
+            </div>
         </div>
+    </>
     );
 };
 
