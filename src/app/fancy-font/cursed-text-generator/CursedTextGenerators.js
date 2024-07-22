@@ -120,7 +120,7 @@ const UnicodeNameConverter = () => {
         </div>
     ), [convertedNames, copiedStyle, handleCopy, isClient]);
 
-    return (
+    return (<>
         <div className="max-w-7xl m-auto p-1">
             <textarea
                 value={name}
@@ -208,7 +208,71 @@ const UnicodeNameConverter = () => {
             <div className="space-y-4 mt-4">
                 {filteredStyles.map(renderStyleCard)}
             </div>
+            <div className="max-w-7xl xl:mx-auto text-left mx-4">
+                <h1 className="pt-2 font-semibold text-xl">Cursed Text: Unleashing Digital Chaos with Eerie Typography</h1>
+                <p className="pt-1">In the vast landscape of digital communication, where emojis and GIFs reign supreme, there&apos;s a darker, more mysterious form of expression lurking in the shadows: cursed text. This peculiar typographic style has gained popularity among internet users looking to add an unsettling edge to their messages or create an air of digital mystique. In this comprehensive guide, we&apos;ll delve into the world of cursed text, exploring its origins, applications, and the tools you can use to create your eerie messages.</p>
+
+                <h2 className="pt-2 font-semibold text-lg">1. Cursed Text: The Art of Digital Distortion</h2>
+                <p className="pt-1">Cursed text, also known as glitch text or logo text, is a form of stylized text that appears distorted, glitchy, or &quot;cursed.&quot; It&apos;s created by adding multiple combining Unicode characters to regular text, resulting in a visually chaotic and often unsettling appearance.</p>
+                <p className="pt-2">Example:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Normal text: Hello World</li>
+                    <li>Cursed text: H̸̢̪̯̱̰̎̇̽̂̊ę̷̛̠̟̰̄̆̈́͝l̶̰͚̱̈́̒͒̕͝l̷̨̮̭̙̣̅̀̊͘o̶̢͚̞̞̿̈́̎͜͝ ̶̡̣̼̟̈́̎̍̕͜W̷̺͕̣̗̎̇̊̕͜o̵̺͚̼̝͆̓̈́̕͜r̵̡̻̺̻̄̓̈́̕͜l̵͚̻̺̻̆̐̽̕͜d̵̡͓̺̻̆̐̽̕͜</li>
+                </ul>
+
+                <p className="pt-2">Uses of cursed text include:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Creating an unsettling atmosphere in digital art</li>
+                    <li>Adding a touch of horror to social media posts</li>
+                    <li>Designing unique and attention-grabbing usernames</li>
+                    <li>Crafting eerie memes and internet jokes</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">2. Cursed Text Generator: Crafting Digital Nightmares</h2>
+                <p className="pt-1">A cursed text generator is an online tool that allows users to easily create cursed text by inputting normal text and applying various levels of &quot;cursedness&quot; or distortion.</p>
+
+                <p className="pt-2">Example:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Input: Beware the curse</li>
+                    <li>Output options:</li>
+                    <li>B̵̖̽e̷̲͐w̶̹̔a̶͚̓r̶͎̈́e̶̟͝ ̶̱̒t̵͖̆h̷͉̆e̷͉̎ ̵͖́c̷̯̈́u̷͚͝r̶̖̂s̷̩͑e̷̗͝ (Mildly cursed)</li>
+                </ul>
+
+                <p className="pt-2">Popular uses for cursed text generators:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Creating spooky social media posts for Halloween</li>
+                    <li>Designing creepy aesthetics for digital art projects</li>
+                    <li>Adding an element of mystery to online game usernames</li>
+                    <li>Crafting unsettling messages for horror-themed content</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">3. Cursed Text Copy and Paste: Spreading the Digital Hex</h2>
+                <p className="pt-1">Cursed text copy and paste refers to the practice of sharing pre-generated cursed text across various digital platforms. This method allows users to quickly and easily incorporate cursed text into their online communications without using a generator themselves.</p>
+
+                <p className="pt-2">Examples:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Ẁ̷̡͔̟̦̤̩̪̼͎͔̰̹̠̻̈́̐̇̔̈́̈́̇̒̚͝h̷̨̦̖͍̮̟͙̣̻̭̓͑̅̋̃̿̃̾̅̕͘͜͠͝ͅa̵̯͍̙̠͐͒̒͗̑̃̇̈̒̈́̑̕t̶̢̟̻̲̼͓̦̟̹̳̰̣̏̈́̌̈́̌͜ ̶̡̻͉̤̗̜̜̹͕̤̘̺̬̑̓̂̄͋͊̈́̉̔̚h̵̡̨̛̥͔̞̗̰̘̟̝̦̮̙̐͒͑͗̒̒̌͐̕̕͠a̶̡̨̰̘̯̠̙̫̯̪̐̃̋̋̀̊̓̋̐̌̄̕͝v̷̙̗͍̣̙̤̱̣̝̥̣͚͆̀̆́́̈́̊̿̽̈́̚̚͜͝e̶̛͚̯̠̥̝̼̗̪̗͚̋̓̓̓̐̈́̊ ̶̱̩̤̰͔̟̬̖̊̽͜y̶̢̛̗̗͉̖̤̪̖̑̏̿̋͌̃̈́̔̎͂̚͠ͅo̶̡̖͖̬͚̻̻̓͗̏̓́̋͋̾̓̒̓̚͘͝ư̶̺̤̺̜̼̦̭̒̑̓̊̈́̀̂͂̿̇̂̆ ̷̯͎̫̰̭̤͚̜̞̬͖̅̄̆̈́̒̄̚͝d̶̢̛̥̺̰̣̠͍͖͗̎̽̇͒̈́̒̌͜͝ǫ̵̦͙̲̗̱͖͔̮̣̞̜̿́͗̿̑́̃̿̑̋͛̄͗ͅn̷̢̧̦̜͚͎̜̯̼̳̙̤̝̿̈́̈̀̀̏̐̚͝͝͠e̸̛̙͐̀̄̾̒̍̿̈́̈́̈́̕͝?̸̛̟̠͙̦̼̞̯̞̆̓̾̍̊̈́̈͂̕͝͠</li>
+                </ul>
+
+                <p className="pt-2">Benefits of copy-paste cursed text:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Quick access to pre-made cursed text</li>
+                    <li>Consistency in style across multiple platforms</li>
+                    <li>Ability to use cursed text on platforms that don&apos;t support text generators</li>
+                    <li>Sharing specific cursed phrases or messages within communities</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">4. Cursed Text Gen: The Evolution of Eerie Typography</h2>
+                <p className="pt-1">Cursed text gen, short for generation, refers to the broader concept of creating and using cursed text across various digital mediums. It encompasses not just the act of generating cursed text but also the culture and creativity surrounding its use.</p>
+
+                <p className="pt-2">Examples:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Normal: The quick brown fox jumps over the lazy dog.</li>
+                    <li>Cursed gen: T̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕h̸̨̧̛͕͚̣̦̫̰̎̅̈̑̈́̈́̕͜͝ę̷͕̲̟̱̫̥̘̋̑̈́̒̈́̕͝͝ͅ ̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕q̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ư̷̡͕͚̣̦̫̰̎̅̈̑̈́̈́̕͜͝ī̷̛̮͎̖̦̗̳̱̯̙̩̊̈́̒̈́̕c̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕k̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ ̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕b̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕r̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ơ̷̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕w̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕n̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ ̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕f̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ơ̷̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕x̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ ̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕j̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ư̷̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕m̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕p̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕s̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ ̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ơ̷̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕v̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ē̷̛̮͎̖̦̗̳̱̯̙̩̊̈́̒̈́̕r̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ ̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕t̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ḫ̷̛͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ē̷̛̮͎̖̦̗̳̱̯̙̩̊̈́̒̈́̕ ̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕l̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ā̷̛̮͎̖̦̗̳̱̯̙̩̊̈́̒̈́̕z̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ȳ̷̛̮͎̖̦̗̳̱̯̙̩̊̈́̒̈́̕ ̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕d̷̛̮͎̖̦̗̳̱̯̙̩̄̊̈́̒̈́̕ơ̷̮͎̖̦̗̳̱̯̙̩̄̊</li>
+                </ul>
+            </div>
         </div>
+    </>
     );
 };
 
