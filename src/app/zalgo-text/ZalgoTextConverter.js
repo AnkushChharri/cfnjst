@@ -267,7 +267,7 @@ const ZalgoTextConverter = () => {
                 <h2 className="pt-2 font-semibold text-lg">Conclusion: Embracing the Chaos of Zalgo Text</h2>
                 <p className="pt-1">Zalgo&apos;s text is a testament to internet culture&apos;s creativity and playfulness. Whether you want to add a touch of digital eldritch horror to your online presence or experiment with text manipulation, Zalgo text offers a unique way to express yourself digitally.</p>
                 <p className="pt-1">Remember, moderation and context are key to effectively using Zalgo text. By understanding its origins, mechanics, and potential applications, you can harness the power of Zalgo text to enhance your digital communication and creative projects.</p>
-                <p className="pt-1 pb-2">So, the next time you want to add a bit of controlled chaos to your text, fire up a Zalgo text generator and let your imagination run wild. Remember, with great power comes great responsibility – use your newfound Zalgo wisdom wisely!</p>
+                <p className="pt-1">So, the next time you want to add a bit of controlled chaos to your text, fire up a Zalgo text generator and let your imagination run wild. Remember, with great power comes great responsibility – use your newfound Zalgo wisdom wisely!</p>
             </div>
 
 
