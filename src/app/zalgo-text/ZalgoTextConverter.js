@@ -112,7 +112,7 @@ const ZalgoTextConverter = () => {
         textareaRef.current?.focus();
     }, []);
 
-    return (
+    return (<>
         <div className="max-w-7xl m-auto p-1">
             <div className="flex mb-4">
                 <textarea
@@ -186,7 +186,93 @@ const ZalgoTextConverter = () => {
             {copiedStyle && (
                 <div className="mt-4 text-green-600 text-center">Copied: {copiedStyle} style</div>
             )}
+            <div className="max-w-7xl xl:mx-auto text-left mx-4">
+                <h1 className="pt-2 font-semibold text-xl">Zalgo Text: Unleashing Digital Chaos in Typography</h1>
+                <p className="pt-1">In the ever-evolving landscape of internet culture, Zalgo text stands out as a unique and intriguing phenomenon. This peculiar form of text manipulation has captured the imagination of online communities, sparking creativity and adding a touch of digital mystique to everyday communication. Let&apos;s dive into the world of Zalgo text and explore its origins, applications, and how you can create your own using a Zalgo text generator.</p>
+
+                <h2 className="pt-2 font-semibold text-lg">What is Zalgo Text?</h2>
+                <p className="pt-1">Zalgo text, also known as &quot;glitch text&quot; or &quot;cursed text,&quot; is a text that appears glitchy or corrupted. It&apos;s created by combining regular characters with multiple combining Unicode characters, resulting in text that seems to &quot;bleed&quot; upwards and downwards.</p>
+                <p className="pt-2">Example:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Normal text: &quot;Hello World&quot;</li>
+                    <li>Zalgo text: &quot;H̸̢̪̯̱̰̎̇̅̂ȅ̷̡̨̺͖͚̭̰̯̈́̎͆̈́͘͝l̴̰͇̦̣̲̹̅̊̃͑̆̕͝l̶̢͈͇̩̯̠̿̑̈́̈́̈́̕͠ǫ̷̡̥̮̮̰̩̓̊̿̈̕͝͝ ̶̨̯̩̘͚̰̓̆̈́̓̈̕͜W̷̧̛̖̣̟̼̰̆̇̅̈́̈́͜o̶̢̨͚̝̼̗̊̅̈́̈́̕͝͝r̵̨̧̺̖̭̭̋̊̅̈́̈́͘͝l̴̯̱̥̩̰̭̈́̊̅̈́̓̕͝d̷̨̧̮̱̗̈́̊̅̆̈́̕͜͝&quot;</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">The Origin of Zalgo Text</h2>
+                <p className="pt-1">The term &quot;Zalgo&quot; originates from a creepypasta (internet horror story) about an entity that causes insanity, death, and destruction. The distorted text style was created to represent the corruption or &quot;invoking&quot; of Zalgo in text form.</p>
+                <p className="pt-2">Example:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Normal: &quot;He comes&quot;</li>
+                    <li>Zalgo: &quot;H̵̪̓̈́e̶͚͛̓ ̶͎̈́̓c̵̳̆̓o̵̩͐̓m̵̧̛̓e̸̮̽̓s̵̳̏̓&quot;</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">How Zalgo Text Works</h2>
+                <p className="pt-1">Zalgo text is created by adding multiple combined characters to each letter of regular text. These combining characters are meant to add accents or diacritical marks to letters, but they create the characteristic Zalgo effect when overused.</p>
+                <p className="pt-2">Example:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Regular letter: &quot;a&quot;</li>
+                    <li>Zalgo letter: &quot;a̷̧̛̭̣̖̝̟̓̆̅̈́̈́̕&quot;</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">Using a Zalgo Text Generator</h2>
+                <p className="pt-1">A Zalgo text generator is a tool that automatically applies the Zalgo effect to your input text. These generators typically allow you to control the intensity of the effect by adjusting the number of combined characters added.</p>
+                <p className="pt-2">Examples:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Input: &quot;Create chaos&quot;</li>
+                    <li>Intensity: Low, Medium, High</li>
+                    <li>Direction: Up, Middle, Down, or All</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">Applications of Zalgo Text</h2>
+                <p className="pt-2">While primarily used for fun and artistic expression, Zalgo text has found various applications:</p>
+                <ol className="list-decimal list-inside pl-4">
+                    <li>Meme Culture: Often used in image macros and memes for comedic effect.</li>
+                    <li>Creative Writing: Employed in digital storytelling to convey supernatural or glitchy elements.</li>
+                    <li>Online Personas: Some users incorporate Zalgo text into their usernames or bios for a unique aesthetic.</li>
+                    <li>Artistic Typography: Used in digital art and graphic design for a surreal or horror-inspired look.</li>
+                </ol>
+                <p className="pt-2">Example:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Normal username: &quot;DarkLord99&quot;</li>
+                    <li>Zalgo username: &quot;D̸̨̛̖̣̝͚̟̆̅̈́̈́͘a̷̧̛̭̣̖̝̟̓̆̅̈́̈́̕r̵̨̧̖̱̗̟̈́̆̅̈́̈́͘k̵̨̧̺̖̭̭̋̊̅̈́̈́͘L̴̢̧̥̮̮̟̓̆̅̈́̈́͘o̶̢̨͚̝̼̗̊̅̈́̈́̕͝r̵̨̧̺̖̭̭̋̊̅̈́̈́͘d̷̨̧̮̱̗̈́̊̅̆̈́̕9̷̨̧̮̱̗̈́̊̅̆̈́̕9̷̨̧̮̱̗̈́̊̅̆̈́̕&quot;</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">The Zalgo Font Myth</h2>
+                <p className="pt-1">It&apos;s important to note that there isn&apos;t a &quot;Zalgo font&quot; in the traditional sense. The Zalgo effect is achieved through character manipulation, not a specific font file. However, some may refer to the overall appearance as a &quot;Zalgo font&quot; colloquially.</p>
+                <p className="pt-2">Example:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Misconception: &quot;Download the Zalgo font&quot;</li>
+                    <li>Reality: &quot;Use a Zalgo text generator to create the effect.&quot;</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">Creating Zalgo Text Responsibly</h2>
+                <p className="pt-2">While Zalgo text can be fun and creative, it&apos;s important to use it responsibly:</p>
+                <ol className="list-decimal list-inside pl-4">
+                    <li>Accessibility: Zalgo text is not screen-reader friendly and can be difficult for some users to read.</li>
+                    <li>Platform Compatibility: Some platforms may not display Zalgo text correctly.</li>
+                    <li>Overuse: Too much Zalgo text can make your content unreadable or annoying.</li>
+                </ol>
+                <p className="pt-2">Example of responsible use:</p>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Normal: &quot;Click here for a surprise!&quot;</li>
+                    <li>Zalgo: &quot;C̭̊l̳̏i̜̓c̖̆k̙̇ ̧̆h̹̏ḙ̑r̝̂ḙ̑ ̟̌f̺̂ỗ̱r̰̍ ̖̌a̮͒ ̹̌s̯̃ű̱r̰̍p̟̌r̮͂ị̃s̯̃ḛ̑!̖̌&quot;</li>
+                    <li>(Used sparingly for emphasis, not for the entire message)</li>
+                </ul>
+
+                <h2 className="pt-2 font-semibold text-lg">The Future of Zalgo Text</h2>
+                <p className="pt-1">As internet culture continues to evolve, so does the use of Zalgo text. From its origins in creepypasta to its current status as a tool for digital expression, Zalgo text represents the creative ways users manipulate language in the digital age.</p>
+                <p className="pt-2">Example of potential future use:</p>
+                <p className="pt-1">Augmented Reality (AR) applications incorporating Zalgo text for horror-themed experiences.</p>
+
+                <h2 className="pt-2 font-semibold text-lg">Conclusion: Embracing the Chaos of Zalgo Text</h2>
+                <p className="pt-1">Zalgo&apos;s text is a testament to internet culture&apos;s creativity and playfulness. Whether you want to add a touch of digital eldritch horror to your online presence or experiment with text manipulation, Zalgo text offers a unique way to express yourself digitally.</p>
+                <p className="pt-1">Remember, moderation and context are key to effectively using Zalgo text. By understanding its origins, mechanics, and potential applications, you can harness the power of Zalgo text to enhance your digital communication and creative projects.</p>
+                <p className="pt-1">So, the next time you want to add a bit of controlled chaos to your text, fire up a Zalgo text generator and let your imagination run wild. Remember, with great power comes great responsibility – use your newfound Zalgo wisdom wisely!</p>
+            </div>
+
+
         </div>
+    </>
     );
 };
 
