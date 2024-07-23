@@ -43,7 +43,7 @@ const SymbolSelector = () => {
         setSelectedSymbols('');
     }, []);
 
-    return (
+    return (<>
         <div className="max-w-4xl m-auto p-4">
             <div className="mb-4">
                 <div className="relative p-4 rounded-md">
@@ -158,7 +158,128 @@ const SymbolSelector = () => {
                     ))}
                 </div>
             </div>
+
+            <div className="max-w-7xl xl:mx-auto text-left mx-4">
+                <h1 className="pt-2 font-semibold text-xl">Heart Emoji: Expressing Love and Affection in the Digital Age</h1>
+                <p className="pt-4">In the colorful world of digital communication, heart emojis stand out as powerful symbols of love, affection, and emotion. These little icons have revolutionized the way we express our feelings online, adding depth and nuance to our text-based conversations. This comprehensive guide will explore various aspects of heart emojis, from their meanings and usage to practical applications in different contexts.</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Heart Emoji: A Symbol for Every Emotion</h2>
+                <p className="pt-4">The classic heart emoji ❤️ is just the beginning. There&apos;s a rainbow of heart emojis to express different shades of emotion:</p>
+
+                <p className="pt-4">1. Red Heart ❤️: The quintessential symbol of love and affection.</p>
+                <p className="pt-2">Example: &quot;Missing you already ❤️&quot; </p>
+
+                <p className="pt-4">2. Orange Heart 🧡: Often used for friendship or warm affection.</p>
+                <p className="pt-2">Example: &quot;Thanks for always being there for me 🧡&quot;</p>
+
+                <p className="pt-4">3. Yellow Heart 💛: Represents happiness, positivity, or platonic love.</p>
+                <p className="pt-2">Example: &quot;Congrats on your new job! So happy for you 💛&quot;</p>
+
+                <p className="pt-4">4. Green Heart 💚: Associated with nature, growth, or sometimes jealousy.</p>
+                <p className="pt-2">Example: &quot;Let&apos;s save the planet together 💚&quot;</p>
+
+                <p className="pt-4">5. Blue Heart 💙: Can signify trust, harmony, or sometimes sadness.</p>
+                <p className="pt-2">Example: &quot;Feeling a bit down today 💙&quot;</p>
+
+                <p className="pt-4">6. Purple Heart 💜: Often used for passion, royalty, or spirituality.</p>
+                <p className="pt-2">Example: &quot;Your support means the world to me 💜&quot;</p>
+
+                <p className="pt-4">7. Black Heart 🖤: Can represent dark humor, sorrow, or sophistication.</p>
+                <p className="pt-2">Example: &quot;Gothic fashion is my passion 🖤&quot;</p>
+
+                <p className="pt-4">By choosing the right heart color, you can add layers of meaning to your digital expressions, making your messages more nuanced and emotionally rich.</p>
+
+                <h2 className="pt-2 font-semibold text-xl">Heart Eyes Emoji: Love at First Sight</h2>
+                <p className="pt-4">The heart eyes emoji 😍 is a playful way to express strong admiration, love, or excitement. It&apos;s like your eyes have literally turned into hearts!</p>
+
+                <p className="pt-4">1. Expressing Adoration: Use it to show you&apos;re head over heels for someone or something.</p>
+                <p className="pt-2">Example: &quot;Just saw the cutest puppy in the park 😍&quot;</p>
+
+                <p className="pt-4">2. Showing Appreciation: Perfect for when you&apos;re really impressed or grateful.</p>
+                <p className="pt-2">Example: &quot;You cooked dinner? You&apos;re the best 😍&quot;</p>
+
+                <p className="pt-4">3. Excitement About Objects: Great for expressing love for inanimate things too.</p>
+                <p className="pt-2">Example: &quot;Finally got my hands on the new iPhone 😍&quot;</p>
+
+                <h3 className="pt-4">4. Reacting to Good News: Use it to show you&apos;re thrilled about someone&apos;s accomplishments.</h3>
+                <p className="pt-4">Example: &quot;You got the job? That&apos;s amazing 😍&quot;</p>
+
+                <h3 className="pt-4">5. Flirting: A subtle way to show romantic interest.</h3>
+                <p className="pt-4">Example: &quot;Looking forward to our date tonight 😍&quot;</p>
+
+                <p className="pt-4">The heart eyes emoji adds a touch of enthusiasm and warmth to your messages, making it perfect for those moments when words alone just aren&apos;t enough.</p>
+
+                <h2 className="pt-2 font-semibold text-xl">Heart Emoji Copy and Paste: Spreading the Love</h2>
+                <p className="pt-4">For easy access to heart emojis, you can copy and paste them directly into your messages. Here are some popular variations:</p>
+
+                <p className="pt-4">1. Classic Red Heart: ❤️</p>
+                <p className="pt-2">Example: &quot;Love you, mom ❤️&quot;</p>
+
+                <p className="pt-4">2. Heart Suit: ♥️</p>
+                <p className="pt-2">Example: &quot;Card game night! Who&apos;s in? ♥️&quot;</p>
+
+                <p className="pt-4">3. Two Hearts: 💕</p>
+                <p className="pt-2">Example: &quot;Best friends forever 💕&quot;</p>
+
+                <p className="pt-4">4. Sparkling Heart: 💖</p>
+                <p className="pt-2">Example: &quot;Your kindness brightens my day 💖&quot;</p>
+
+                <p className="pt-4">5. Growing Heart: 💗</p>
+                <p className="pt-2">Example: &quot;My love for you grows stronger every day 💗&quot;</p>
+
+                <p className="pt-4">6. Beating Heart: 💓</p>
+                <p className="pt-2">Example: &quot;My heart races when I think of you 💓&quot;</p>
+
+                <p className="pt-4">7. Broken Heart: 💔</p>
+                <p className="pt-2">Example: &quot;Need some comfort food after that breakup 💔&quot;</p>
+
+                <h3 className="pt-4">To use these in your messages, simply copy the emoji and paste it into your text field. Most modern devices and platforms support emoji display, ensuring your heartfelt expressions come across as intended.</h3>
+
+                <h3 className="pt-4">Pro Tip: Create a note on your device with frequently used heart emojis for quick access. This can be a real time-saver when you want to add some love to your messages on the go!</h3>
+
+                <h2 className="pt-2 font-semibold text-xl">Pink Heart Emoji: Soft and Sweet Expressions</h2>
+                <p className="pt-4">The pink heart emoji 💗 (or 🩷 on some platforms) is a softer, more playful variation of the classic red heart. It&apos;s perfect for expressing gentle affection, sweetness, or a touch of romance.</p>
+
+                <p className="pt-4">1. Gentle Affection: Use it for softer expressions of love or care.</p>
+                <p className="pt-2">Example: &quot;Thinking of you today 💗&quot;</p>
+
+                <p className="pt-4">2. Friendship Love: Great for showing platonic love to friends.</p>
+                <p className="pt-2">Example: &quot;Girls&apos; night out was a blast! Love you all 💗&quot;</p>
+
+                <p className="pt-4">3. Cute and Playful: Perfect for lighthearted, fun messages.</p>
+                <p className="pt-2">Example: &quot;You&apos;re my favorite person to be silly with 💗&quot;</p>
+
+                <p className="pt-4">4. Self-Love: Use it when talking about self-care or personal growth.</p>
+                <p className="pt-2">Example: &quot;Taking a mental health day. Self-care is important 💗&quot;</p>
+
+                <p className="pt-4">5. Brand Aesthetics: Popular in branding for products targeting a younger or predominantly female audience.</p>
+                <p className="pt-2">Example: &quot;New pink collection dropping soon 💗 Stay tuned!&quot;</p>
+
+                <p className="pt-4">The pink heart emoji adds a touch of softness and charm to your messages, making it ideal for those moments when you want to express affection without the intensity of a red heart.</p>
+
+                <h2 className="pt-2 font-semibold text-xl">Optimizing Your Heart Emoji Usage for Maximum Impact</h2>
+                <p className="pt-4">To make the most of heart emojis in your digital communication:</p>
+
+                <p className="pt-4">1. Context is Key: Choose the right heart emoji based on the tone and content of your message.</p>
+                <p className="pt-2">Example: Use 💙 for a calm, reassuring message, and ❤️‍🔥 for passionate declarations.</p>
+
+                <p className="pt-4">2. Combine with Other Emojis: Create nuanced expressions by pairing heart emojis with complementary symbols.</p>
+                <p className="pt-2">Example: &quot;Can&apos;t wait for our beach vacation 🏖️💗&quot; combines the beach with a gentle pink heart.</p>
+
+                <p className="pt-4">3. Don&apos;t Overuse: While heart emojis are expressive, too many can dilute their effect. Use them strategically for emphasis.</p>
+                <p className="pt-2">Example: Instead of &quot;I love you ❤️❤️❤️❤️❤️&quot;, try &quot;I love you ❤️&quot; for a more sincere feel.</p>
+
+                <p className="pt-4">4. Consider Your Audience: Different age groups and cultures may interpret heart emojis differently. Be mindful of your audience when using them.</p>
+                <p className="pt-2">Example: A red heart might be too intense for a work email, but perfect for a message to a loved one.</p>
+
+                <p className="pt-4">5. Stay Updated: Emoji designs can vary slightly between platforms. Stay aware of how your heart emojis appear across different devices and applications.</p>
+
+                <p className="pt-4">By thoughtfully integrating heart emojis into your digital communication, you can add warmth, affection, and emotional depth to your messages. Whether you&apos;re expressing love, showing appreciation, or simply adding some charm to your conversations, these heartfelt symbols offer a dynamic way to connect with others in the digital realm.</p>
+
+                <p className="pt-4">Remember, like love itself, the art of using heart emojis requires sincerity and care. Use your heart emojis wisely, and watch your digital conversations bloom with emotion and connection! 💖✨</p>
+            </div>
         </div>
+    </>
     );
 };
 
