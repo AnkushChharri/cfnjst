@@ -91,7 +91,7 @@ const DotSymbolSelector = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    return (
+    return (<>
         <div className="max-w-7xl m-auto p-4">
             <div id="sticky-box" className="mb-4 transition-all duration-300">
                 <div className="relative p-4 rounded-md">
@@ -209,7 +209,70 @@ const DotSymbolSelector = () => {
                     ))}
                 </div>
             </div>
+            <div className="max-w-7xl xl:mx-auto text-left mx-4">
+                <h1 className="pt-2 font-semibold text-xl">The Dot Symbol: A Tiny Mark with Massive Impact</h1>
+                <p className="pt-4">The dot symbol, also known as a period or full stop, is a small yet powerful punctuation mark used in various contexts. This humble character plays a crucial role in written communication, digital technology, and even mathematics. In this comprehensive guide, we&apos;ll explore the many uses of the dot symbol, how to copy and paste it, and its significance across different fields.</p>
+
+                <h2 className="pt-4 font-semibold text-xl">What is a Dot Symbol?</h2>
+                <p className="pt-4">A dot symbol is a small, circular mark typically used in writing and various other applications. It&apos;s one of the most basic and versatile punctuation marks in the English language and many other writing systems.</p>
+                <p className="pt-2">Example: The dot at the end of this sentence is a dot symbol.</p>
+
+                <h2 className="pt-4 font-semibold text-xl">How to Type a Dot Symbol</h2>
+                <p className="pt-4">Typing a dot symbol is straightforward on most devices:</p>
+
+                <ul className="list-decimal list-inside pl-4">
+                    <li>On a standard keyboard, press the period (.) key.</li>
+                    <li>On mobile devices, tap the period (.) button on the on-screen keyboard.</li>
+                </ul>
+
+                <p className="pt-4">Example: To type &quot;www.example.com,&quot; you would press the period key three times.</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Dot Symbol Copy and Paste</h2>
+                <p className="pt-4">For situations where you need to insert a dot symbol quickly, here are some options to copy and paste:</p>
+
+                <ol className="list-disc list-inside pl-4">
+                    <li>Standard dot: .</li>
+                    <li>Middle dot: ·</li>
+                    <li>Bullet point: •</li>
+                </ol>
+
+                <p className="pt-4">Example: Copy this middle dot · and paste it into your document for a distinctive separator.</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Uses of the Dot Symbol in Writing</h2>
+                <h3 className="pt-4 font-semibold">1. End of Sentence</h3>
+                <p className="pt-4">The primary use of a dot symbol in writing is to mark the end of a sentence.</p>
+                <p className="pt-2">Example: The sun is shining. Birds are singing.</p>
+
+                <h3 className="pt-4 font-semibold">2. Abbreviations</h3>
+                <p className="pt-4">Dots are used in many abbreviations, especially in titles and names.</p>
+                <p className="pt-4">Example: Dr. Smith visited Mr. Johnson at 3 p.m.</p>
+
+                <h3 className="pt-4 font-semibold">3. Ellipsis</h3>
+                <p className="pt-4">Three consecutive dots form an ellipsis, indicating an omission or pause.</p>
+                <p className="pt-4">Example: She thought about it and then said, &quot;Well...&quot;</p>
+
+                <h2 className="pt-4 font-semibold text-xl">The Dot Symbol in Mathematics</h2>
+                <p className="pt-4">In mathematics, the dot symbol serves several important functions:</p>
+
+                <h3 className="pt-4 font-semibold">1. Decimal Point</h3>
+                <p className="pt-4">It separates the integer part from the fractional part of a number.</p>
+                <p className="pt-4">Example: The value of pi to two decimal places is 3.14.</p>
+
+                <h3 className="pt-4 font-semibold">2. Multiplication</h3>
+                <p className="pt-4">A dot between numbers or variables can indicate multiplication.</p>
+                <p className="pt-4">Example: 3 · 4 = 12</p>
+
+                <h3 className="pt-4 font-semibold">3. Dot Product</h3>
+                <p className="pt-4">In vector algebra, a dot between vectors represents the dot product operation.</p>
+                <p className="pt-4">Example: If a = (1, 2, 3) and b = (4, 5, 6), then a · b = 1(4) + 2(5) + 3(6) = 32</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Conclusion</h2>
+                <p className="pt-4">The dot symbol, despite its small size, plays an enormous role in our written and digital lives. From ending sentences to separating domain names, from mathematical operations to cultural symbols, the dot is truly a versatile character. Understanding its various uses can help improve communication and appreciation for this tiny but mighty symbol.</p>
+                <p className="pt-4">Remember, whether you&apos;re writing an email, solving a math problem, or designing a website, the humble dot is there to help clarify and structure your work. So, the next time you see or use a dot, take a moment to appreciate its significance in our complex world of symbols and communication.</p>
+            </div>
+
         </div>
+    </>
     );
 };
 
