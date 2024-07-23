@@ -164,11 +164,11 @@ const SymbolSelector = () => {
                 <h1 className="pt-2 font-semibold text-xl">Home Emoji: Your Digital Welcome Mat 🏠</h1>
                 <p className="pt-4">In our increasingly digital world, emojis have become a universal language. Among these tiny icons, the home emoji stands out as a symbol of comfort, belonging, and shelter. This post will explore everything you need to know about the home emoji, from its meaning to its various uses and how to easily copy and paste it into your messages.</p>
 
-                <h1 className="pt-4 font-semibold text-xl">What is the Home Emoji? 🏡</h1>
-                <p className="pt-4">The home emoji, typically depicted as a simple house with a triangular roof and rectangular base, represents a dwelling place. It's a digital icon that conveys the concept of home, shelter, or residence in a single, easily recognizable symbol.</p>
-                <p className="pt-2">Example: When telling a friend you've arrived safely after a trip, you might text: "Finally made it 🏠"</p>
+                <h2 className="pt-4 font-semibold text-xl">What is the Home Emoji? 🏡</h2>
+                <p className="pt-4">The home emoji, typically depicted as a simple house with a triangular roof and rectangular base, represents a dwelling place. It&apos;s a digital icon that conveys the concept of home, shelter, or residence in a single, easily recognizable symbol.</p>
+                <p className="pt-2">Example: When telling a friend you&apos;ve arrived safely after a trip, you might text: &quot;Finally made it 🏠&quot;</p>
 
-                <h1 className="pt-2 font-semibold text-xl">The Many Faces of the Home Emoji 🏘️</h1>
+                <h2 className="pt-2 font-semibold text-xl">The Many Faces of the Home Emoji 🏘️</h2>
                 <p className="pt-4">While the basic house emoji 🏠 is the most common, there are several variations:</p>
 
                 <ul className="list-decimal list-inside pl-4">
@@ -178,14 +178,14 @@ const SymbolSelector = () => {
                     <li>Classical Building 🏛️</li>
                 </ul>
 
-                <p className="pt-4">Example: Describing your neighborhood: "Our street has a mix of homes 🏠🏡🏘️"</p>
+                <p className="pt-4">Example: Describing your neighborhood: &quot;Our street has a mix of homes 🏠🏡🏘️&quot;</p>
 
-                <h1 className="pt-4 font-semibold text-xl">Welcome Home Emoji: Creating a Warm Digital Greeting 👋🏠</h1>
-                <p className="pt-4">Combining the home emoji with other icons can create a warm, welcoming message. The "welcome home" emoji combination typically uses the waving hand emoji alongside the house.</p>
-                <p className="pt-2">Example: Greeting someone returning from a trip: "👋🏠 Welcome back! Hope you had a great vacation!"</p>
+                <h2 className="pt-4 font-semibold text-xl">Welcome Home Emoji: Creating a Warm Digital Greeting 👋🏠</h2>
+                <p className="pt-4">Combining the home emoji with other icons can create a warm, welcoming message. The &quot;welcome home&quot; emoji combination typically uses the waving hand emoji alongside the house.</p>
+                <p className="pt-2">Example: Greeting someone returning from a trip: &quot;👋🏠 Welcome back! Hope you had a great vacation!&quot;</p>
 
-                <h1 className="pt-2 font-semibold text-xl">Home Emoji Copy and Paste: Quick and Easy Usage 📋🏠</h1>
-                <p className="pt-4">For those looking to quickly use the home emoji, here's how you can copy and paste it:</p>
+                <h2 className="pt-2 font-semibold text-xl">Home Emoji Copy and Paste: Quick and Easy Usage 📋🏠</h2>
+                <p className="pt-4">For those looking to quickly use the home emoji, here&apos;s how you can copy and paste it:</p>
 
                 <ul className="list-decimal list-inside pl-4">
                     <li>House: 🏠</li>
@@ -196,33 +196,33 @@ const SymbolSelector = () => {
                 </ul>
 
                 <p className="pt-4">Simply highlight the emoji you want, copy it, and paste it into your desired text field.</p>
-                <p className="pt-4">Example: Sharing your new address: "Just moved! My new place 🏠 is at 123 Oak Street."</p>
+                <p className="pt-4">Example: Sharing your new address: &quot;Just moved! My new place 🏠 is at 123 Oak Street.&quot;</p>
 
-                <h1 className="pt-2 font-semibold text-xl">The Versatility of the Home Emoji: Beyond Just Houses 🌐🏠</h1>
-                <p className="pt-4">The home emoji isn't just for literal houses. It can represent various concepts related to home and belonging:</p>
+                <h2 className="pt-2 font-semibold text-xl">The Versatility of the Home Emoji: Beyond Just Houses 🌐🏠</h2>
+                <p className="pt-4">The home emoji isn&apos;t just for literal houses. It can represent various concepts related to home and belonging:</p>
 
                 <ul className="list-decimal list-inside pl-4">
-                    <li>Hometown: "Back to my roots 🏠"</li>
-                    <li>Comfort zone: "Reading is my 🏠"</li>
-                    <li>Website homepage: "Check our 🏠 page for updates"</li>
-                    <li>Family: "Nothing beats 🏠 for the holidays"</li>
+                    <li>Hometown: &quot;Back to my roots 🏠&quot;</li>
+                    <li>Comfort zone: &quot;Reading is my 🏠&quot;</li>
+                    <li>Website homepage: &quot;Check our 🏠 page for updates&quot;</li>
+                    <li>Family: &quot;Nothing beats 🏠 for the holidays&quot;</li>
                 </ul>
 
-                <p className="pt-4">Example: Expressing homesickness: "Missing my 🏠 and family while traveling 🧳"</p>
+                <p className="pt-4">Example: Expressing homesickness: &quot;Missing my 🏠 and family while traveling 🧳&quot;</p>
 
-                <h1 className="pt-2 font-semibold text-xl">Home Emoji in Different Contexts: From Personal to Professional 💼🏠</h1>
+                <h2 className="pt-2 font-semibold text-xl">Home Emoji in Different Contexts: From Personal to Professional 💼🏠</h2>
                 <p className="pt-4">The home emoji finds its place in various settings:</p>
 
                 <ul className="list-decimal list-inside pl-4">
-                    <li>Personal messages: "Can't wait to get 🏠 and relax"</li>
-                    <li>Real estate: "New listings 🏠🏡 available now!"</li>
-                    <li>Travel: "🏠➡️🏨 Off on a business trip"</li>
-                    <li>Work-from-home culture: "Another day at the 🏠 office"</li>
+                    <li>Personal messages: &quot;Can&apos;t wait to get 🏠 and relax&quot;</li>
+                    <li>Real estate: &quot;New listings 🏠🏡 available now!&quot;</li>
+                    <li>Travel: &quot;🏠➡️🏨 Off on a business trip&quot;</li>
+                    <li>Work-from-home culture: &quot;Another day at the 🏠 office&quot;</li>
                 </ul>
 
-                <p className="pt-4">Example: In a work context: "Team meeting at 3 PM. Join from 🏠 or office."</p>
+                <p className="pt-4">Example: In a work context: &quot;Team meeting at 3 PM. Join from 🏠 or office.&quot;</p>
 
-                <h1 className="pt-2 font-semibold text-xl">The Psychology Behind the Home Emoji: Why We Love It ❤️🏠</h1>
+                <h2 className="pt-2 font-semibold text-xl">The Psychology Behind the Home Emoji: Why We Love It ❤️🏠</h2>
                 <p className="pt-4">The home emoji resonates with many because it taps into our fundamental need for shelter and belonging. It evokes feelings of:</p>
 
                 <ul className="list-decimal list-inside pl-4">
@@ -233,9 +233,9 @@ const SymbolSelector = () => {
                     <li>Roots</li>
                 </ul>
 
-                <p className="pt-4">Example: Expressing contentment: "Nothing beats the feeling of being 🏠 sweet 🏠"</p>
+                <p className="pt-4">Example: Expressing contentment: &quot;Nothing beats the feeling of being 🏠 sweet 🏠&quot;</p>
 
-                <h1 className="pt-2 font-semibold text-xl">Home Emoji Across Platforms: A Universal Symbol 🌐🏠</h1>
+                <h2 className="pt-2 font-semibold text-xl">Home Emoji Across Platforms: A Universal Symbol 🌐🏠</h2>
                 <p className="pt-4">While the basic concept remains the same, the home emoji may appear slightly different across various platforms and devices:</p>
 
                 <ul className="list-decimal list-inside pl-4">
@@ -246,27 +246,26 @@ const SymbolSelector = () => {
                 </ul>
 
                 <p className="pt-4">Despite these slight variations, the message remains clear across all platforms.</p>
-                <p className="pt-2">Example: "No matter what device you're on, 🏠 always means home!"</p>
+                <p className="pt-2">Example: &quot;No matter what device you&apos;re on, 🏠 always means home!&quot;</p>
 
-                <h1 className="pt-2 font-semibold text-xl">Creative Uses of the Home Emoji: Beyond the Obvious 🎨🏠</h1>
+                <h2 className="pt-2 font-semibold text-xl">Creative Uses of the Home Emoji: Beyond the Obvious 🎨🏠</h2>
                 <p className="pt-4">Get creative with the home emoji in your digital communications:</p>
 
                 <ul className="list-decimal list-inside pl-4">
-                    <li>As a verb: "Let's 🏠 this project" (meaning to complete or settle)</li>
-                    <li>In idioms: "🏠 is where the ❤️ is"</li>
-                    <li>For emphasis: "I'm staying 🏠🏠🏠 this weekend"</li>
-                    <li>In visual puns: "🏠🎵" (house music)</li>
+                    <li>As a verb: &quot;Let&apos;s 🏠 this project&quot; (meaning to complete or settle)</li>
+                    <li>In idioms: &quot;🏠 is where the ❤️ is&quot;</li>
+                    <li>For emphasis: &quot;I&apos;m staying 🏠🏠🏠 this weekend&quot;</li>
+                    <li>In visual puns: &quot;🏠🎵&quot; (house music)</li>
                 </ul>
 
-                <p className="pt-4">Example: Planning a housewarming: "🎉🏠 Party at my new place this Saturday!"</p>
+                <p className="pt-4">Example: Planning a housewarming: &quot;🎉🏠 Party at my new place this Saturday!&quot;</p>
 
-                <h1 className="pt-2 font-semibold text-xl">Conclusion: The Home Emoji - Small Icon, Big Impact 🌟🏠</h1>
+                <h2 className="pt-2 font-semibold text-xl">Conclusion: The Home Emoji - Small Icon, Big Impact 🌟🏠</h2>
 
-                <p className="pt-4">From a simple representation of a house to a symbol of comfort, belonging, and identity, the home emoji has secured its place in our digital vocabulary. Whether you're welcoming someone back, discussing real estate, or simply expressing your love for home, this tiny icon packs a powerful punch.</p>
+                <p className="pt-4">From a simple representation of a house to a symbol of comfort, belonging, and identity, the home emoji has secured its place in our digital vocabulary. Whether you&apos;re welcoming someone back, discussing real estate, or simply expressing your love for home, this tiny icon packs a powerful punch.</p>
 
-                <p className="pt-4">Remember, in the vast landscape of digital communication, the home emoji stands as a beacon of warmth and familiarity. So the next time you want to add a touch of homeliness to your message, don't forget to include this charming little house 🏠. After all, there's no place like home – even in the digital world!</p>
+                <p className="pt-4">Remember, in the vast landscape of digital communication, the home emoji stands as a beacon of warmth and familiarity. So the next time you want to add a touch of homeliness to your message, don&apos;t forget to include this charming little house 🏠. After all, there&apos;s no place like home – even in the digital world!</p>
             </div>
-
 
         </div>
 
