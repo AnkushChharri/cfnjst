@@ -36,7 +36,7 @@ const SymbolSelector = () => {
         setSelectedSymbols('');
     }, []);
 
-    return (
+    return (<>
         <div className="max-w-4xl m-auto p-4">
             <div className="mb-4">
                 <div className="relative p-4 rounded-md">
@@ -149,7 +149,98 @@ const SymbolSelector = () => {
                     ))}
                 </div>
             </div>
+            <div className="max-w-7xl xl:mx-auto text-left mx-4">
+                <h1 className="pt-2 font-semibold text-xl">Moon Emoji: Lunar Phases, Full Moon, and Moon Face Emojis</h1>
+                <p className="pt-4">In the vast universe of digital communication, emojis have become our celestial bodies, guiding us through conversations with their expressive charm. Among these stellar symbols, the moon emoji shines brightly, casting its gentle glow across our messages. This comprehensive guide will explore the various moon emojis, from the serene crescent to the enigmatic moon face, illuminating their meanings and optimal uses.</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Moon Phase Emojis: A Lunar Cycle in Your Messages</h2>
+                <p className="pt-4">The moon phase emojis offer a unique way to express the passage of time, mood changes, or simply add a touch of nocturnal beauty to your digital conversations. Let&apos;s wax poetic about each phase:</p>
+
+                <h3 className="pt-4 font-semibold">1. 🌑 New Moon: The journey begins with darkness, symbolizing new beginnings or the unknown.</h3>
+                <p className="pt-2">Example: &quot;Starting my new diet today 🌑 Wish me luck!&quot;</p>
+
+                <h3 className="pt-4 font-semibold">2. 🌒 Waxing Crescent Moon: A sliver of hope emerges, perfect for expressing growing optimism.</h3>
+                <p className="pt-2">Example: &quot;My startup is slowly gaining traction 🌒 Things are looking up!&quot;</p>
+
+                <h3 className="pt-4 font-semibold">3. 🌓 First Quarter Moon: Half-illuminated, this emoji represents balance or being at a crossroads.</h3>
+                <p className="pt-2">Example: &quot;Halfway through the semester 🌓 Time to buckle down and study!&quot;</p>
+
+                <h3 className="pt-4 font-semibold">4. 🌔 Waxing Gibbous Moon: Almost full, it&apos;s ideal for conveying anticipation or nearing a goal.</h3>
+                <p className="pt-2">Example: &quot;Almost finished with my novel 🌔 Can&apos;t wait to share it with the world!&quot;</p>
+
+                <h3 className="pt-4 font-semibold">5. 🌕 Full Moon: The pinnacle of lunar beauty, perfect for celebrating achievements or expressing completeness.</h3>
+                <p className="pt-2">Example: &quot;Finally got my degree 🌕 Years of hard work have paid off!&quot;</p>
+
+                <h3 className="pt-4 font-semibold">6. 🌖 Waning Gibbous Moon: Symbolizes reflection or the start of a decline.</h3>
+                <p className="pt-2">Example: &quot;The party&apos;s winding down 🌖 But what a night it&apos;s been!&quot;</p>
+
+                <h3 className="pt-4 font-semibold">7. 🌗 Last Quarter Moon: Another half-moon, but now decreasing, ideal for expressing mixed feelings.</h3>
+                <p className="pt-2">Example: &quot;Bittersweet feelings as I pack for my move 🌗 Excited but gonna miss this place.&quot;</p>
+
+                <h3 className="pt-4 font-semibold">8. 🌘 Waning Crescent Moon: The cycle nears its end, perfect for goodbyes or conclusions.</h3>
+                <p className="pt-2">Example: &quot;Wrapping up this chapter of my life 🌘 Ready for what comes next.&quot;</p>
+
+                <p className="pt-4">By incorporating these moon phase emojis into your messages, you can add depth and nuance to your digital communication, making your texts more engaging and expressive.</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Full Moon Emoji: When Your Message Needs to Shine Bright</h2>
+                <p className="pt-4">The full moon emoji 🌕 deserves special attention for its versatility and visual impact. This radiant circle carries a wealth of meanings and can elevate your messages in various contexts:</p>
+
+                <h3 className="pt-4 font-semibold">1. Completion and Achievement: Use it to highlight major accomplishments or milestones.</h3>
+                <p className="pt-2">Example: &quot;After months of training, I finished my first marathon today! 🌕&quot;</p>
+
+                <h3 className="pt-4 font-semibold">2. Beauty and Perfection: Emphasize the aesthetic appeal or flawlessness of something.</h3>
+                <p className="pt-2">Example: &quot;Just saw the Taj Mahal by moonlight 🌕 Absolutely breathtaking!&quot;</p>
+
+                <h3 className="pt-4 font-semibold">3. Clarity and Illumination: Indicate moments of realization or when things become clear.</h3>
+                <p className="pt-2">Example: &quot;Finally understood that complex math problem 🌕 It all makes sense now!&quot;</p>
+
+                <h3 className="pt-4 font-semibold">4. Emotional Intensity: Express strong feelings or heightened states of mind.</h3>
+                <p className="pt-2">Example: &quot;Our first kiss under the full moon 🌕 Magical doesn&apos;t even begin to describe it.&quot;</p>
+
+                <h3 className="pt-4 font-semibold">5. Natural Cycles and Timing: Reference lunar cycles or perfect timing.</h3>
+                <p className="pt-2">Example: &quot;Planting my garden by the full moon 🌕 Here&apos;s to a bountiful harvest!&quot;</p>
+
+                <p className="pt-4">The full moon emoji&apos;s bold, circular shape makes it stand out in text, drawing the reader&apos;s eye and adding emphasis to your message. Its association with nighttime and celestial beauty also makes it a popular choice for creating a romantic or mysterious atmosphere in your digital conversations.</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Moon Face Emoji: Adding Character to Your Lunar Expressions</h2>
+                <p className="pt-4">While the standard moon emojis represent the celestial body itself, the moon face emojis infuse personality into your lunar references. These anthropomorphic moons can add humor, emotion, or whimsy to your messages:</p>
+
+                <h3 className="pt-4 font-semibold">1. 🌚 New Moon Face: Often used playfully to suggest mischief or sly humor.</h3>
+                <p className="pt-2">Example: &quot;I may have eaten the last cookie 🌚 Don&apos;t tell anyone!&quot;</p>
+
+                <h3 className="pt-4 font-semibold">2. 🌝 Full Moon Face: Typically represents a cheerful or sometimes smugly content expression.</h3>
+                <p className="pt-2">Example: &quot;Aced all my exams this semester 🌝 Feeling pretty good about myself!&quot;</p>
+
+                <h3 className="pt-4 font-semibold">3. 🌛 First Quarter Moon Face: Can be used to express a dreamy or sleepy state.</h3>
+                <p className="pt-2">Example: &quot;Staying up late to watch the meteor shower 🌛 So worth the lost sleep!&quot;</p>
+
+                <h3 className="pt-4 font-semibold">4. 🌜 Last Quarter Moon Face: Often used to convey a sense of winding down or tiredness.</h3>
+                <p className="pt-2">Example: &quot;It&apos;s been a long day, time to hit the hay 🌜 Goodnight, everyone!&quot;</p>
+
+                <p className="pt-4">These moon face emojis allow you to personify the moon, making your messages more relatable and emotionally resonant. They&apos;re particularly useful in casual conversation, adding a touch of playfulness to your digital interactions.</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Optimizing Your Lunar Emoji Usage for Maximum Impact</h2>
+                <p className="pt-4">To make the most of moon emojis in your digital communication:</p>
+
+                <h3 className="pt-4 font-semibold">1. Context is Key: Choose the appropriate moon phase or face to match the tone and content of your message.</h3>
+                <p className="pt-2">Example: Use 🌒 when talking about gradual progress, or 🌝 when sharing good news.</p>
+
+                <h3 className="pt-4 font-semibold">2. Combine with Other Emojis: Create mini-stories or set scenes by pairing moon emojis with related symbols.</h3>
+                <p className="pt-2">Example: &quot;Camping under the stars tonight ⛺🌕🏞️&quot; paints a vivid picture.</p>
+
+                <h3 className="pt-4 font-semibold">3. Use in Sequences: Show progression or the passage of time with a series of moon phases.</h3>
+                <p className="pt-2">Example: &quot;My fitness journey this year: 🌑➡️🌓➡️🌕 From couch potato to marathon runner!&quot;</p>
+
+                <h3 className="pt-4 font-semibold">4. Enhance Text-Based Art: Incorporate moon emojis into ASCII art or emoji patterns for visual appeal.</h3>
+                <p className="pt-2">Example: &quot;•*¨*•.¸¸🌕 Sweet dreams! ¸¸.•*¨*•&quot;</p>
+
+                <h3 className="pt-4 font-semibold">5. Cultural Sensitivity: Be aware that moon symbolism varies across cultures. What&apos;s positive in one context might not be in another.</h3>
+
+                <p className="pt-4">By thoughtfully integrating moon emojis into your digital communication, you can add layers of meaning, emotion, and visual interest to your messages. Whether you&apos;re expressing the cycles of life, the beauty of nature, or simply adding a touch of nighttime magic to your texts, these lunar symbols offer a universe of possibilities for creative and engaging online interactions.</p>
+                <p className="pt-4">Remember, like the ever-changing moon itself, the world of emojis is constantly evolving. Stay curious, experiment with different combinations, and let your creativity shine as brightly as the full moon in a clear night sky. Happy messaging! 🌙✨</p>
+            </div>
         </div>
+    </>
     );
 };
 
