@@ -42,7 +42,7 @@ const SymbolSelector = () => {
         setSelectedSymbols('');
     }, []);
 
-    return (
+    return (<>
         <div className="max-w-4xl m-auto p-4">
             <div className="mb-4">
                 <div className="relative p-4 rounded-md">
@@ -154,7 +154,133 @@ const SymbolSelector = () => {
                     ))}
                 </div>
             </div>
+
+            <div className="max-w-7xl xl:mx-auto text-left mx-4">
+                <h1 className="pt-2 font-semibold text-xl">Kaomoji: Expressing Emotions Through Japanese Text Art (◕‿◕)</h1>
+                <p className="pt-2">In the vast world of digital communication, Kaomoji stands out as a unique and expressive form of text art. These intricate Japanese emoticons bring a touch of creativity and emotion to our online conversations. This post will explore the world of Kaomoji, from its origins to practical usage, focusing on cute Kaomoji, easy copy-and-paste options, and the ever-popular cat Kaomoji.</p>
+
+                <h2 className="pt-4 font-semibold text-xl">What is Kaomoji? (・∀・)</h2>
+                <p className="pt-2">Kaomoji, literally meaning &ldquo;face characters&rdquo; in Japanese, are complex emoticons that use a combination of Japanese characters, punctuation marks, and letters to create expressive faces and figures. Unlike standard Western emoticons that are read sideways, Kaomoji are typically read straight-on.</p>
+                <p>Example: Happy Kaomoji: (^_^) vs. Western smiley: :)</p>
+
+                <h2 className="pt-4 font-semibold text-xl">The Origins of Kaomoji: A Brief History ヽ(´▽`)/</h2>
+                <p className="pt-2">Kaomoji emerged in Japan during the 1980s, gaining popularity with the rise of internet culture. They offer a more nuanced way to express emotions compared to simple emoticons.</p>
+
+                <p className="pt-4">Example: Evolution of expressing happiness:</p>
+
+                <ul className="list-decimal list-inside pl-4">
+                    <li>:) (Western emoticon)</li>
+                    <li>(^_^) (Basic Kaomoji)</li>
+                    <li>ヽ(´▽`)/ (Complex Kaomoji)</li>
+                </ul>
+
+                <h2 className="pt-4 font-semibold text-xl">Cute Kaomoji: Adding Adorable Flair to Your Messages (´｡• ᵕ •｡`)</h2>
+                <p className="pt-2">Cute Kaomoji, often referred to as &ldquo;kawaii&rdquo; in Japanese, are particularly popular. They often feature round, soft shapes and exaggerated expressions to convey cuteness.</p>
+                <p className="pt-2">Some popular cute Kaomoji include:</p>
+
+                <ul className="list-decimal list-inside pl-4">
+                    <li>(◕‿◕) - Wide-eyed cute face</li>
+                    <li>(⁎˃ᴗ˂⁎) - Blushing cuteness</li>
+                    <li>ᔦꙬᔨ - Owl-like cute face</li>
+                </ul>
+
+                <p className="pt-4">Example: Expressing excitement about cute puppies: &ldquo;Just saw the cutest puppies! (◕‿◕) They were so fluffy!&rdquo;</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Kaomoji Copy and Paste: Easy Ways to Use Kaomoji ☜(ﾟヮﾟ☜)</h2>
+                <p className="pt-2">For those who want to quickly use Kaomoji without memorizing complex character combinations, copy and paste is the way to go. Here are some popular Kaomoji you can easily copy and paste:</p>
+
+                <ul className="list-decimal list-inside pl-4">
+                    <li>Surprise: (°o°)</li>
+                    <li>Love: (♡‿♡)</li>
+                    <li>Confusion: (⊙_⊙)</li>
+                    <li>Sadness: (╥﹏╥)</li>
+                    <li>Excitement: \\(^ヮ^)/</li>
+                </ul>
+
+                <p className="pt-4">Example: Sharing good news: &ldquo;I got the job! \\(^ヮ^)/ Can&apos;t wait to start!&rdquo;</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Cat Kaomoji: Feline Fun in Text Form (=^･ω･^=)</h2>
+                <p className="pt-2">Cat Kaomoji are a beloved subset of these Japanese emoticons. They capture the essence of our feline friends in adorable text art form.</p>
+
+                <p className="pt-4">Popular cat Kaomoji include:</p>
+
+                <ul className="list-decimal list-inside pl-4">
+                    <li>(=^･ω･^=) - Standard cat face</li>
+                    <li>(^・ω・^ ) - Cat with whiskers</li>
+                    <li>ฅ^•ﻌ•^ฅ - Paws up cat</li>
+                    <li>(ΦωΦ) - Wide-eyed cat</li>
+                </ul>
+
+                <p className="pt-4">Example: Talking about your pet: &ldquo;My cat is napping on my lap right now (=^･ω･^=) So cute!&rdquo;</p>
+
+                <h2 className="pt-4 font-semibold text-xl">The Versatility of Kaomoji: Beyond Just Faces ┗(･ω･;)┛</h2>
+                <p className="pt-2">While faces are common, Kaomoji can represent a wide range of concepts:</p>
+
+                <ul className="list-decimal list-inside pl-4">
+                    <li>Actions: _(┐「ε:)_ (Flipping a table)</li>
+                    <li>Objects: ✿ (Flower)</li>
+                    <li>Animals: ʕ•ᴥ•ʔ (Bear)</li>
+                    <li>Situations: ヾ(´￢｀)ﾉ (Waving goodbye)</li>
+                </ul>
+
+                <p className="pt-4">Example: Describing your day: &ldquo;Work was tough _(┐「ε:)_ but now I&apos;m relaxing ┐(´∀｀)┌&rdquo;</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Kaomoji in Different Contexts: From Casual to Professional (๑•̀ㅂ•́)و✧</h2>
+                <p className="pt-2">While Kaomoji are often used in casual settings, they can add a touch of personality in various contexts:</p>
+
+                <ul className="list-decimal list-inside pl-4">
+                    <li>Personal messages: &ldquo;Miss you! (っ˘̩╭╮˘̩)っ&rdquo;</li>
+                    <li>Social media posts: &ldquo;New profile pic! How does it look? (・∀・)&rdquo;</li>
+                    <li>Informal emails: &ldquo;Thanks for your help! (ノ*°▽°*)&rdquo;</li>
+                    <li>Blog comments: &ldquo;Great article! Learned a lot (●♡∀♡)&rdquo;</li>
+                </ul>
+
+                <p className="pt-4">Example: Ending a friendly work email: &ldquo;Looking forward to the meeting! (๑˃̵ᴗ˂̵)و&rdquo;</p>
+
+                <h2 className="pt-4 font-semibold text-xl">The Psychology Behind Kaomoji: Why We Love Them (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)</h2>
+                <p className="pt-2">Kaomoji appeal to us for several reasons:</p>
+
+                <ul className="list-decimal list-inside pl-4">
+                    <li>Visual appeal: They&apos;re more detailed than standard emoticons</li>
+                    <li>Emotional nuance: They can express complex emotions</li>
+                    <li>Cultural charm: They offer a touch of Japanese pop culture</li>
+                    <li>Creativity: They allow for personal expression</li>
+                </ul>
+
+                <p className="pt-4">Example: Expressing a mix of emotions: &ldquo;Nervous but excited about my presentation tomorrow (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)&rdquo;</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Kaomoji Across Platforms: Compatibility Considerations (;￢_￢)</h2>
+                <p className="pt-2">While Kaomoji are widely supported, some platforms may display them differently:</p>
+
+                <ul className="list-decimal list-inside pl-4">
+                    <li>Mobile devices: Generally good support</li>
+                    <li>Social media: Mostly compatible</li>
+                    <li>Older systems: May have issues displaying complex Kaomoji</li>
+                    <li>Emails: Can vary depending on the client</li>
+                </ul>
+
+                <p className="pt-4">Example: Checking compatibility: &ldquo;Can you see this Kaomoji clearly? (;￢_￢) Let me know!&rdquo;</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Creating Your Own Kaomoji: Unleash Your Creativity ᕦ(ò_óˇ)ᕤ</h2>
+                <p className="pt-2">While copying and pasting is convenient, creating your own Kaomoji can be fun:</p>
+
+                <ul className="list-decimal list-inside pl-4">
+                    <li>Start with basic shapes: ( ) for the face</li>
+                    <li>Add eyes: (^_^) or (T_T)</li>
+                    <li>Include a mouth: (^_^) or (^o^)</li>
+                    <li>Embellish with extras: arms, accessories, etc.</li>
+                </ul>
+
+                <p className="pt-4">Example: A custom excited Kaomoji: \\(☆▽☆)/</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Conclusion: Embracing the World of Kaomoji ♪(^∇^*)</h2>
+
+                <p className="pt-2">Kaomoji offer a delightful way to add emotion, creativity, and a touch of Japanese culture to our digital communications. Whether you&apos;re expressing joy with a cute Kaomoji, sharing your love for cats with a feline-inspired design, or simply copying and pasting to quickly convey your feelings, these intricate emoticons have a special place in our online world.</p>
+
+                <p className="pt-2">So why not give Kaomoji a try? Add a splash of creativity to your next message and see how these charming text faces can transform your digital expressions. After all, in the world of online communication, a picture – or in this case, a Kaomoji – is worth a thousand words! (ღ˘⌣˘ღ)</p>
+            </div>
         </div>
+    </>
     );
 };
 
