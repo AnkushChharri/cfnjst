@@ -40,7 +40,7 @@ const StarSymbolSelector = () => {
         setSelectedStars('');
     }, []);
 
-    return (
+    return (<>
         <div className="max-w-4xl m-auto p-4">
             <div className="mb-4">
                 <div className="relative p-4 rounded-md">
@@ -159,7 +159,45 @@ const StarSymbolSelector = () => {
                     ))}
                 </div>
             </div>
+
+            <div className="max-w-7xl xl:mx-auto text-left mx-4">
+                <h1 className="pt-2 font-semibold text-xl">Straight Line Symbol: A Comprehensive Guide</h1>
+                <p className="pt-4">Are you looking for information on the straight-line symbol? Whether you&apos;re a student, designer, or just curious about typography, this guide will cover everything you need to know about this versatile punctuation mark. From its various uses to how to type it on different devices, we&apos;ve got you covered.</p>
+
+                <h2 className="pt-4 font-semibold text-xl">What is the Straight Line Symbol?</h2>
+                <p className="pt-4">The straight line symbol, also known as the vertical bar or pipe symbol, is a character that looks like this: |. It&apos;s a vertical line that extends from top to bottom, typically with the same height as other text characters.</p>
+                <p className="pt-2">Example: Here&apos;s the straight line symbol in action: A | B</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Uses of the Straight Line Symbol</h2>
+                <p className="pt-4">The straight line symbol has several applications across various fields:</p>
+
+                <h3 className="pt-4 font-semibold">1. Programming and Coding</h3>
+                <p className="pt-4">In many programming languages, the straight line symbol represents the &quot;OR&quot; operator in logical operations.</p>
+                <p className="pt-2">Example: In Python, you might see: `if x == 1 | y == 2:`</p>
+
+                <h3 className="pt-4 font-semibold">2. Mathematics</h3>
+                <p className="pt-4">Mathematicians use the straight line symbol to denote absolute value or to separate parts of an equation.</p>
+                <p className="pt-2">Example: |x| represents the absolute value of x.</p>
+
+                <h3 className="pt-4 font-semibold">3. Linguistics</h3>
+                <p className="pt-4">In linguistics, it&apos;s used to separate phonetic transcriptions or to indicate a pause in speech.</p>
+                <p className="pt-2">Example: The phonetic transcription of &quot;cat&quot; might look like this: /kæt|/.</p>
+
+                <h3 className="pt-4 font-semibold">4. Data Formatting</h3>
+                <p className="pt-4">The symbol is often used to separate data fields in CSV (Comma-Separated Values) files.</p>
+                <p className="pt-2">Example: A CSV file might contain: `Name|Age|City.`</p>
+
+                <h3 className="pt-4 font-semibold">5. Typography</h3>
+                <p className="pt-4">In typography, it can be used as a divider between text elements.</p>
+                <p className="pt-2">Example: You might see it in a menu like this: Appetizers | Main Courses | Desserts</p>
+
+                <h2 className="pt-4 font-semibold text-xl">Conclusion</h2>
+                <p className="pt-4">The straight line symbol, despite its simple appearance, plays a crucial role in various fields, from programming to literature. By understanding its uses and how to type it, you can enhance your communication in both digital and print media. Whether you&apos;re coding, writing, or designing, the straight line symbol is a versatile tool in your typography toolkit.</p>
+                <p className="pt-4">Remember, context is key when using the straight-line symbol. What works in a programming context might not be appropriate in a literary one. As with all punctuation, use it judiciously to enhance, not hinder, your communication.</p>
+                <p className="pt-4">Now that you&apos;re equipped with this knowledge, you can confidently use the straight line symbol in your work. Happy typing!</p>
+            </div>
         </div>
+    </>
     );
 };
 
