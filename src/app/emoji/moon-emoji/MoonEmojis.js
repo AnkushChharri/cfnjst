@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useCallback, useEffect } from 'react';
-import { Copy, X, Smile, Zap, CheckCircle, AlertCircle, Info } from 'lucide-react';
+import { Copy, X, Smile, Zap, CheckCircle, AlertCircle, Info, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
 const symbols = [
@@ -14,6 +14,32 @@ const platforms = [
     { name: 'Twitter', className: 'font-[TwitterChirp]' },
     { name: 'WhatsApp', className: 'font-[Segoe UI Emoji]' },
 ];
+
+// Breadcrumb component
+const Breadcrumb = ({ items }) => {
+    return (
+        <nav className="flex" aria-label="Breadcrumb">
+            <ol className="inline-flex items-center space-x-1 md:space-x-3">
+                {items.map((item, index) => (
+                    <li key={index} className="inline-flex items-center">
+                        {index > 0 && (
+                            <ChevronRight className="w-4 h-4 text-gray-400 mx-1" />
+                        )}
+                        {index === items.length - 1 ? (
+                            <span className="text-sm font-medium text-gray-500 md:ml-2">
+                                {item.label}
+                            </span>
+                        ) : (
+                            <Link href={item.href} className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800">
+                                {item.label}
+                            </Link>
+                        )}
+                    </li>
+                ))}
+            </ol>
+        </nav>
+    );
+};
 
 const EmojiComparison = () => {
     const [selectedSymbols, setSelectedSymbols] = useState('');
@@ -71,6 +97,13 @@ const EmojiComparison = () => {
         return () => clearTimeout(timer);
     }, [copiedSymbol]);
 
+    // Define the breadcrumb items
+    const breadcrumbItems = [
+        { label: 'Home', href: '/' },
+        { label: 'emoji', href: '/emoji' },
+        { label: 'moon-emoji', href: '/emoji/moon-emoji' },
+    ];
+
     return (<>
         <div className="max-w-7xl mx-auto p-4 space-y-8">
             {/* Improved Alert Component */}
@@ -101,6 +134,10 @@ const EmojiComparison = () => {
                     </div>
                 </div>
             </div>
+
+
+            {/* Add Breadcrumb component */}
+            <Breadcrumb items={breadcrumbItems} />
 
             {/* Emoji Playground */}
             <div className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 p-1 rounded-3xl shadow-lg">
@@ -216,10 +253,10 @@ const EmojiComparison = () => {
 
 
 
-            {/* Angry Emojis */}
+            {/* Moon Emojis */}
             <div className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 p-1 rounded-3xl shadow-lg">
                 <div className="bg-white p-6 sm:p-8 rounded-3xl">
-                    <h3 className="text-2xl sm:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500">Angry Emojis</h3>
+                    <h3 className="text-2xl sm:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500">Moon Emojis</h3>
                     <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 gap-2 sm:gap-4">
                         {symbols.map((symbol, index) => (
                             <button
@@ -239,68 +276,7 @@ const EmojiComparison = () => {
                 </div>
             </div>
 
-            {/* Emoji Comparison */}
-            <div className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 p-1 rounded-3xl shadow-lg">
-                <div className="bg-white p-6 sm:p-8 rounded-3xl">
-                    <h3 className="text-2xl sm:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500">Angry Emoji Comparison</h3>
-                    <div className="mb-6 flex justify-center">
-                        <button
-                            className={`px-4 sm:px-8 py-2 sm:py-3 rounded-l-full text-sm sm:text-lg font-medium ${activeTab === 'table' ? 'bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white' : 'bg-gray-200 text-gray-700'} transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-fuchsia-400`}
-                            onClick={() => setActiveTab('table')}
-                        >
-                            Table View
-                        </button>
-                        <button
-                            className={`px-4 sm:px-8 py-2 sm:py-3 rounded-r-full text-sm sm:text-lg font-medium ${activeTab === 'grid' ? 'bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white' : 'bg-gray-200 text-gray-700'} transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-400`}
-                            onClick={() => setActiveTab('grid')}
-                        >
-                            Grid View
-                        </button>
-                    </div>
-                    {activeTab === 'table' ? (
-                        <div className="overflow-x-auto rounded-2xl shadow-md">
-                            <table className="w-full border-collapse">
-                                <thead>
-                                    <tr className="bg-gradient-to-r from-violet-200 to-fuchsia-200">
-                                        <th className="border border-violet-300 p-2 sm:p-4 text-left font-semibold">Emoji</th>
-                                        {platforms.map((platform) => (
-                                            <th key={platform.name} className="border border-violet-300 p-2 sm:p-4 text-left font-semibold">{platform.name}</th>
-                                        ))}
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {symbols.map((symbol, index) => (
-                                        <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
-                                            <td className="border border-violet-200 p-2 sm:p-4 text-center text-2xl sm:text-3xl">{symbol}</td>
-                                            {platforms.map((platform) => (
-                                                <td key={platform.name} className={`border border-violet-200 p-2 sm:p-4 text-center text-2xl sm:text-3xl ${platform.className}`}>
-                                                    {symbol}
-                                                </td>
-                                            ))}
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    ) : (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-                            {symbols.map((symbol, index) => (
-                                <div key={index} className="border-2 border-violet-200 rounded-2xl p-4 sm:p-6 hover:border-fuchsia-400 transition-all duration-300 transform hover:scale-105 shadow-md">
-                                    <h4 className="text-xl sm:text-2xl font-semibold text-center mb-3 sm:mb-4">{symbol}</h4>
-                                    <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                                        {platforms.map((platform) => (
-                                            <div key={platform.name} className="text-center">
-                                                <div className={`text-3xl sm:text-4xl ${platform.className}`}>{symbol}</div>
-                                                <div className="text-xs mt-1 sm:mt-2 font-medium">{platform.name}</div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                </div>
-            </div>
+
             <div className="max-w-7xl xl:mx-auto text-left mx-4">
                 <h1 className="pt-2 font-semibold text-xl">Moon Emoji: Lunar Phases, Full Moon, and Moon Face Emojis</h1>
                 <p className="pt-4">In the vast universe of digital communication, emojis have become our celestial bodies, guiding us through conversations with their expressive charm. Among these stellar symbols, the moon emoji shines brightly, casting its gentle glow across our messages. This comprehensive guide will explore the various moon emojis, from the serene crescent to the enigmatic moon face, illuminating their meanings and optimal uses.</p>
