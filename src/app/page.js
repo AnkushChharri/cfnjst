@@ -4,6 +4,7 @@
 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+
 import SearchComponent from "./components/SearchComponent";
 
 
@@ -15,6 +16,9 @@ export default function Home() {
 
 
     <>
+
+
+
 
 
       <SearchComponent />

@@ -18,31 +18,7 @@ const platforms = [
     { name: 'WhatsApp', className: 'font-[Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif]' },
 ];
 
-// Breadcrumb component
-const Breadcrumb = ({ items }) => {
-    return (
-        <nav className="flex" aria-label="Breadcrumb">
-            <ol className="inline-flex items-center space-x-1 md:space-x-3">
-                {items.map((item, index) => (
-                    <li key={index} className="inline-flex items-center">
-                        {index > 0 && (
-                            <ChevronRight className="w-4 h-4 text-gray-400 mx-1" />
-                        )}
-                        {index === items.length - 1 ? (
-                            <span className="text-sm font-medium text-gray-500 md:ml-2">
-                                {item.label}
-                            </span>
-                        ) : (
-                            <Link href={item.href} className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800">
-                                {item.label}
-                            </Link>
-                        )}
-                    </li>
-                ))}
-            </ol>
-        </nav>
-    );
-};
+
 
 const EmojiComparison = () => {
     const [selectedSymbols, setSelectedSymbols] = useState('');
@@ -100,13 +76,7 @@ const EmojiComparison = () => {
         return () => clearTimeout(timer);
     }, [copiedSymbol]);
 
-    // Define the breadcrumb items
-    const breadcrumbItems = [
-        { label: 'Home', href: '/' },
-        { label: 'emoji', href: '/emoji' },
 
-        { label: 'arrow-emoji', href: '/emoji/arrow-emoji' },
-    ];
 
     return (<>
         <div className="max-w-7xl mx-auto p-4 space-y-8">
@@ -139,8 +109,7 @@ const EmojiComparison = () => {
                 </div>
             </div>
 
-            {/* Add Breadcrumb component */}
-            <Breadcrumb items={breadcrumbItems} />
+
 
             {/* Emoji Playground */}
             <div className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 p-1 rounded-3xl shadow-lg">

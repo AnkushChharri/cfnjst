@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import { AddressBar } from './ui/AddressBar';
 import "./globals.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -15,7 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
 
+
+
+
+
       <head>
+
+
 
 
         {/* SVG as favicon */}
@@ -36,8 +43,24 @@ export default function RootLayout({ children }) {
 
       </head>
 
+
+
+
+
+
+
+
       <body className={`${inter.className} bg-stone-100`}>
         <Navbar />
+
+        <AddressBar />
+
+
+
+
+
+
+
         {children}
         <Footer />
       </body>
