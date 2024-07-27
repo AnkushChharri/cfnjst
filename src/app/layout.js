@@ -51,9 +51,9 @@ export default function RootLayout({ children }) {
 
 
       <body className={`${inter.className} bg-stone-100`}>
-        <Navbar />
 
-        <AddressBar />
+
+
 
 
 
@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
 
 
         {children}
-        <Footer />
+
       </body>
     </html>
   );
